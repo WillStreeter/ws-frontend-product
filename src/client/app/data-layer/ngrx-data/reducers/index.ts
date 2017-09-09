@@ -96,7 +96,11 @@ export const getErrorEntities  = createSelector(getErrorState, fromErrors.getEnt
 export const getGarmentsState = (state: State) => state.garments;
 
 export const getGarmentIds = createSelector(getGarmentsState, fromGarment.getIds);
+
 export const getGarmentEntities  = createSelector(getGarmentsState, fromGarment.getEntities);
+
+export const getCurrentSubSet =  createSelector(getGarmentsState, fromGarment.getCurrentSubSet);
+
 export const getCurrentGarmentCollection  = createSelector(getGarmentsState, fromGarment.getEntities);
 
 

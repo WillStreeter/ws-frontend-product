@@ -9,12 +9,14 @@ import * as GarmentActionTypes from '../../../../business-layer/shared-types/act
 export  interface State {
   ids: string[];
   entities: { [id: string]: GarmentCollectionModel };
+  currentSubSet:GarmentModel[];
   currentCollectionId:string;
 }
 
 export const initialState: State = {
   ids: [],
   entities: {},
+  currentSubSet:[],
   currentCollectionId:''
 };
 
@@ -41,7 +43,7 @@ export function reducer(state = initialState, action: garmentActions.Actions): S
           }
       }
 
-      case GarmentActionTypes.UPDATE_SORTED_COLLECTION:{
+      case GarmentActionTypes.UPDATE_GARMENT_IN_COLLECTION_SUCCESS:{
            if(action.payload) {
                 const garmentSort = <GarmentSortModel>(action.payload);
                 const sortedCollection = state.entities[garmentSort.collectionId];
@@ -53,7 +55,7 @@ export function reducer(state = initialState, action: garmentActions.Actions): S
            return state;
       }
 
-      case GarmentActionTypes.ADD_GARMENT_TO_COLLECTION:{
+      case GarmentActionTypes.ADD_GARMENT_TO_COLLECTION_SUCCESS:{
            if(action.payload) {
                 const garmentToAdd = <GarmentAddModel>(action.payload);
                 const collectionAddingTo = state.entities[garmentToAdd.collectionId];
@@ -86,6 +88,8 @@ export const getEntities = (state: State) => state.entities;
 export const getIds = (state: State) => state.ids;
 
 export const getCurrentCollectionId = (state: State) => state.currentCollectionId;
+
+export const getCurrentSubSet = (state: State) => state.currentSubSet;
 
 export const getCurrentGarmentCollection  = createSelector(getEntities, getCurrentCollectionId, (entities, currentCollectionId) => {
   return entities[currentCollectionId];
