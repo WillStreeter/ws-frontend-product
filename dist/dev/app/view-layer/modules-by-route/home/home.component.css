@@ -1,0 +1,38 @@
+:host {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.btn {
+  display: inline-block;
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 0.85em;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1px;
+  padding: 1.55em 3em;
+  margin: 2em 2em;
+  transition: all 0.65s;
+  border-radius: 30px;
+  color: #522B11;
+  background: #BFB405; }
+
+.btn:hover {
+  color: #A88A6E;
+  letter-spacing: 3px;
+  background: #F1DB5A;
+  box-shadow: 5px 30px 60px #888888; }
+
+/*# sourceMappingURL=/app/view-layer/modules-by-route/home/home.component.css.map */

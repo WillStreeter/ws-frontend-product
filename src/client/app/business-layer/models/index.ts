@@ -1,4 +1,8 @@
-export { SessionModel } from './session.model';
-export { UserModel }   from  './user.model';
+
 export { ErrorModel }   from  './error.model';
-export { RegistrationModel } from './registration.model';
+export { GarmentModel } from './garment.model';
+export { GarmentAddModel } from './garmentAdd.model';
+export { GarmentSortModel } from './garmentSort.model';
+export { GarmentSubsetModel } from './garmentSubset.model';
+export { GarmentCollectionModel } from './garmentCollection.model';
+export { PortalModel } from './portal.model';

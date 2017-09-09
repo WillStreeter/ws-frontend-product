@@ -1,0 +1,97 @@
+:host {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.reg-card {
+  margin-top: 64px;
+  margin-bottom: 64px;
+  min-width: 350px;
+  max-width: 50%;
+  background: #BFB405;
+  background: linear-gradient(to bottom, #BFB405 0%, #b0a605 100%); }
+
+.form-direction {
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #6b3816; }
+  .form-direction small {
+    width: 60%;
+    font-size: .65em;
+    font-weight: 200;
+    color: #F1DB5A; }
+
+.error {
+  color: #D73117; }
+
+.reg-card {
+  min-width: 350px;
+  max-width: 65%; }
+
+.reg-input-container.mat-focused .reg-placeholder-label {
+  color: #F1DB5A; }
+
+.reg-btn {
+  color: #BFB405;
+  background-color: #522B11;
+  background: #522B11; }
+
+.reg-card md-card-header {
+  height: 50px;
+  margin-bottom: 25px; }
+
+.reg-card-title h1 {
+  font-size: 2.5em;
+  font-weight: 100;
+  color: #6b3816;
+  font-family: "Roboto", sans-serif; }
+
+.reg-new-user {
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100%;
+  text-align: center;
+  /* establish flex container */
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  /* make main axis vertical */
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /* center items vertically, in this case */
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.reg-input-container {
+  font-size: 20px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 65%;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 0.35em;
+  padding-right: 0.35em;
+  color: #522B11; }
+
+.reg-placeholder-label {
+  color: #6b3816; }
+
+/*# sourceMappingURL=/app/view-layer/modules-by-route/registration/registration.component.css.map */

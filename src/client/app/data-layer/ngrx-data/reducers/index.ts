@@ -38,9 +38,8 @@ import { combineReducers } from '@ngrx/store';
  * notation packages up all of the exports into a single object.
  */
 import * as fromErrors from './error/error.reducer';
-import * as fromLayouts from './layout/layout.reducer';
-import * as fromProfiles from './profile/profile.reducer';
-import * as fromUsersession from './usersession/usersession.reducer';
+import * as fromPortal from './portal/portal.reducer';
+import * as fromGarment from './garment/garment.reducer';
 
 
 /**
@@ -49,9 +48,8 @@ import * as fromUsersession from './usersession/usersession.reducer';
  */
 export interface State {
   errors: fromErrors.State;
-  layouts: fromLayouts.State;
-  profiles: fromProfiles.State;
-  usersession: fromUsersession.State;
+  portals: fromPortal.State;
+  garments: fromGarment.State;
   router: fromRouter.RouterState;
 }
 
@@ -65,9 +63,8 @@ export interface State {
  */
 const reducers = {
   errors: fromErrors.reducer,
-  layouts: fromLayouts.reducer,
-  profiles: fromProfiles.reducer,
-  usersession: fromUsersession.reducer,
+  portals: fromPortal.reducer,
+  garments: fromGarment.reducer,
   router: fromRouter.routerReducer
 };
 
@@ -83,41 +80,6 @@ export function reducer(state: any, action: any) {
 }
 
 
-/**
- * A selector function is a map function factory. We pass it parameters and it
- * returns a function that maps from the larger state tree into a smaller
- * piece of state. This selector simply selects the `books` state.
- *
- * Selectors are used with the `select` operator.
- *
- * ```ts
- * class MyComponent {
- * 	constructor(state$: Observable<State>) {
- * 	  this.booksState$ = state$.select(getBooksState);
- * 	}
- * }
- * ```
- */
-export const getUsersessionState = (state: State) => state.usersession;
-
-/**
- * Every reducer module exports selector functions, however child reducers
- * have no knowledge of the overall state tree. To make them useable, we
- * need to make new selectors that wrap them.
- *
- * The createSelector function from the reselect library creates
- * very efficient selectors that are memoized and only recompute when arguments change.
- * The created selectors can also be composed together to select different
- * pieces of state.
- */
-export const getUser = createSelector(getUsersessionState, fromUsersession.getUser);
-export const getToken = createSelector(getUsersessionState, fromUsersession.getToken);
-export const getUserLoading = createSelector(getUsersessionState, fromUsersession.getUserLoading);
-export const getUserLoaded = createSelector(getUsersessionState, fromUsersession.getUserLoaded);
-export const hasLoggedInUser = createSelector(getToken, (token) => {
-         return token !=='' ? true:false;
-});
-
 
 
 /**
@@ -131,22 +93,27 @@ export const getErrorEntities  = createSelector(getErrorState, fromErrors.getEnt
 
 
 
-export const getProfilesState = (state: State) => state.profiles;
+export const getGarmentsState = (state: State) => state.garments;
 
-export const getProfileIds = createSelector(getProfilesState, fromProfiles.getIds);
-export const getProfileEntities  = createSelector(getProfilesState, fromProfiles.getEntities);
-export const getSelectedProfileId  = createSelector(getProfilesState, fromProfiles.getSelectedProfileId);
-export const getSelectedProfile  = createSelector(getProfilesState, fromProfiles.getSelectedProfile);
-export const getValidUserName  = createSelector(getProfilesState, fromProfiles.getValidUserName);
+export const getGarmentIds = createSelector(getGarmentsState, fromGarment.getIds);
+export const getGarmentEntities  = createSelector(getGarmentsState, fromGarment.getEntities);
+export const getCurrentGarmentCollection  = createSelector(getGarmentsState, fromGarment.getEntities);
+
 
 
 
 
 /**
- * Layout Reducers
+ * portal Reducers
  */
-export const getLayoutState = (state: State) => state.layouts;
+export const getPortalState = (state: State) => state.portals;
 
-export const getShowLoginDialog = createSelector(getLayoutState, fromLayouts.getShowLoginDialog);
+export const getViewablePerPage = createSelector(getPortalState, fromPortal.getViewablePerPage);
 
-export const getRequestedURL = createSelector(getLayoutState, fromLayouts.getRequestedURL);
+export const getCurrentPage = createSelector(getPortalState, fromPortal.getCurrentPage);
+
+export const getSortType = createSelector(getPortalState, fromPortal.getSortType);
+
+export const getSortBase = createSelector(getPortalState, fromPortal.getSortBase);
+
+export const getSortState = createSelector(getPortalState, fromPortal.getSortState);

@@ -1,0 +1,89 @@
+.login-dialog {
+  min-width: 280px;
+  background-color: #b79f88;
+  background: #b79f88; }
+
+.app-input-icon {
+  font-size: 24px;
+  left: 20px;
+  color: #F1DB5A;
+  padding-left: 0.85em;
+  padding-right: 0.85em; }
+
+.login-ph .mat-focused {
+  color: #F1DB5A; }
+
+.login-btn {
+  color: #522B11;
+  background-color: #BFB405;
+  background: #BFB405; }
+
+.err {
+  color: #D73117; }
+
+a.registration-label {
+  font-size: 20px;
+  color: #F1DB5A;
+  margin-bottom: 20px; }
+  a.registration-label:hover {
+    color: #BFB405; }
+
+.login-card-title {
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100%;
+  text-align: center;
+  /* establish flex container */
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  /* make main axis vertical */
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /* center items vertically, in this case */
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Roboto", sans-serif;
+  color: #BFB405;
+  background-color: #6e5742;
+  background: #6e5742;
+  background: #8e7155;
+  background: radial-gradient(ellipse at center, #8e7155 5%, #673615 100%); }
+
+.login-dialog .login-input-container {
+  font-size: 20px;
+  line-height: 30px;
+  padding-top: 20px;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  /* make main axis vertical */
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /* center items vertically, in this case */
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #522B11; }
+
+input.md-input-element {
+  color: #522B11; }
+
+input.mat-input-element {
+  padding-top: 10px;
+  text-align: center; }
+
+.login-dialog .mat-input-underline .mat-input-ripple {
+  background: #522B11; }
+
+span.mat-placeholder-required {
+  color: #522B11; }
+
+/*# sourceMappingURL=/app/view-layer/common-views/login-container/login.container.css.map */

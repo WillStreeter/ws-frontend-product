@@ -1,0 +1,52 @@
+:host {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.prfl-view-card {
+  margin-top: 64px;
+  margin-bottom: 64px;
+  min-width: 350px;
+  max-width: 50%;
+  background: #BFB405;
+  background: linear-gradient(to bottom, #BFB405 0%, #b0a605 100%); }
+
+.mat-card-header-text {
+  height: 10px !important; }
+
+.prfl-view-card .mat-card-header {
+  height: 80px; }
+
+md-card-title {
+  padding-bottom: 20px; }
+
+.prfl-view-title h1 {
+  font-size: 3em;
+  font-weight: 100;
+  color: #6b3816;
+  font-family: "Roboto", sans-serif; }
+
+md-list-item {
+  padding-top: 20px;
+  padding-bottom: 10px; }
+
+md-list-item h3.profile-item-label {
+  font-size: 1.75em;
+  font-weight: 100;
+  color: #6b3816;
+  font-family: "Roboto", sans-serif; }
+  md-list-item h3.profile-item-label small {
+    font-size: .75em;
+    font-weight: 500;
+    color: #0082CB; }
+
+/*# sourceMappingURL=/app/view-layer/modules-by-route/profile/profile.component.css.map */
