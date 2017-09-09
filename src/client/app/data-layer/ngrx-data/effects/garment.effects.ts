@@ -21,14 +21,64 @@ import {SortingServices} from "../../sorting-services/sorting.service";
 @Injectable()
 export class GarmentEffects {
 
-  @Effect()  fetchGarmentCollection  = Observable.of(new garmentActions.GetGarmentCollection());
 
 
- @Effect() setGarmentServiced = this.actions$
-  .ofType(garmentActions.GarmentTypes.FETCH_GARMENT_COLLECTION_ATTEMPT)
-  .map(action => action.payload)
-  .switchMap( (payload)=>( this.sortingServices.sortGarmentCollection(payload)))
-  .map(payload =>  new garmentActions.UpdateSortedCollection(payload));
+    @Effect()  startUpApp  = Observable.of(new garmentActions.GetGarmentCollection());
+
+
+    @Effect() fetchGarmentCollection = this.actions$
+        .ofType(garmentActions.GarmentTypes.FETCH_GARMENT_COLLECTION_ATTEMPT)
+        .map(action => action.payload)
+        .switchMap(() => this.garmentServices.getProducts(
+            errorActions.ErrorTypes.REPORT_ERROR,
+            garmentActions.GarmentTypes.FETCH_GARMENT_COLLECTION_FAILURE,
+            garmentActions.GarmentTypes.FETCH_GARMENT_COLLECTION_SUCCESS));
+
+
+    @Effect()  garmentCollectionFetched = this.actions$
+      .ofType(garmentActions.GarmentTypes.FETCH_GARMENT_COLLECTION_SUCCESS)
+      .map(action => action.payload)
+      .switchMap( (payload)=>( this.sortingServices.sortGarmentCollection(payload)))
+      .map(payload =>  new garmentActions.UpdateSortedCollection(payload));
+
+
+
+
+    @Effect() upddateGarementInCollection = this.actions$
+        .ofType(garmentActions.GarmentTypes.UPDATE_GARMENT_IN_COLLECTION_SUCCESS)
+        .map(action => action.payload)
+        .switchMap(payload => this.garmentServices.updateProduct( payload,
+            errorActions.ErrorTypes.REPORT_ERROR,
+            garmentActions.GarmentTypes.REGISTER_USER_FAILURE,
+            garmentActions.GarmentTypes.REGISTER_USER_SUCCESS));
+
+
+
+    @Effect() garmentUpdatedInCollection = this.actions$
+        .ofType(garmentActions.GarmentTypes.UPDATE_GARMENT_IN_COLLECTION_SUCCESS)
+        .map(action => action.payload)
+        .switchMap( (payload)=>( this.sortingServices.sortGarmentCollection(payload)))
+        .map(payload =>  new garmentActions.UpdateSortedCollection(payload));
+
+
+
+
+    @Effect() addGarmentToCollection = this.actions$
+        .ofType(garmentActions.GarmentTypes.ADD_GARMENT_TO_COLLECTION_ATTEMPT)
+        .map(action => action.payload)
+        .switchMap(payload => this.garmentServices.addNewProduct( payload,
+            errorActions.ErrorTypes.REPORT_ERROR,
+            garmentActions.GarmentTypes.ADD_GARMENT_TO_COLLECTION_FAILURE,
+            garmentActions.GarmentTypes.ADD_GARMENT_TO_COLLECTION_SUCCESS));
+
+
+
+    @Effect() garmentAddedToCollection = this.actions$
+        .ofType(garmentActions.GarmentTypes.ADD_GARMENT_TO_COLLECTION_SUCCESS)
+        .map(action => action.payload)
+        .switchMap( (payload)=>( this.sortingServices.sortGarmentCollection(payload)))
+        .map(payload =>  new garmentActions.UpdateSortedCollection(payload));
+
 
 
 

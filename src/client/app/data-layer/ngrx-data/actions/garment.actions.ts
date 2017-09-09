@@ -27,10 +27,36 @@ export class GetGarmentCollectionSuccess implements Action {
   constructor(public payload:GarmentCollectionModel) {  }
 }
 
+export class UpdateGarmentAttempt implements Action {
+ public readonly type =  GarmentActionTypes.UPDATE_GARMENT_IN_COLLECTION_ATTEMPT;
+ constructor(public payload:GarmentAddModel) {  }
+}
 
-export class AddGarmentToCollection implements Action {
- public readonly type =  GarmentActionTypes.ADD_GARMENT_TO_COLLECTION;
-  constructor(public payload:GarmentAddModel) {  }
+export class UpdateGarmentFailure implements Action {
+ public readonly type =  GarmentActionTypes.UPDATE_GARMENT_IN_COLLECTION_FAILURE;
+ constructor(public payload:GarmentAddModel) {  }
+}
+
+
+export class UpdateGarmentSuccess implements Action {
+ public readonly type =  GarmentActionTypes.UPDATE_GARMENT_IN_COLLECTION_SUCCESS;
+ constructor(public payload:GarmentAddModel) {  }
+}
+
+
+export class AddGarmentToCollectionAttempt implements Action {
+ public readonly type =  GarmentActionTypes.ADD_GARMENT_TO_COLLECTION_ATTEMPT;
+ constructor(public payload:GarmentAddModel) {  }
+}
+
+export class AddGarmentToCollectionFailure implements Action {
+ public readonly type =  GarmentActionTypes.ADD_GARMENT_TO_COLLECTION_FAILURE;
+ constructor(public payload:GarmentAddModel) {  }
+}
+
+export class AddGarmentToCollectionSuccess implements Action {
+ public readonly type =  GarmentActionTypes.ADD_GARMENT_TO_COLLECTION_SUCCESS;
+ constructor(public payload:GarmentAddModel) {  }
 }
 
 export class GetSubsetOfCollection implements Action {
@@ -48,7 +74,12 @@ export type Actions =
 GetGarmentCollection
      | GetGarmentCollectionFailure
      | GetGarmentCollectionSuccess
-     | AddGarmentToCollection
+     | UpdateGarmentAttempt
+     | UpdateGarmentFailure
+     | UpdateGarmentSuccess
+     | AddGarmentToCollectionAttempt
+     | AddGarmentToCollectionFailure
+     | AddGarmentToCollectionSuccess
      | GetSubsetOfCollection
      | UpdateSortedCollection
 

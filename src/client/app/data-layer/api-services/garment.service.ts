@@ -8,7 +8,7 @@ export class GarmentService {
 
   constructor(private httpWrapperService: HttpWrapperService) { }
 
-    getProducts(ErrorActionType:string, SpecificErrorType:string, SuccessType:string) {
+  getProducts(ErrorActionType:string, SpecificErrorType:string, SuccessType:string) {
     let getParams: HttpParams = {
       errorActionType: ErrorActionType,
       specificErrorType: SpecificErrorType,
@@ -19,6 +19,33 @@ export class GarmentService {
     };
     return this.httpWrapperService.get(getParams);
   }
+
+  updateProduct(payload: {id:string, name: string, type: string, price:number, inventory:string, thumbnail:string},
+               ErrorActionType:string, SpecificErrorType:string, SuccessType:string) {
+    let postParams: HttpParams = {
+      errorActionType:ErrorActionType,
+      specificErrorType: SpecificErrorType,
+      payload: payload,
+      responseObject: 'product',
+      successActionType: SuccessType,
+      uri: 'products/update'
+    };
+    return this.httpWrapperService.post(postParams);
+  }
+
+  addNewProduct(payload: {name: string, type: string, price:number, inventory:string, thumbnail:string},
+               ErrorActionType:string, SpecificErrorType:string, SuccessType:string) {
+    let postParams: HttpParams = {
+      errorActionType:ErrorActionType,
+      specificErrorType: SpecificErrorType,
+      payload: payload,
+      responseObject: 'product',
+      successActionType: SuccessType,
+      uri: 'products/add'
+    };
+    return this.httpWrapperService.post(postParams);
+  }
+
 
 
 }

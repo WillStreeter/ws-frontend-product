@@ -12,16 +12,14 @@ import { Injectable } from '@angular/core';
 import { Store, Action } from '@ngrx/store';
 import { Actions, Effect  } from '@ngrx/effects';
 import { Observable } from 'rxjs/Observable';
-import * as usersessionActions from '../actions/usersession.actions';
+import * as portalActions from '../actions/portal.actions';
+import * as garmentActions from '../actions/garment.actions';
 import * as errorActions from '../actions/error.actions';
-import { UserServices } from '../../api-services/user.service';
 
 
 
 @Injectable()
-export class UserSessionEffects {
-
-  @Effect()  startAppClearUser$  = Observable.of(new usersessionActions.AppStartLoginClear());
+export class PortalEffects {
 
 
   @Effect() loginUser$ = this.actions$
