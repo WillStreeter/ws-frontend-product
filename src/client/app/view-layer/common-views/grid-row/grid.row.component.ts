@@ -1,4 +1,5 @@
 import { Component,Input } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { GarmentModel } from '../../../business-layer/models';
 
 
@@ -11,6 +12,8 @@ import { GarmentModel } from '../../../business-layer/models';
 })
 export class GridRowComponent{
     @Input() garment:GarmentModel;
+    isReadOnly:boolean = true;
+
 
     get id() {
       return this.garment.id;
@@ -25,9 +28,12 @@ export class GridRowComponent{
     }
 
     get price() {
-       return this.garment.price;
+       return "$"+this.garment.price;
     }
 
+    get inventory(){
+        return this.garment.inventory;
+    }
     get thumbnail(){
        return this.garment.thumbnail;
     }

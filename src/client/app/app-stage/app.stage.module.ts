@@ -3,6 +3,7 @@ import { HttpModule } from '@angular/http';
 import { APP_BASE_HREF, CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -47,6 +48,8 @@ import { BaseRequestOptions } from '@angular/http';
              CommonModule,
              BrowserModule,
              BrowserAnimationsModule,
+             FormsModule,
+             ReactiveFormsModule,
              HttpModule,
              NGRxDataModule.forRoot(),
              PubSubBrokerModule.forRoot(),

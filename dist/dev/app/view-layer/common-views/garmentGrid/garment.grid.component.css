@@ -13,7 +13,12 @@
           justify-content: center; }
 
 .grid-layout {
-  min-width: 850px; }
+  min-width: 850px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #DBDBDB;
+  padding: 40px;
+  color: #b0b0b0; }
 
 .nav-link.active-btn {
   color: #03538a; }

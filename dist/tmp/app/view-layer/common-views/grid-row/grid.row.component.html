@@ -9,15 +9,15 @@
           </div>
      </div>
      <div class="garment-name" fxLayout="column" fxFlex="40">
-       {{name}}
+         <input id="garmentName" [(ngModel)]="name" [readonly]="isReadOnly"  placeholder=""/>
      </div>
      <div class="garment-type" fxLayout="column" fxFlex="20">
-       {{type}}
+         <input id="garmentType" [(ngModel)]="type" [readonly]="isReadOnly"  placeholder=""/>
      </div>
      <div class="garment-price" fxLayout="column" fxFlex="15">
-       {{price}}
+         <input id="garmentPrice" [(ngModel)]="price" [readonly]="isReadOnly"  placeholder=""/>
      </div>
      <div class="garment-inventory" fxLayout="column" fxFlex="15">
-       {{inventory}}
+         <input id="garmentInventory" [(ngModel)]="inventory" [readonly]="isReadOnly"  placeholder=""/>
      </div>
   </div>

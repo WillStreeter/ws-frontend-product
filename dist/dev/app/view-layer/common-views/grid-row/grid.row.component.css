@@ -1,7 +1,8 @@
 .grid-row {
   border-bottom-style: solid;
+  border-width: 1px;
   border-bottom-color: #DBDBDB;
-  min-height: 50px; }
+  min-height: 55px; }
 
 md-checkbox {
   margin: auto; }
@@ -24,5 +25,20 @@ md-checkbox {
 .garment-price,
 .garment-inventory {
   margin: auto; }
+
+input {
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  /* border-color:$steel-white;*/
+  padding: 5px;
+  padding-left: 2px;
+  margin: 10px;
+  font-size: 1em;
+  color: #646464; }
+
+.garment-price input,
+.garment-inventory input {
+  text-align: right; }
 
 /*# sourceMappingURL=/app/view-layer/common-views/grid-row/grid.row.component.css.map */

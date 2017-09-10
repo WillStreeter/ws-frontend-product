@@ -1,5 +1,6 @@
 
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule } from '@angular/router';
@@ -11,6 +12,8 @@ import { MaterialModule } from '@angular/material';
 @NgModule({
     imports: [ RouterModule,
                RouterModule,
+               FormsModule,
+        ReactiveFormsModule,
                CommonModule,
                MaterialModule,
                FlexLayoutModule ],
