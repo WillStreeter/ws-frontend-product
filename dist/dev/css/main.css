@@ -1,13 +1,10 @@
 @import url(seed-main.css);
 @import url(../../../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css);
 body {
-  background-color: #A88A6E;
-  backgroundcolor: #A88A6E;
+  background-color: #fefefe;
+  backgroundcolor: #fefefe;
   font-family: "Lato", sans-serif;
-  font-size: 16px;
-  background: #c5b19e;
-  background: radial-gradient(ellipse at center, #c5b19e 5%, #A88A6E 100%);
-  background-repeat: no-repeat; }
+  font-size: 16px; }
 
 /* Set up a default font and some padding to provide breathing room */
 p {
@@ -51,5 +48,3 @@ md-dialog-container.mat-dialog-container,
 
 .login-dialog .mat-slide-toggle-thumb {
   background-color: #F1DB5A; }
-
-/*# sourceMappingURL=/css/main.css.map */

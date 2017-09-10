@@ -23,44 +23,76 @@ export const initialState: State = {
 export function reducer(state = initialState, action: garmentActions.Actions): State {
   switch (action.type) {
       case GarmentActionTypes.FETCH_GARMENT_COLLECTION_SUCCESS:{
-          if(action.payload.hasOwnProperty('id') ||
-             action.payload.hasOwnProperty('products')) {
-              const garmentCollection:GarmentCollectionModel = <GarmentCollectionModel>(action.payload);
+              console.log('  reducer FETCH_GARMENT_COLLECTION_SUCCESS', action.payload)
+          if(action.payload) {
+              let  garmentCollection:GarmentCollectionModel = <GarmentCollectionModel>{};
+              garmentCollection.id=''+state.ids.length + Math.floor(Math.random() * (100 - 1)) +1,
+              garmentCollection.products=action.payload;
               if (state.ids.indexOf(garmentCollection.id) > -1) {
                 return state;
               }
 
-              return {
-                currentCollectionId:garmentCollection.id,
-                ids: [ ...state.ids, garmentCollection.id ],
-                entities: Object.assign({}, state.entities, {
-                  [garmentCollection.id]: garmentCollection
-                })
-              };
-
-          }else {
-             return state;
+             state = Object.assign( {
+                                        currentSubSet:state.currentSubSet,
+                                        ids: [ ...state.ids, garmentCollection.id ],
+                                        entities: Object.assign({}, state.entities, {
+                                          [garmentCollection.id]: garmentCollection
+                                        }),
+                                        currentCollectionId:garmentCollection.id,
+                                      });
           }
+             return state;
+      }
+
+      case GarmentActionTypes.UPDATE_SORTED_COLLECTION:{
+           if(action.payload) {
+                let  garmentCollection:GarmentCollectionModel = <GarmentCollectionModel>{};
+                const garmentSorted:GarmentSortModel = <GarmentSortModel>(action.payload);
+                garmentCollection.id = garmentSorted.collectionId;
+                garmentCollection.products = [...<GarmentModel[]>(garmentSorted.products)];
+
+              console.log('  UPDATE_SORTED_COLLECTION garmentCollection ', garmentCollection )
+              console.log('  before state.entities[ garmentCollection.id] ', state.entities[ garmentCollection.id] )
+
+
+             state =  Object.assign( {
+                                        currentSubSet:state.currentSubSet,
+                                        ids: state.ids ,
+                                        entities: Object.assign({}, state.entities, {
+                                          [garmentCollection.id]: garmentCollection
+                                        }),
+                                        currentCollectionId:state.currentCollectionId
+                                      });
+              console.log('  UPDATE_SORTED_COLLECTION  state .entities[ garmentCollection.id] ',  state .entities[ garmentCollection.id] )
+
+           }
+           return state
+
       }
 
       case GarmentActionTypes.UPDATE_GARMENT_IN_COLLECTION_SUCCESS:{
            if(action.payload) {
-                const garmentSort = <GarmentSortModel>(action.payload);
-                const sortedCollection = state.entities[garmentSort.collectionId];
-                state.entities = sortedCollection.products = garmentSort.products;
-                entities: Object.assign({}, state.entities, {
+                const garmentUpdate = <GarmentAddModel>(action.payload);
+                const sortedCollection:GarmentCollectionModel = state.entities[garmentUpdate.collectionId];
+                sortedCollection.products = sortedCollection.products.map((product:GarmentModel)=>{
+                     if(product.id === garmentUpdate.product.id){
+                         product = garmentUpdate.product;
+                     }
+                     return product;
+                 });
+                 state.entities =  Object.assign({}, state.entities, {
                   [sortedCollection.id]: sortedCollection
                 });
            }
-           return state;
+           return state
       }
 
       case GarmentActionTypes.ADD_GARMENT_TO_COLLECTION_SUCCESS:{
            if(action.payload) {
                 const garmentToAdd = <GarmentAddModel>(action.payload);
                 const collectionAddingTo = state.entities[garmentToAdd.collectionId];
-                state.entities = collectionAddingTo.push(garmentToAdd.product);
-                entities: Object.assign({}, state.entities, {
+                collectionAddingTo.products.push(garmentToAdd.product);
+                 state.entities =  Object.assign({}, state.entities, {
                   [collectionAddingTo.id]: collectionAddingTo
                 });
            }

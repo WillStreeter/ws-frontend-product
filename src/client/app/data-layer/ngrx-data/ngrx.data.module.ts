@@ -4,7 +4,8 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 import { HttpWrapperService } from '../api-services/http.wrapper.service';
-import { UserServices } from '../api-services/user.service';
+import { GarmentService } from '../api-services/garment.service';
+import { SortingServices }   from '../sorting-services/sorting.service';
 
 /*
      ngrx base library
@@ -21,13 +22,12 @@ import { reducer } from  './reducers/index';
 
 
 import { ErrorEffects } from './effects/error.effects';
-import { UserSessionEffects } from './effects/usersession.effects';
-import { ProfileEffects } from './effects/profile.effects';
+import { GarmentEffects } from './effects/garment.effects';
+
 
 /*
    Routes and Guards
  */
-import { UsersessionGuard, DialogStateGuard } from './guards/index';
 
 @NgModule({
     imports: [ CommonModule,
@@ -36,13 +36,12 @@ import { UsersessionGuard, DialogStateGuard } from './guards/index';
                StoreModule.provideStore(reducer),
                RouterStoreModule.connectRouter(),
                EffectsModule.run(ErrorEffects),
-               EffectsModule.run(ProfileEffects),
-               EffectsModule.run(UserSessionEffects) ],
+               EffectsModule.run(GarmentEffects) ],
     exports: [],
-    providers: [ UsersessionGuard,
-                 DialogStateGuard,
+    providers: [
                  HttpWrapperService,
-                 UserServices  ]
+                 SortingServices,
+                 GarmentService  ]
 })
 export class NGRxDataModule {
 
@@ -54,10 +53,9 @@ export class NGRxDataModule {
   static forRoot(): ModuleWithProviders  {
     return {
       ngModule: NGRxDataModule,
-      providers: [ UsersessionGuard,
-                   DialogStateGuard,
-                   HttpWrapperService,
-                   UserServices]
+      providers: [ HttpWrapperService,
+                   SortingServices,
+                   GarmentService]
     }
   }
 }

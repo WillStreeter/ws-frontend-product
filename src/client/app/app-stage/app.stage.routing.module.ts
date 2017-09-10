@@ -10,19 +10,7 @@ import { Routes, RouterModule } from '@angular/router';
                   {
                       path: 'error',
                       loadChildren: 'app/view-layer/modules-by-route/notfound/notfound.page.module#NotfoundPageModule'
-                  },
-                  {
-                      path: 'register',
-                      loadChildren: 'app/view-layer/modules-by-route/registration/registration.module#RegistrationModule'
-                  },
-                  {
-                      path: 'profile/username/:username',
-                      loadChildren:  'app/view-layer/modules-by-route/profile/profile.module#ProfileModule'
-                  },
-                  {
-                      path: 'surprise',
-                      loadChildren: 'app/view-layer/modules-by-route/surprise/surprise.module#SurpriseModule'
-                  },
+                  }
               ];
 
 

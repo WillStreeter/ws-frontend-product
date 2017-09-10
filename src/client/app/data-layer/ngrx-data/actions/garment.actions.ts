@@ -24,7 +24,7 @@ export class GetGarmentCollectionFailure implements Action {
 
 export class GetGarmentCollectionSuccess implements Action {
  public readonly type = GarmentActionTypes.FETCH_GARMENT_COLLECTION_SUCCESS;
-  constructor(public payload:GarmentCollectionModel) {  }
+  constructor(public payload:any) {  }
 }
 
 export class UpdateGarmentAttempt implements Action {

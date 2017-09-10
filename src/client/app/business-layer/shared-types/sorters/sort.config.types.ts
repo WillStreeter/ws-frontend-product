@@ -4,10 +4,22 @@
 
 
  export const SORT_BASES =  {
-                               "Name":"string",
-                               "Type":"term",
-                               "Price":"number",
-                               "Inventory":"number"
+                               "Name":{
+                                   attr:"name",
+                                   dataType:"string"
+                               },
+                               "Type":{
+                                   attr:"type",
+                                   dataType:"term"
+                               },
+                               "Price":{
+                                   attr:"price",
+                                   dataType:"number"
+                               },
+                               "Inventory":{
+                                   attr:"inventory",
+                                   dataType:"number"
+                               },
                              };
 
 

@@ -1,7 +1,7 @@
 all:
 
-CONTAINER_NAME = ws-ngx-login-demo-container
-IMAGE_NAME = local-ws-ngx-login-demo-dev
+CONTAINER_NAME = weebly-garment-demo-container
+IMAGE_NAME = local-weebly-garment-demo-dev
 
 
 build-clean:
@@ -15,13 +15,13 @@ clean: build-clean
 	#gulp build.prod.aot
 
 #build:
-	#docker build -t willsonic/ws-ngx-login-demo .
+	#docker build -t willstreeter/weebly-garment-demo .
 
 build-dev:
-	docker build -t local-ws-ngx-login-demo-dev -f Dockerfile.dev .
+	docker build -t local-weebly-garment-demo -f Dockerfile.dev .
 
 #install:
-	#gcloud docker --  push willsonic/ws-ngx-login-demo
+	#gcloud docker --  push willstreeter/weebly-garment-demo
 
 run-container:
 	docker run --name $(CONTAINER_NAME) -d -p 5555:5555  $(IMAGE_NAME)

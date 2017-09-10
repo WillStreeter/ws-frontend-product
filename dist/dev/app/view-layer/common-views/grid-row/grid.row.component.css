@@ -1,0 +1,28 @@
+.grid-row {
+  border-bottom-style: solid;
+  border-bottom-color: #DBDBDB;
+  min-height: 50px; }
+
+md-checkbox {
+  margin: auto; }
+
+.img-thumb {
+  width: 35px;
+  height: 35px;
+  margin: auto; }
+
+/* resize images */
+.img-thumb img {
+  width: 100%;
+  height: auto;
+  border-style: solid;
+  border-color: #DBDBDB;
+  border-width: 1.75px; }
+
+.garment-name,
+.garment-type,
+.garment-price,
+.garment-inventory {
+  margin: auto; }
+
+/*# sourceMappingURL=/app/view-layer/common-views/grid-row/grid.row.component.css.map */

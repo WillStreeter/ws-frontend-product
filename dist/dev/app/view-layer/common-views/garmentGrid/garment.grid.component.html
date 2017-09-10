@@ -1,0 +1,6 @@
+<!-- ngrx smart-container-->
+<div class="flex-container" fxFlexFill>
+   <div class="grid-layout" fxLayout="column"  fxFlex="100"  >
+       <grid-row *ngFor=" let garment of currentGarmentSubset$ | async" [garment]="garment"></grid-row>
+   </div>
+</div>

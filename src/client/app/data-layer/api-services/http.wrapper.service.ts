@@ -16,7 +16,7 @@ export class HttpWrapperService {
 
 
   public delete(params: HttpParams) {
-    let {apiUrl, options} = this.configRequest(params.uri, true);
+    let {apiUrl, options} = this.configRequest(params.uri);
 
     return this.http.delete(apiUrl, options)
       .map(res => ({
@@ -33,11 +33,11 @@ export class HttpWrapperService {
   }
 
   public get(params: HttpParams) {
-    let {apiUrl, options} = this.configRequest(params.uri, params.auth);
-    return this.http.get(apiUrl, options)
-      .map(res => ({
+    let {apiUrl, options} = this.configRequest(params.uri);
+    return this.http.get('http://private-anon-85f7209c9f-weeblyfrontendtrialapi.apiary-mock.com/products', options)
+      .map(res =>({
         type: params.successActionType,
-        payload: res.json()[params.responseObject]
+        payload: res.json()
       }))
       .catch(res => Observable.of({
         type: params.errorActionType,
@@ -50,7 +50,7 @@ export class HttpWrapperService {
 
   public post(params: HttpParams) {
 
-    let {apiUrl, options} = this.configRequest(params.uri, params.auth);
+    let {apiUrl, options} = this.configRequest(params.uri);
     return this.http.post(apiUrl, params.payload, options)
       .map(res => ({
         type: params.successActionType,
@@ -66,7 +66,7 @@ export class HttpWrapperService {
   }
 
   public put(params: HttpParams) {
-    let {apiUrl, options} = this.configRequest(params.uri, true);
+    let {apiUrl, options} = this.configRequest(params.uri);
 
     return this.http.put(apiUrl, params.payload, options)
       .map(res => ({
@@ -84,15 +84,10 @@ export class HttpWrapperService {
 
 
 
-  private configRequest(uri: string, authRequired: boolean = false): {apiUrl: string, options: RequestOptions} {
+  private configRequest(uri: string): {apiUrl: string, options: RequestOptions} {
     let apiUrl = `${Config.HOST}/${Config.API}/${uri}`;
 
-    let headers = authRequired ?
-      new Headers({
-        'Content-Type': 'application/json',
-        'x-access-token' : `${localStorage['Authorized']}`
-      }) :
-      new Headers({'Content-Type': 'application/json'});
+    let headers = new Headers({'Content-Type': 'application/json'});
     let options = new RequestOptions({ headers: headers });
 
     return {apiUrl, options};

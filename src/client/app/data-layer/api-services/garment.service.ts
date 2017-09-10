@@ -12,7 +12,6 @@ export class GarmentService {
     let getParams: HttpParams = {
       errorActionType: ErrorActionType,
       specificErrorType: SpecificErrorType,
-      payload: payload,
       responseObject: 'products',
       successActionType:SuccessType,
       uri: 'http://private-anon-85f7209c9f-weeblyfrontendtrialapi.apiary-mock.com/products'

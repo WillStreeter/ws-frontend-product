@@ -13,7 +13,7 @@ import * as portalActions from '../actions/portal.actions';
 import * as garmentActions from '../actions/garment.actions';
 import { GarmentService } from '../../api-services/garment.service';
 import * as fromRoot from '../reducers/index';
-import {GarmentSortModel} from "../../../business-layer/models/garmentSort.model";
+import {GarmentSortModel, GarmentModel} from "../../../business-layer/models";
 import {SortingServices} from "../../sorting-services/sorting.service";
 
 
@@ -39,18 +39,18 @@ export class GarmentEffects {
       .ofType(garmentActions.GarmentTypes.FETCH_GARMENT_COLLECTION_SUCCESS)
       .map(action => action.payload)
       .switchMap( (payload)=>( this.sortingServices.sortGarmentCollection(payload)))
-      .map(payload =>  new garmentActions.UpdateSortedCollection(payload));
+      .map((payload) =>  new garmentActions.UpdateSortedCollection(payload));
 
 
 
 
     @Effect() upddateGarementInCollection = this.actions$
-        .ofType(garmentActions.GarmentTypes.UPDATE_GARMENT_IN_COLLECTION_SUCCESS)
+        .ofType(garmentActions.GarmentTypes.UPDATE_GARMENT_IN_COLLECTION_ATTEMPT)
         .map(action => action.payload)
         .switchMap(payload => this.garmentServices.updateProduct( payload,
             errorActions.ErrorTypes.REPORT_ERROR,
-            garmentActions.GarmentTypes.REGISTER_USER_FAILURE,
-            garmentActions.GarmentTypes.REGISTER_USER_SUCCESS));
+            garmentActions.GarmentTypes.UPDATE_GARMENT_IN_COLLECTION_FAILURE,
+            garmentActions.GarmentTypes.UPDATE_GARMENT_IN_COLLECTION_SUCCESS));
 
 
 

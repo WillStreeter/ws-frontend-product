@@ -97,11 +97,13 @@ export const getGarmentsState = (state: State) => state.garments;
 
 export const getGarmentIds = createSelector(getGarmentsState, fromGarment.getIds);
 
+export const getCurrentCollectionId = createSelector(getGarmentsState, fromGarment.getCurrentCollectionId);
+
 export const getGarmentEntities  = createSelector(getGarmentsState, fromGarment.getEntities);
 
-export const getCurrentSubSet =  createSelector(getGarmentsState, fromGarment.getCurrentSubSet);
+export const getCurrentGarmentCollection  = createSelector(getGarmentsState, fromGarment.getCurrentGarmentCollection);
 
-export const getCurrentGarmentCollection  = createSelector(getGarmentsState, fromGarment.getEntities);
+
 
 
 
@@ -121,3 +123,31 @@ export const getSortType = createSelector(getPortalState, fromPortal.getSortType
 export const getSortBase = createSelector(getPortalState, fromPortal.getSortBase);
 
 export const getSortState = createSelector(getPortalState, fromPortal.getSortState);
+
+
+
+
+export const getCurrentSubSet =  createSelector( getCurrentGarmentCollection,
+                                                 getCurrentPage,
+                                                 getViewablePerPage,
+                                                ( gcCollection,
+                                                  currentPage,
+                                                  viewablePerPage)=>{
+                                                    if(!gcCollection){
+                                                     return [];
+                                                    }
+                                                    console.log('gcCollection =', gcCollection)
+                                                    if(gcCollection.products && gcCollection.products.length){
+                                                           const pages = (gcCollection.products.length/viewablePerPage);
+                                                           const start = (currentPage - 1) * viewablePerPage;
+                                                           const end = (currentPage === pages)?
+                                                                             gcCollection.products.length -(pages * start ):
+                                                                             viewablePerPage;
+                                                         gcCollection.products.slice(start, end )
+                                                         return gcCollection.products;
+                                                    }else{
+                                                        gcCollection.products= [];
+                                                        return gcCollection.products;
+                                                    }
+
+                                                    } );

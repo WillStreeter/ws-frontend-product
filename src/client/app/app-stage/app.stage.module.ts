@@ -22,7 +22,7 @@ import { PubSubBrokerModule }   from '../business-layer/pubsub-broker/pubsub.bro
  */
 import { HomeModule }  from '../view-layer/modules-by-route/home/home.module';
 import { NotfoundPageModule }  from '../view-layer/modules-by-route/notfound/notfound.page.module';
-import { MastheadModule } from '../view-layer/common-views/masthead/masthead.module';
+
 
 
 /*
@@ -52,7 +52,6 @@ import { BaseRequestOptions } from '@angular/http';
              PubSubBrokerModule.forRoot(),
              BrokerageModule.forRoot(),
              AppStageRoutingModule,
-             MastheadModule,
              HomeModule,
              NotfoundPageModule,
              FlexLayoutModule
