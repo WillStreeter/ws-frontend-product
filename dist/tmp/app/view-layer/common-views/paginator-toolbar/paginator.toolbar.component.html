@@ -1,0 +1,34 @@
+<div fxLayout="row" fxFlex="100" class="paginator-toolbar">
+   <div fxLayout="column" fxFlex="30">
+       <div class="garment-toolbar-type" fxLayout="column" fxFlex="20">
+        <button md-button [mdMenuTriggerFor]="ppItems" class="per-page-trigger">
+             items per page: 5
+             <i class="material-icons">arrow_drop_down</i>
+        </button>
+        <md-menu #ppItems="mdMenu">
+          <button md-menu-item>5</button>
+          <button md-menu-item>10</button>
+          <button md-menu-item>15</button>
+        </md-menu>
+     </div>
+   </div>
+   <div fxLayout="column" fxFlex="70">
+      <div fxLayout="row" class="pp-btn-group">
+          <button md-icon-button class="page-back">
+                 <i class="material-icons">chevron_left</i>
+          </button>
+            <button md-button [mdMenuTriggerFor]="pages" class="pages-trigger">
+                 1
+                 <i class="material-icons">arrow_drop_down</i>
+            </button>
+            <md-menu #pages="mdMenu">
+              <button md-menu-item>1</button>
+              <button md-menu-item>2</button>
+              <button md-menu-item>3</button>
+            </md-menu>
+          <button md-icon-button  class="page-ahead">
+                 <i class="material-icons">chevron_right</i>
+          </button>
+      </div>
+   </div>
+</div>

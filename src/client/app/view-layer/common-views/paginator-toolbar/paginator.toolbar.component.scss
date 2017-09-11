@@ -1,0 +1,18 @@
+@import '../../../../scss/vendor';
+.paginator-toolbar{
+  padding-top:10px;
+}
+.pp-btn-group{
+  justify-content:flex-end;
+}
+
+.pages-trigger{
+    width:20px;
+    min-width: 20px;
+    text-align:left;
+}
+
+
+.page-ahead{
+  margin-left:20px;
+}

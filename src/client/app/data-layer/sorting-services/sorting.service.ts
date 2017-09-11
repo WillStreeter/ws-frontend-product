@@ -15,42 +15,57 @@ import { SORT_BASES  } from "../../business-layer/shared-types/sorters/sort.conf
 export class SortingServices {
 
     sortState$:Subscription;
-    currentCollectionId$:Subscription;
+    currentGarmentCollection:Subscription;
+    portalState:Subscription;
     sortStateVal:any;
+
+    currentPage:any;
+    viewablePerPage:any;
     collectionId:string;
     constructor( private store: Store<fromRoot.State>){}
 
 
 
     sortGarmentCollection(products:GarmentModel[]){
-       console.log('sortGarmentCollection = ', products)
+       let collectionSubset;
+        this.currentGarmentCollection = this.store.select(fromRoot.getGarmentsState).subscribe((val)=>{
+            this.collectionId = val.currentCollectionId;
+        });
+        this.currentGarmentCollection.unsubscribe();
+
+        this.sortState$= this.store.select(fromRoot.getPortalState).subscribe((val)=>{
+              this.sortStateVal = val;
+        });
+        this.sortState$.unsubscribe();
         const collectionList= this.sortCollection(products);
-        return Observable.of(<GarmentSortModel>{collectionId:this.collectionId,
-                                  sortType:this.sortStateVal.sortType,
-                                  products:collectionList });
-    }
+        if(collectionList.length){
+           const pages = (collectionList.length/this.sortStateVal.viewablePerPage);
+           const start = (this.sortStateVal.currentPage - 1) * this.sortStateVal.viewablePerPage;
+           const end = (this.sortStateVal.currentPage === pages)?
+                             collectionList.length -(pages * start ):
+                             this.sortStateVal.viewablePerPage;
+
+           collectionSubset = collectionList.slice(start, end );
+
+           console.log(" collectionSubsetsliced =", collectionSubset)
+        }
+        return Observable.of(<GarmentSortModel>{ collectionId:this.collectionId,
+                                                  sortType:this.sortStateVal.sortType,
+                                                  subSetCollection:collectionSubset,
+                                                  products:collectionList });
+     }
 
 
     sortCollection(collectionList:GarmentModel[]){
 
-       this.currentCollectionId$ = this.store.select(fromRoot.getCurrentCollectionId).subscribe((val)=>{
-            this.collectionId = val;
-       });
-        this.currentCollectionId$.unsubscribe();
-
-       this.sortState$= this.store.select(fromRoot.getPortalState).subscribe((val)=>{
-              this.sortStateVal = val;
-       });
-       this.sortState$.unsubscribe();
-
        if(SORT_BASES[this.sortStateVal.sortBase].dataType === "string"){
           collectionList = this.doAlphaSort(collectionList,  SORT_BASES[this.sortStateVal.sortBase].attr);
-          if(  this.sortStateVal.sortType == "Descending"){
+          if(  this.sortStateVal.sortDirection == "Descending"){
              collectionList = collectionList.reverse();
           }
        }else if(SORT_BASES[  this.sortStateVal.sortBase].dataType === "number"){
           collectionList = this.doNumericalSort(collectionList,   SORT_BASES[this.sortStateVal.sortBase].attr);
-          if(  this.sortStateVal.sortType == "Descending"){
+          if(  this.sortStateVal.sortDirection == "Descending"){
              collectionList = collectionList.reverse();
           }
        }else{
@@ -63,8 +78,6 @@ export class SortingServices {
     }
 
     private doAlphaSort(list:any, base:string){
-    console.log('list is =', list)
-    console.log('base is =', base)
     let value:any = [...list].sort((firstTerm, secondTerm):number =>{
             const a = firstTerm[base].toLowerCase();
             const b = secondTerm[base].toLowerCase();
@@ -85,12 +98,13 @@ export class SortingServices {
         return  [...list].sort((firstTerm, secondTerm) =>(firstTerm[base] - (secondTerm)[base]));
     }
 
-    private doTypeSort(list:Array<GarmentModel>, type:string){
-      let Physical:Array<GarmentModel> = [];
-      let Digital:Array<GarmentModel>  = [];
-      let Service:Array<GarmentModel>  = [];
+    private doTypeSort(list:GarmentModel[] , type:string){
+      let Physical:GarmentModel[] = [];
+      let Digital:GarmentModel[]  = [];
+      let Service:GarmentModel[]  = [];
 
       list.forEach( (item)=>{
+          console.log('item.type =', item.type)
           switch(item.type){
               case "Physical":
                 Physical.push(item);
@@ -104,7 +118,7 @@ export class SortingServices {
           }
       });
 
-      let typeSorted:Array<GarmentModel>;
+      let typeSorted:GarmentModel[] ;
 
       switch(type){
           case "Physical":

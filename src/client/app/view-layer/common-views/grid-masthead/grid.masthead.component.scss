@@ -1,0 +1,35 @@
+@import '../../../../scss/vendor';
+
+h2{
+   color:$body-black;
+   font-weight:400;
+}
+
+.mh-btn-group{
+  padding-top:15px;
+  justify-content:flex-end;
+}
+
+
+.add-product-btn{
+   background-color:$noc-color;
+   color:$baby-powder;
+}
+
+.import-btn,
+.export-btn{
+   margin-right:3%;
+}
+.import-btn,
+.export-btn,
+.add-product-btn{
+  border-radius:1px;
+}
+
+.export-btn[disabled],
+.import-btn[disabled]{
+    background-color:$baby-powder;
+    border-style:solid;
+    border-width:1px;
+    border-color:$input-color;
+}

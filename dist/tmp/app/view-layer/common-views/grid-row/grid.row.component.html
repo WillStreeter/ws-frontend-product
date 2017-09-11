@@ -1,7 +1,9 @@
 <!-- ngrx smart-container-->
   <div fxLayout="row" class="grid-row">
+    <form #f="ngForm" (ngSubmit)="publishGarmentUpdate(f)" novalidate>
      <div fxLayout="column" fxFlex="5">
-          <md-checkbox></md-checkbox>
+          <md-checkbox [checked]="isChecked"
+               (change)="turnPublishingOn(garment.id)"></md-checkbox>
      </div>
      <div fxLayout="column" fxFlex="5">
           <div class="img-thumb">
@@ -9,15 +11,41 @@
           </div>
      </div>
      <div class="garment-name" fxLayout="column" fxFlex="40">
-         <input id="garmentName" [(ngModel)]="name" [readonly]="isReadOnly"  placeholder=""/>
+         <input id="garmentName"  [className]="liveInput_Class"
+                 [(ngModel)]="garment.name" [readonly]="isReadOnly"  placeholder=""  name="garmentName">
      </div>
      <div class="garment-type" fxLayout="column" fxFlex="20">
-         <input id="garmentType" [(ngModel)]="type" [readonly]="isReadOnly"  placeholder=""/>
+         <div *ngIf="isReadOnly==false">
+
+                 <div class="garment-toolbar-type" fxLayout="column" fxFlex="20">
+                    <button md-button type="button"  [mdMenuTriggerFor]="type" class="type-btn-trigger">
+                         {{ updatedType}}
+                    </button>
+                    <md-menu #type="mdMenu">
+                      <button md-menu-item type="button" (click)="updateGarmentType('Physical')">Physical</button>
+                      <button md-menu-item type="button" (click)="updateGarmentType('Digital')">Digital</button>
+                      <button md-menu-item type="button" (click)="updateGarmentType('Service')">Service</button>
+                    </md-menu>
+                 </div>
+         </div>
+         <input *ngIf="isReadOnly==true" id="garmentType"  [(ngModel)]="type" [readonly]="isReadOnly"  placeholder="" name="garmentType">
      </div>
-     <div class="garment-price" fxLayout="column" fxFlex="15">
-         <input id="garmentPrice" [(ngModel)]="price" [readonly]="isReadOnly"  placeholder=""/>
+     <div class="garment-price" fxLayout="column" fxFlex="10">
+         <input id="garmentPrice" [className]="liveInput_Class"
+          [(ngModel)]="price" [readonly]="isReadOnly"  placeholder="" name="garmentPrice">
      </div>
-     <div class="garment-inventory" fxLayout="column" fxFlex="15">
-         <input id="garmentInventory" [(ngModel)]="inventory" [readonly]="isReadOnly"  placeholder=""/>
+     <div class="garment-inventory" fxLayout="column" fxFlex="10">
+         <input id="garmentInventory" [className]="liveInput_Class"
+            [(ngModel)]="inventory" [readonly]="isReadOnly"  placeholder="" name="garmentInventory">
      </div>
+
+     <div fxLayout="column" fxFlex="5">
+        <div [className]="revealPublish_Class">
+                <button type="submit"  id="{{garment.id}}"
+                       class="save-button">
+                       <md-icon class="save-icon" aria-label="save changes" >save</md-icon>
+                </button>
+        </div>
+     </div>
+    </form>
   </div>

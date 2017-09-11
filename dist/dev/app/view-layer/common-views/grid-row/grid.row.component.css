@@ -5,7 +5,11 @@
   min-height: 55px; }
 
 md-checkbox {
-  margin: auto; }
+  margin: auto;
+  color: #0082CB; }
+
+.input-on {
+  border-color: #c4c4c4; }
 
 .img-thumb {
   width: 35px;
@@ -37,8 +41,26 @@ input {
   font-size: 1em;
   color: #646464; }
 
-.garment-price input,
+.garment-type input {
+  text-align: left; }
+
+.garment-price input {
+  text-align: left; }
+
 .garment-inventory input {
   text-align: right; }
+
+.un-revealed {
+  visibility: hidden; }
+
+.do-reveal {
+  visibility: visible; }
+
+.save-button {
+  background-color: transparent;
+  border: none;
+  padding-top: 15px;
+  color: #0082CB;
+  width: 20px; }
 
 /*# sourceMappingURL=/app/view-layer/common-views/grid-row/grid.row.component.css.map */

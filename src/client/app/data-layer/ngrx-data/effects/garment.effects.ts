@@ -39,7 +39,10 @@ export class GarmentEffects {
       .ofType(garmentActions.GarmentTypes.FETCH_GARMENT_COLLECTION_SUCCESS)
       .map(action => action.payload)
       .switchMap( (payload)=>( this.sortingServices.sortGarmentCollection(payload)))
-      .map((payload) =>  new garmentActions.UpdateSortedCollection(payload));
+      .map((payload) =>  {
+           localStorage.setItem('products', JSON.stringify(payload.products));
+          return new garmentActions.UpdateSortedCollection(payload)
+      });
 
 
 
@@ -56,8 +59,9 @@ export class GarmentEffects {
 
     @Effect() garmentUpdatedInCollection = this.actions$
         .ofType(garmentActions.GarmentTypes.UPDATE_GARMENT_IN_COLLECTION_SUCCESS)
-        .map(action => action.payload)
-        .switchMap( (payload)=>( this.sortingServices.sortGarmentCollection(payload)))
+        .withLatestFrom( this.store.select(fromRoot.getCurrentGarmentCollection) )
+        .map( ([action, garmentCollection]) => [action.payload, garmentCollection] )
+        .switchMap( (garmentCollection)=>this.sortingServices.sortGarmentCollection(garmentCollection[1].products))
         .map(payload =>  new garmentActions.UpdateSortedCollection(payload));
 
 
@@ -75,8 +79,9 @@ export class GarmentEffects {
 
     @Effect() garmentAddedToCollection = this.actions$
         .ofType(garmentActions.GarmentTypes.ADD_GARMENT_TO_COLLECTION_SUCCESS)
-        .map(action => action.payload)
-        .switchMap( (payload)=>( this.sortingServices.sortGarmentCollection(payload)))
+        .withLatestFrom( this.store.select(fromRoot.getCurrentGarmentCollection) )
+        .map( ([action, garmentCollection]) => [action.payload, garmentCollection] )
+        .switchMap( (garmentCollection)=>this.sortingServices.sortGarmentCollection(garmentCollection[1].products))
         .map(payload =>  new garmentActions.UpdateSortedCollection(payload));
 
 

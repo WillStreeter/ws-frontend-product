@@ -5,4 +5,5 @@ export { GarmentAddModel } from './garmentAdd.model';
 export { GarmentSortModel } from './garmentSort.model';
 export { GarmentSubsetModel } from './garmentSubset.model';
 export { GarmentCollectionModel } from './garmentCollection.model';
+export { SortRequestModel } from './sortRequest.model';
 export { PortalModel } from './portal.model';

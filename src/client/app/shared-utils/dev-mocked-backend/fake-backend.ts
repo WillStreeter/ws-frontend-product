@@ -19,15 +19,17 @@ export function fakeBackendFactory(backend: MockBackend, options: BaseRequestOpt
         setTimeout(() => {
 
             // updateProduct
-            if (connection.request.url.match(/\/api\/products\/update\/\d+$/) && connection.request.method === RequestMethod.Post) {
+            if (connection.request.url.endsWith('/api/products/update') && connection.request.method === RequestMethod.Post) {
                 // get new user object from post body
 
                 let urlParts = connection.request.url.split('/');
                 let id = parseInt(urlParts[urlParts.length - 1]);
                 let updateProduct = JSON.parse(connection.request.getBody());
                 let completeProductUpdate;
+                //console.log(' fakeBackendFactory productReturn  updateProduct =', updateProduct.id)
+               // console.log(' fakeBackendFactory productReturn  products =', products)
                 let updatedProducts = products.map(product => {
-                              if(product.id === id){
+                              if(product.id === updateProduct.id){
                                   product = Object.assign({}, product, updateProduct);
                                   completeProductUpdate = product;
                               }
@@ -41,7 +43,9 @@ export function fakeBackendFactory(backend: MockBackend, options: BaseRequestOpt
                 };
                 // respond 200 OK
                 connection.mockRespond(new Response(
-                    new ResponseOptions({ status: 200,   body:productReturn }  )
+                    new ResponseOptions({ status: 200,   body:{
+                                                                 product:completeProductUpdate
+                                                                } }  )
                 ));
 
                 return;
@@ -51,31 +55,25 @@ export function fakeBackendFactory(backend: MockBackend, options: BaseRequestOpt
             if (connection.request.url.endsWith('/api/products/add') && connection.request.method === RequestMethod.Post) {
                 // get new user object from post body
                 let  newProduct = JSON.parse(connection.request.getBody());
-                // validation
-                let duplicateProduct = products.filter(product => { return product.name === product.name; }).length;
-                if (duplicateProduct) {
-                    return connection.mockError(new Error('Product Named "' + newProduct.name + '" is already taken'));
-                }
-
+                console.log(' newProduct =', newProduct)
                 // save new user
-                newProduct.id = newProduct.length + Math.floor(Math.random() * (100 - 1)) +1;
-                products.push(newProduct);
+                //newProduct.id = newProduct.length + Math.floor(Math.random() * (100 - 1)) +1;
+                console.log('   newProduct.id =',   newProduct.id)
+                products = [...products, newProduct]
                 localStorage.setItem('products', JSON.stringify(products));
-                 let productReturn = { status: 200,
-                                   account:{
-                                             product:newProduct
-                                           }
-                                 };
                 // respond 200 OK
+                console.log(' newProduct =', newProduct)
                 connection.mockRespond(new Response(
-                        new ResponseOptions({ status: 200,   body:productReturn }  )
+                        new ResponseOptions({ status: 200,   body:{
+                                                                 product:newProduct
+                                                                } } )
                         ));
 
                 return;
             }
 
             // delete Product
-            if (connection.request.url.match(/\/api\/Products\/\d+$/) &&
+            if (connection.request.url.match(/\/api\/products\/\d+$/) &&
                 connection.request.method === RequestMethod.Delete) {
                 // check for fake auth token in header and return user if valid, this
                 // security is implemented server side in a real application

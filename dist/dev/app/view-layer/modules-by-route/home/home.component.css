@@ -12,6 +12,14 @@
       -ms-flex-pack: center;
           justify-content: center; }
 
+.grid-layout {
+  max-width: 850px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #DBDBDB;
+  padding: 20px 40px;
+  color: #b0b0b0; }
+
 .btn {
   display: inline-block;
   position: relative;

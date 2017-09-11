@@ -1,0 +1,41 @@
+<!-- Created by willstreeter on 9/10/17. -->
+
+<div fxLayout="row" class="grid-toolbar-row">
+     <div fxLayout="column" fxFlex="5">
+          <md-checkbox></md-checkbox>
+     </div>
+     <div class="garment-toolbar-name" fxLayout="column" fxFlex="45">
+        <md-button-toggle class="toolbar-name" (click)="updateGridSortBase('Name')">
+              Name
+             <i class="material-icons">arrow_drop_down</i>
+             <i class="material-icons arrw-hidden">arrow_drop_up</i>
+        </md-button-toggle>
+     </div>
+     <div class="garment-toolbar-type" fxLayout="column" fxFlex="20">
+        <button md-button [mdMenuTriggerFor]="type" class="type-btn-trigger">
+             Type
+             <i class="material-icons">arrow_drop_down</i>
+             <i class="material-icons arrw-hidden">arrow_drop_up</i>
+        </button>
+        <md-menu #type="mdMenu">
+          <button md-menu-item  (click)="updateGridSortBase('Physical')">Physical</button>
+          <button md-menu-item  (click)="updateGridSortBase('Digital')">Digital</button>
+          <button md-menu-item  (click)="updateGridSortBase('Service')">Service</button>
+        </md-menu>
+     </div>
+     <div class="garment-toolbar-price" fxLayout="column" fxFlex="10">
+        <md-button-toggle (click)="updateGridSortBase('Price')">
+             Price
+             <i class="material-icons">arrow_drop_down</i>
+             <i class="material-icons arrw-hidden">arrow_drop_up</i>
+        </md-button-toggle>
+     </div>
+     <div class="garment-toolbar-inventory" fxLayout="column" fxFlex="10">
+        <md-button-toggle (click)="updateGridSortBase('Inventory')">
+             Inventory
+             <i class="material-icons">arrow_drop_down</i>
+             <i class="material-icons arrw-hidden">arrow_drop_up</i>
+        </md-button-toggle>
+     </div>
+     <div fxLayout="column" fxFlex="5"></div>
+</div>

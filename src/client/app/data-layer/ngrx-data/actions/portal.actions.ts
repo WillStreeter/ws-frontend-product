@@ -2,6 +2,9 @@ import { Action } from '@ngrx/store';
 import { SortRequestModel } from '../../../business-layer/models/sortRequest.model';
 import * as PortalActionTypes from '../../../business-layer/shared-types/actions/portal.action.types';
 
+export const PortalTypes = PortalActionTypes;
+
+
 export class UpdateViewablePerPageCount implements Action {
   public readonly type = PortalActionTypes.UPDATE_VIEWABLE_PER_PAGE_COUNT;
     constructor(public payload:number) {  }

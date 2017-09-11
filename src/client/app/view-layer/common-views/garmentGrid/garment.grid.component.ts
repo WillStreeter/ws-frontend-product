@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ChangeDetectionStrategy, Output,
+         SimpleChange, OnInit, EventEmitter, ChangeDetectorRef } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
-import { GarmentModel } from '../../../business-layer/models'
+import { GarmentModel,
+         PortalModel,
+         SortRequestModel,
+         GarmentSortModel } from '../../../business-layer/models'
 import { BrokerDispatcherService } from '../../../business-layer/pubsub-broker/services/broker.dispatcher.service';
 import { BrokerResponse } from "../../../business-layer/pubsub-broker/models/broker.response.model";
 import { BrokerList } from '../../../business-layer/brokerage/ngrx-stubs/brokerlist';
-
-
 
 @Component({
     moduleId: module.id,
@@ -16,8 +18,9 @@ import { BrokerList } from '../../../business-layer/brokerage/ngrx-stubs/brokerl
 })
 export class GarmentGridComponent implements OnInit {
     currentGarmentSubset$: Observable<GarmentModel[]>;
+    currentPortalStateSub:Subscription;
+    currentPortalState:PortalModel;
     brokerRef:any;
-
 
 
     constructor(private bDS:BrokerDispatcherService) {
@@ -27,8 +30,29 @@ export class GarmentGridComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.currentGarmentSubset$ = this.brokerRef.storeObs.brokerGarmentSubset;
 
-    this.currentGarmentSubset$ = this.brokerRef.storeObs.brokerGarmentSubset;
+       this.currentPortalStateSub = this.brokerRef.storeObs.brokerPortalState.subscribe(value => {
+            this.currentPortalState = <PortalModel>(value);
+       });
+    }
+    garmentModelAdd(garment:GarmentModel){
+        console.log('GarmentGridComponent  ---- garmentModelAdd =',garment)
+         var note = this.brokerRef.storeDsp.ADD_GARMENT_TO_COLLECTION_ATTEMPT;
+         note.payLoad = garment;
+         this.bDS.dispatchBrokerAction(note);
+    }
+    garmentModelUpdate(garment:GarmentModel){
+        console.log('GarmentGridComponent  ---- garmentModelUpdate =',garment)
+         var note = this.brokerRef.storeDsp.UPDATE_GARMENT_IN_COLLECTION_ATTEMPT;
+         note.payLoad = garment;
+         this.bDS.dispatchBrokerAction(note);
+    }
+    toolbarSortUpdate(newSort:SortRequestModel){
+        console.log('GarmentGridComponent  ---- toolbarSortUpdate =',newSort)
+         var note = this.brokerRef.storeDsp.UPDATE_SORT_STATE;
+         note.payLoad = newSort;
+        this.bDS.dispatchBrokerAction(note);
     }
 
 }

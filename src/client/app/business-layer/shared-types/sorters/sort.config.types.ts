@@ -8,8 +8,16 @@
                                    attr:"name",
                                    dataType:"string"
                                },
-                               "Type":{
-                                   attr:"type",
+                               "Physical":{
+                                   attr:"Physical",
+                                   dataType:"term"
+                               },
+                               "Digital":{
+                                   attr:"Digital",
+                                   dataType:"term"
+                               },
+                               "Service":{
+                                   attr:"Service",
                                    dataType:"term"
                                },
                                "Price":{

@@ -11,9 +11,12 @@
 
 md-checkbox {
    margin: auto;
+   color:$noc-color;
 }
 
-
+.input-on{
+    border-color:$input-color;
+}
 
 .img-thumb {
     width: 35px;
@@ -48,11 +51,36 @@ input{
     font-size:1em;
     color:darken($border-reg-color,10%)
 }
-
-
-.garment-price,
-.garment-inventory{
-input {
-    text-align: right;
+.garment-type{
+    input {
+        text-align: left;
+    }
 }
+
+.garment-price{
+    input {
+        text-align: left;
+    }
+}
+.garment-inventory{
+    input {
+        text-align: right;
+    }
+}
+
+.active-row{
+
+}
+.un-revealed{
+   visibility: hidden
+}
+.do-reveal{
+  visibility:visible;
+}
+.save-button{
+  background-color:transparent;
+  border:none;
+  padding-top:15px;
+  color:$noc-color;
+  width:20px;
 }

@@ -61,8 +61,6 @@ import { BaseRequestOptions } from '@angular/http';
            ],
   providers: [
     NGRxBrokerRegistrationService,
-
-
     // providers used to create fake backend
     fakeBackendProvider,
     MockBackend,

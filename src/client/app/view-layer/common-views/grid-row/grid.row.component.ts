@@ -1,5 +1,5 @@
-import { Component,Input } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component,Input, Output, EventEmitter} from '@angular/core';
+import { NgForm, FormsModule } from '@angular/forms';
 import { GarmentModel } from '../../../business-layer/models';
 
 
@@ -12,8 +12,12 @@ import { GarmentModel } from '../../../business-layer/models';
 })
 export class GridRowComponent{
     @Input() garment:GarmentModel;
+    @Output() updateGarmentModel = new EventEmitter<GarmentModel>();
+    isChecked:boolean = false;
     isReadOnly:boolean = true;
-
+     liveInput_Class='noStyle';
+     revealPublish_Class='un-revealed';
+     updatedType:string ='';
 
     get id() {
       return this.garment.id;
@@ -24,18 +28,50 @@ export class GridRowComponent{
     }
 
     get type() {
-      return this.garment.type;
+       this.updatedType = this.garment.type
+        return  this.updatedType;
     }
 
     get price() {
        return "$"+this.garment.price;
     }
-
     get inventory(){
         return this.garment.inventory;
     }
+
     get thumbnail(){
        return this.garment.thumbnail;
+    }
+
+
+    updateGarmentType(value){
+        this.updatedType = value;
+    }
+
+    turnPublishingOn(garmentId:string){
+        this.isChecked = true;
+        this.isReadOnly = false;
+        this.liveInput_Class = 'input-on';
+        this.revealPublish_Class='do-reveal';
+    };
+
+    publishGarmentUpdate(f: NgForm){
+        this.isReadOnly = true;
+        this.isChecked= false;
+        this.liveInput_Class = 'noStyle';
+        this.revealPublish_Class='un-revealed';
+
+        let updateGM:GarmentModel =<GarmentModel>{
+                                                  id:this.garment.id,
+                                                  name:f.value.garmentName,
+                                                  type: this.updatedType,
+                                                  price:f.value.garmentPrice,
+                                                  inventory:f.value.garmentInventory,
+                                                  thumbnail:this.garment.thumbnail
+                                                 };
+        console.log('turnPublishingOn updateGM =', updateGM)
+        this.updateGarmentModel.emit(updateGM)
+
     }
 
 }

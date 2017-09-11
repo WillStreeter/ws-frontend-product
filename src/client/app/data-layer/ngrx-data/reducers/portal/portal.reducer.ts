@@ -7,7 +7,7 @@ export interface State {
   viewablePerPage:number;
   currentPage:number;
   totalPages:number;
-  sortType:string;
+  sortDirection:string;
   sortBase:string;
 }
 
@@ -15,7 +15,7 @@ const initialState: State = {
   viewablePerPage:10,
   currentPage:1,
   totalPages:5,
-  sortType:'Ascending',
+  sortDirection:'Ascending',
   sortBase:'Name',
 };
 
@@ -31,7 +31,8 @@ export function reducer(state = initialState, action: portal.Actions): State {
     case PortalActionTypes.UPDATE_SORT_STATE: {
       const sortRequest:SortRequestModel = <SortRequestModel>(action.payload);
 
-      return Object.assign({}, state,   {sortDirection:sortRequest.type, sortBase:sortRequest.base });
+      return Object.assign({}, state,   {sortDirection:sortRequest.directionChange?sortRequest.direction:state.sortDirection,
+                                         sortBase:sortRequest.base?sortRequest.base:state.sortBase });
     }
 
     default:
@@ -41,7 +42,7 @@ export function reducer(state = initialState, action: portal.Actions): State {
 
 export const getViewablePerPage = (state: State) => state.viewablePerPage;
 export const getCurrentPage = (state: State) => state.currentPage;
-export const getSortType = (state: State) => state.sortType;
+export const getSortType = (state: State) => state.sortDirection;
 export const getSortBase = (state: State) => state.sortBase;
-export const getSortState = (state: State) => Object.assign({},{sortType:state.sortType, sortBase:state.sortBase});
+export const getSortState = (state: State) => Object.assign({},{sortDirection:state.sortDirection, sortBase:state.sortBase});
 

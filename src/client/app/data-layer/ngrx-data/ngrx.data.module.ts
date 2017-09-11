@@ -23,6 +23,7 @@ import { reducer } from  './reducers/index';
 
 import { ErrorEffects } from './effects/error.effects';
 import { GarmentEffects } from './effects/garment.effects';
+import { PortalEffects } from './effects/portal.effects';
 
 
 /*
@@ -36,6 +37,7 @@ import { GarmentEffects } from './effects/garment.effects';
                StoreModule.provideStore(reducer),
                RouterStoreModule.connectRouter(),
                EffectsModule.run(ErrorEffects),
+               EffectsModule.run(PortalEffects),
                EffectsModule.run(GarmentEffects) ],
     exports: [],
     providers: [

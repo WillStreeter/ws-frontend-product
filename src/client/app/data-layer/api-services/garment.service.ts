@@ -19,8 +19,9 @@ export class GarmentService {
     return this.httpWrapperService.get(getParams);
   }
 
-  updateProduct(payload: {id:string, name: string, type: string, price:number, inventory:string, thumbnail:string},
+  updateProduct(payload: {id:number, name: string, type: string, price:number, inventory:string, thumbnail:string},
                ErrorActionType:string, SpecificErrorType:string, SuccessType:string) {
+               console.log('GarmentService === updateProduct', payload)
     let postParams: HttpParams = {
       errorActionType:ErrorActionType,
       specificErrorType: SpecificErrorType,
@@ -32,7 +33,7 @@ export class GarmentService {
     return this.httpWrapperService.post(postParams);
   }
 
-  addNewProduct(payload: {name: string, type: string, price:number, inventory:string, thumbnail:string},
+  addNewProduct(payload: {id:number,name: string, type: string, price:number, inventory:string, thumbnail:string},
                ErrorActionType:string, SpecificErrorType:string, SuccessType:string) {
     let postParams: HttpParams = {
       errorActionType:ErrorActionType,
@@ -43,6 +44,9 @@ export class GarmentService {
       uri: 'products/add'
     };
     return this.httpWrapperService.post(postParams);
+
+    // console.log('value callback ', value)
+    // return value;
   }
 
 

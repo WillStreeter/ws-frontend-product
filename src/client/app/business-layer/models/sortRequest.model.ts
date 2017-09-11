@@ -1,5 +1,6 @@
 
 export interface SortRequestModel{
+    directionChange:boolean;
     base:string,
-    type:string;
+    direction:string;
 }

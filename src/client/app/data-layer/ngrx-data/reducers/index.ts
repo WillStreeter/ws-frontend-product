@@ -103,6 +103,7 @@ export const getGarmentEntities  = createSelector(getGarmentsState, fromGarment.
 
 export const getCurrentGarmentCollection  = createSelector(getGarmentsState, fromGarment.getCurrentGarmentCollection);
 
+export const getCurrentSubSet =  createSelector(getGarmentsState, fromGarment.getCurrentSubSet);
 
 
 
@@ -126,28 +127,3 @@ export const getSortState = createSelector(getPortalState, fromPortal.getSortSta
 
 
 
-
-export const getCurrentSubSet =  createSelector( getCurrentGarmentCollection,
-                                                 getCurrentPage,
-                                                 getViewablePerPage,
-                                                ( gcCollection,
-                                                  currentPage,
-                                                  viewablePerPage)=>{
-                                                    if(!gcCollection){
-                                                     return [];
-                                                    }
-                                                    console.log('gcCollection =', gcCollection)
-                                                    if(gcCollection.products && gcCollection.products.length){
-                                                           const pages = (gcCollection.products.length/viewablePerPage);
-                                                           const start = (currentPage - 1) * viewablePerPage;
-                                                           const end = (currentPage === pages)?
-                                                                             gcCollection.products.length -(pages * start ):
-                                                                             viewablePerPage;
-                                                         gcCollection.products.slice(start, end )
-                                                         return gcCollection.products;
-                                                    }else{
-                                                        gcCollection.products= [];
-                                                        return gcCollection.products;
-                                                    }
-
-                                                    } );
