@@ -39,15 +39,12 @@ export class SortingServices {
         this.sortState$.unsubscribe();
         const collectionList= this.sortCollection(products);
         if(collectionList.length){
-           const pages = (collectionList.length/this.sortStateVal.viewablePerPage);
+           const pages = Math.ceil(collectionList.length/this.sortStateVal.viewablePerPage);
            const start = (this.sortStateVal.currentPage - 1) * this.sortStateVal.viewablePerPage;
-           const end = (this.sortStateVal.currentPage === pages)?
-                             collectionList.length -(pages * start ):
+           const end = (this.sortStateVal.currentPage === pages) ?
+                             collectionList.length:
                              this.sortStateVal.viewablePerPage;
-
            collectionSubset = collectionList.slice(start, end );
-
-           console.log(" collectionSubsetsliced =", collectionSubset)
         }
         return Observable.of(<GarmentSortModel>{ collectionId:this.collectionId,
                                                   sortType:this.sortStateVal.sortType,
@@ -104,7 +101,6 @@ export class SortingServices {
       let Service:GarmentModel[]  = [];
 
       list.forEach( (item)=>{
-          console.log('item.type =', item.type)
           switch(item.type){
               case "Physical":
                 Physical.push(item);

@@ -1,7 +1,8 @@
 export interface PortalModel {
-        pageCount:number;
-        currentPage:number;
-        totalPages:number;
-        sortType:string;
-        sortState:string;
+    viewablePerPage:number;
+    revealAddGarmentRow:boolean,
+    currentPage:number;
+    totalPages:number;
+    sortDirection:string;
+    sortBase:string;
 }

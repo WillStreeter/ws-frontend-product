@@ -14,7 +14,7 @@ import { Actions, Effect  } from '@ngrx/effects';
 import { Observable } from 'rxjs/Observable';
 import * as portalActions from '../actions/portal.actions';
 import * as garmentActions from '../actions/garment.actions';
-import {SortingServices} from "../../sorting-services/sorting.service";
+import { SortingServices } from "../../sorting-services/sorting.service";
 import * as fromRoot from '../reducers/index';
 
 
@@ -28,7 +28,26 @@ export class PortalEffects {
       .switchMap((garmentCollection)=>( this.sortingServices.sortGarmentCollection(garmentCollection[1].products)))
       .map((payload) =>  new garmentActions.UpdateSortedCollection(payload));
 
+    @Effect()  updateAddRowRevealState = this.actions$
+      .ofType(garmentActions.GarmentTypes.ADD_GARMENT_TO_COLLECTION_SUCCESS)
+        .map(action => action.payload)
+        .switchMap(payload =>{
+            return Observable.of( new portalActions.UpdateAddRowGarment(false));
+        });
 
+     @Effect()  updateAfterPageChange= this.actions$
+      .ofType(portalActions.PortalTypes.SET_CURRENT_PAGE_NUMBER)
+      .withLatestFrom( this.store.select(fromRoot.getCurrentGarmentCollection) )
+      .map( ([action, garmentCollection]) => [action.payload, garmentCollection] )
+      .switchMap((garmentCollection)=>( this.sortingServices.sortGarmentCollection(garmentCollection[1].products)))
+      .map((payload) =>  new garmentActions.UpdateSortedCollection(payload));
+
+     @Effect()  updateAfterViewableUpdate= this.actions$
+      .ofType(portalActions.PortalTypes.UPDATE_VIEWABLE_PER_PAGE_COUNT)
+      .withLatestFrom( this.store.select(fromRoot.getCurrentGarmentCollection) )
+      .map( ([action, garmentCollection]) => [action.payload, garmentCollection] )
+      .switchMap((garmentCollection)=>( this.sortingServices.sortGarmentCollection(garmentCollection[1].products)))
+      .map((payload) =>  new garmentActions.UpdateSortedCollection(payload));
 
   constructor(private store:Store<fromRoot.State>,
               private actions$: Actions,

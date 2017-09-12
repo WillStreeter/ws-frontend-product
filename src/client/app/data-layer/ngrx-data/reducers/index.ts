@@ -115,6 +115,8 @@ export const getCurrentSubSet =  createSelector(getGarmentsState, fromGarment.ge
  */
 export const getPortalState = (state: State) => state.portals;
 
+export const getRevealAddGarmentRow =  createSelector(getPortalState, fromPortal.getRevealAddGarmentRow);
+
 export const getViewablePerPage = createSelector(getPortalState, fromPortal.getViewablePerPage);
 
 export const getCurrentPage = createSelector(getPortalState, fromPortal.getCurrentPage);

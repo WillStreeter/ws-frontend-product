@@ -21,8 +21,13 @@ export class GridToolbarComponent {
      @Output() updateSort = new EventEmitter<SortRequestModel>();
 
 
-    onChange(city) {
-        alert(city.name);
+    updateChangeDirection():void{
+        let newSort:SortRequestModel =<SortRequestModel>{
+                                                          directionChange:true,
+                                                          base:'',
+                                                          direction:''
+                                                         };
+        this.updateSort.emit(newSort )
       }
 
     updateGridSortBase(baseId:string):void{

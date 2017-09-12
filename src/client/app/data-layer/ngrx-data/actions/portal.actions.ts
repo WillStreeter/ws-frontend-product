@@ -19,9 +19,14 @@ export class UpdateCurrentSortState implements Action {
  public readonly type = PortalActionTypes.UPDATE_SORT_STATE;
   constructor(public payload:SortRequestModel) {  }
 }
+export class UpdateAddRowGarment implements Action{
+ public readonly type = PortalActionTypes.UPDATE_REVEAL_GARMENT_ADD_ROW;
+  constructor(public payload:boolean) {  }
+}
 
 
 export type Actions
   = UpdateViewablePerPageCount
   | SetCurrentPageNumber
+  | UpdateAddRowGarment
   | UpdateCurrentSortState;

@@ -13,34 +13,17 @@
           justify-content: center; }
 
 .grid-layout {
-  max-width: 850px;
+  width: 850px;
+  min-height: 900px;
   border-style: solid;
   border-width: 1px;
   border-color: #DBDBDB;
   padding: 20px 40px;
   color: #b0b0b0; }
 
-.btn {
-  display: inline-block;
-  position: relative;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-size: 0.85em;
-  text-decoration: none;
-  text-transform: uppercase;
-  text-align: center;
-  letter-spacing: 1px;
-  padding: 1.55em 3em;
-  margin: 2em 2em;
-  transition: all 0.65s;
-  border-radius: 30px;
-  color: #522B11;
-  background: #BFB405; }
+/*
+    do media query for for phone tablet
 
-.btn:hover {
-  color: #A88A6E;
-  letter-spacing: 3px;
-  background: #F1DB5A;
-  box-shadow: 5px 30px 60px #888888; }
+*/
 
 /*# sourceMappingURL=/app/view-layer/modules-by-route/home/home.component.css.map */

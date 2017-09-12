@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 
 /**
  * This class represents the lazy loaded HomeComponent.
@@ -11,4 +11,4 @@ import { Component } from '@angular/core';
   styleUrls: ['home.component.css'],
 })
 
-export class HomeComponent { }
+export class HomeComponent {}

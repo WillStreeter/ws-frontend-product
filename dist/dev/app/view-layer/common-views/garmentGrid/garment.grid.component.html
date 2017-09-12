@@ -2,9 +2,9 @@
 <div class="flex-container" fxFlexFill>
    <div class="grid-layout" fxLayout="column" fxFlex="100"  >
        <grid-toolbar  (updateSort)="toolbarSortUpdate($event)"></grid-toolbar>
-       <grid-create-row (addGarmentModel)="garmentModelAdd($event)"></grid-create-row>
+       <grid-create-row *ngIf="revealCreateRow===true"
+                        (addGarmentModel)="garmentModelAdd($event)"></grid-create-row>
        <grid-row *ngFor=" let garment of currentGarmentSubset$ | async"
-
                  (updateGarmentModel)="garmentModelUpdate($event)"
                  [garment]="garment"></grid-row>
    </div>

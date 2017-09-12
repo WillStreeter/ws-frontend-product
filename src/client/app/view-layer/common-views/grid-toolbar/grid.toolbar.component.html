@@ -5,17 +5,18 @@
           <md-checkbox></md-checkbox>
      </div>
      <div class="garment-toolbar-name" fxLayout="column" fxFlex="45">
-        <md-button-toggle class="toolbar-name" (click)="updateGridSortBase('Name')">
+        <md-button-toggle class="toolbar-name" (click)="updateGridSortBase('Name')"
+        (dblclick)="updateChangeDirection()">
               Name
              <i class="material-icons">arrow_drop_down</i>
              <i class="material-icons arrw-hidden">arrow_drop_up</i>
         </md-button-toggle>
+        <span>
+        </span>
      </div>
      <div class="garment-toolbar-type" fxLayout="column" fxFlex="20">
         <button md-button [mdMenuTriggerFor]="type" class="type-btn-trigger">
              Type
-             <i class="material-icons">arrow_drop_down</i>
-             <i class="material-icons arrw-hidden">arrow_drop_up</i>
         </button>
         <md-menu #type="mdMenu">
           <button md-menu-item  (click)="updateGridSortBase('Physical')">Physical</button>
@@ -24,14 +25,16 @@
         </md-menu>
      </div>
      <div class="garment-toolbar-price" fxLayout="column" fxFlex="10">
-        <md-button-toggle (click)="updateGridSortBase('Price')">
+        <md-button-toggle (click)="updateGridSortBase('Price')"
+        (dblclick)="updateChangeDirection()">
              Price
              <i class="material-icons">arrow_drop_down</i>
              <i class="material-icons arrw-hidden">arrow_drop_up</i>
         </md-button-toggle>
      </div>
      <div class="garment-toolbar-inventory" fxLayout="column" fxFlex="10">
-        <md-button-toggle (click)="updateGridSortBase('Inventory')">
+        <md-button-toggle (click)="updateGridSortBase('Inventory')"
+        (dblclick)="updateChangeDirection()">
              Inventory
              <i class="material-icons">arrow_drop_down</i>
              <i class="material-icons arrw-hidden">arrow_drop_up</i>

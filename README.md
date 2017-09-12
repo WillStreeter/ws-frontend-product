@@ -1,2 +1,3 @@
-# ws-garment-ex
+# Frontend Trial Project (Weebly)
+
 WIP preview

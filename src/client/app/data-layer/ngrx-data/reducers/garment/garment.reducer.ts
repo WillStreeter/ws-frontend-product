@@ -23,7 +23,6 @@ export const initialState: State = {
 export function reducer(state = initialState, action: garmentActions.Actions): State {
   switch (action.type) {
       case GarmentActionTypes.FETCH_GARMENT_COLLECTION_SUCCESS:{
-              console.log('  reducer FETCH_GARMENT_COLLECTION_SUCCESS', action.payload)
           if(action.payload) {
               let  garmentCollection:GarmentCollectionModel = <GarmentCollectionModel>{};
               garmentCollection.id=''+state.ids.length + Math.floor(Math.random() * (100 - 1)) +1,
@@ -51,8 +50,6 @@ export function reducer(state = initialState, action: garmentActions.Actions): S
                 garmentCollection.id = garmentSorted.collectionId;
                 garmentCollection.products = [...<GarmentModel[]>(garmentSorted.products)];
 
-              console.log('  UPDATE_SORTED_COLLECTION garmentCollection ', garmentCollection )
-              console.log('  before state.entities[ garmentCollection.id] ', state.entities[ garmentCollection.id] )
 
 
              state =  Object.assign( {
@@ -91,7 +88,6 @@ export function reducer(state = initialState, action: garmentActions.Actions): S
                                         }),
                                         currentCollectionId:state.currentCollectionId
                                       });
-                 console.log('  UPDATE_GARMENT_IN_COLLECTION_SUCCESS garmentProducts ', state)
            }
            return state
       }

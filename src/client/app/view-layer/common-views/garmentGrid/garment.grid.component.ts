@@ -1,4 +1,4 @@
-import {Component, ChangeDetectionStrategy, Output,
+import {Component, ChangeDetectionStrategy, Output,Input,
          SimpleChange, OnInit, EventEmitter, ChangeDetectorRef } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
@@ -20,6 +20,8 @@ export class GarmentGridComponent implements OnInit {
     currentGarmentSubset$: Observable<GarmentModel[]>;
     currentPortalStateSub:Subscription;
     currentPortalState:PortalModel;
+    revealCreateRow:boolean = false;
+
     brokerRef:any;
 
 
@@ -34,25 +36,24 @@ export class GarmentGridComponent implements OnInit {
 
        this.currentPortalStateSub = this.brokerRef.storeObs.brokerPortalState.subscribe(value => {
             this.currentPortalState = <PortalModel>(value);
+            this.revealCreateRow =  this.currentPortalState.revealAddGarmentRow;
        });
     }
+
     garmentModelAdd(garment:GarmentModel){
-        console.log('GarmentGridComponent  ---- garmentModelAdd =',garment)
          var note = this.brokerRef.storeDsp.ADD_GARMENT_TO_COLLECTION_ATTEMPT;
          note.payLoad = garment;
          this.bDS.dispatchBrokerAction(note);
     }
     garmentModelUpdate(garment:GarmentModel){
-        console.log('GarmentGridComponent  ---- garmentModelUpdate =',garment)
          var note = this.brokerRef.storeDsp.UPDATE_GARMENT_IN_COLLECTION_ATTEMPT;
          note.payLoad = garment;
          this.bDS.dispatchBrokerAction(note);
     }
     toolbarSortUpdate(newSort:SortRequestModel){
-        console.log('GarmentGridComponent  ---- toolbarSortUpdate =',newSort)
          var note = this.brokerRef.storeDsp.UPDATE_SORT_STATE;
          note.payLoad = newSort;
-        this.bDS.dispatchBrokerAction(note);
+         this.bDS.dispatchBrokerAction(note);
     }
 
 }

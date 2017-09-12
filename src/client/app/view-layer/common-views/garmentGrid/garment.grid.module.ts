@@ -1,6 +1,8 @@
 
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ControlMessagesComponent } from '../../common-views/custom-validators/control.messaging.component';
+import { ValidationService } from '../../../business-layer/validators/services/validation.service';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { GarmentGridComponent } from './garment.grid.component';
@@ -16,11 +18,14 @@ import { MaterialModule } from '@angular/material';
                CommonModule,
                MaterialModule,
                FlexLayoutModule ],
+    providers: [ ValidationService ],
     declarations: [ GarmentGridComponent,
+                    ControlMessagesComponent,
                     GridCreateRowComponent,
                     GridToolbarComponent,
                     GridRowComponent ],
     exports: [GarmentGridComponent,
+              ControlMessagesComponent,
               GridCreateRowComponent,
               GridToolbarComponent,
               GridRowComponent]

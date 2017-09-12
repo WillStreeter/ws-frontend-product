@@ -10,14 +10,14 @@
                <img src="{{thumbnail}}" alt="{{name}}">
           </div>
      </div>
-     <div class="garment-name" fxLayout="column" fxFlex="40">
+     <div class="garment-name" fxLayout="column" fxFlex="30">
          <input id="garmentName"  [className]="liveInput_Class"
                  [(ngModel)]="garment.name" [readonly]="isReadOnly"  placeholder=""  name="garmentName">
      </div>
-     <div class="garment-type" fxLayout="column" fxFlex="20">
+     <div class="garment-type" fxLayout="column" fxFlex="15">
          <div *ngIf="isReadOnly==false">
 
-                 <div class="garment-toolbar-type" fxLayout="column" fxFlex="20">
+                 <div class="garment-toolbar-type" fxLayout="column" fxFlex="15">
                     <button md-button type="button"  [mdMenuTriggerFor]="type" class="type-btn-trigger">
                          {{ updatedType}}
                     </button>
@@ -39,8 +39,8 @@
             [(ngModel)]="inventory" [readonly]="isReadOnly"  placeholder="" name="garmentInventory">
      </div>
 
-     <div fxLayout="column" fxFlex="5">
-        <div [className]="revealPublish_Class">
+     <div fxLayout="column" fxFlex="5"  [className]="revealPublish_Class">
+        <div>
                 <button type="submit"  id="{{garment.id}}"
                        class="save-button">
                        <md-icon class="save-icon" aria-label="save changes" >save</md-icon>

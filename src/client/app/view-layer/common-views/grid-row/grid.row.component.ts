@@ -19,6 +19,7 @@ export class GridRowComponent{
      revealPublish_Class='un-revealed';
      updatedType:string ='';
 
+
     get id() {
       return this.garment.id;
     }
@@ -48,11 +49,18 @@ export class GridRowComponent{
         this.updatedType = value;
     }
 
+
     turnPublishingOn(garmentId:string){
-        this.isChecked = true;
-        this.isReadOnly = false;
-        this.liveInput_Class = 'input-on';
-        this.revealPublish_Class='do-reveal';
+        this.isChecked = !this.isChecked ;
+        if(this.isChecked){
+            this.isReadOnly = false;
+            this.liveInput_Class = 'input-on';
+            this.revealPublish_Class='do-reveal';
+        }else{
+            this.isReadOnly = true;
+            this.liveInput_Class = 'noStyle';
+            this.revealPublish_Class='un-revealed';
+        }
     };
 
     publishGarmentUpdate(f: NgForm){
@@ -69,7 +77,6 @@ export class GridRowComponent{
                                                   inventory:f.value.garmentInventory,
                                                   thumbnail:this.garment.thumbnail
                                                  };
-        console.log('turnPublishingOn updateGM =', updateGM)
         this.updateGarmentModel.emit(updateGM)
 
     }
