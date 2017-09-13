@@ -10,9 +10,9 @@ build-clean:
 
 clean: build-clean
 
-#build-dist:
-	#npm install
-	#gulp build.prod.aot
+build-dist:
+	npm install
+	gulp build.prod.aot
 
 #build:
 	#docker build -t willstreeter/weebly-garment-demo .

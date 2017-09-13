@@ -1,0 +1,42 @@
+<div fxLayout="row" fxFlex="100" class="paginator-toolbar">
+   <div fxLayout="column" fxFlex="30">
+       <div class="garment-toolbar-type" fxLayout="column" fxFlex="20">
+         <div *ngIf="disabled5===true">
+             1  page of: {{totalNumberProducts}}
+         </div>
+        <button md-button [mdMenuTriggerFor]="ppItems"
+           *ngIf="disabled5 ===false"
+            class="per-page-trigger">
+             items per page: {{viewablePerPage}}
+             <i class="material-icons">arrow_drop_down</i>
+        </button>
+        <md-menu #ppItems="mdMenu">
+          <button md-menu-item [disabled]="disabled5"(click)="setViewableCount(5)">5</button>
+          <button md-menu-item  [disabled]="disabled10"(click)="setViewableCount(10)">10</button>
+          <button md-menu-item [disabled]="disabled15"(click)="setViewableCount(15)">15</button>
+        </md-menu>
+     </div>
+   </div>
+   <div fxLayout="column" fxFlex="70">
+      <div fxLayout="row" class="pp-btn-group">
+          <button md-icon-button class="page-back"
+                 [disabled]="currentPage===1"
+                 (click)="goToPage(currentPage-1)">
+                 <i class="material-icons">chevron_left</i>
+          </button>
+            <button md-button [mdMenuTriggerFor]="pages" class="pages-trigger">
+                  {{currentPage}}
+                 <i class="material-icons">arrow_drop_down</i>
+            </button>
+            <md-menu #pages="mdMenu">
+              <button md-menu-item  *ngFor=" let index of pageList"
+                       [disabled]="onLastPage && (index+1) == totalNumberOfPages"
+                       (click)="goToPage(index+1)"> {{index+1}}</button>
+            </md-menu>
+          <button md-icon-button  class="page-ahead" [disabled]="onLastPage"
+                 (click)="goToPage(currentPage+1)">
+                 <i class="material-icons">chevron_right</i>
+          </button>
+      </div>
+   </div>
+</div>

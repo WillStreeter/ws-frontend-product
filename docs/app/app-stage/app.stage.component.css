@@ -1,0 +1,17 @@
+:host {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-grow: 3;
+      -ms-flex-positive: 3;
+          flex-grow: 3; }
+
+.mast-head-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 64px;
+  z-index: 90; }
+
+/*# sourceMappingURL=/app/app-stage/app.stage.component.css.map */

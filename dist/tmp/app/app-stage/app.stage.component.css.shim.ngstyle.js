@@ -1,0 +1,1 @@
+export const styles = ['[_nghost-%COMP%]{display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-grow:3;-ms-flex-positive:3;flex-grow:3}.mast-head-nav[_ngcontent-%COMP%]{position:fixed;top:0;right:0;left:0;height:64px;z-index:90}'];
