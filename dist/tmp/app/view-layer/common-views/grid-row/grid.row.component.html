@@ -2,7 +2,7 @@
   <div fxLayout="row" class="grid-row">
     <form #f="ngForm" (ngSubmit)="publishGarmentUpdate(f)" novalidate>
      <div fxLayout="column" fxFlex="5">
-          <md-checkbox [checked]="isChecked"
+          <md-checkbox [checked]="isChecked" [disabled]="rowUpdateState"
                (change)="turnPublishingOn(garment.id)"></md-checkbox>
      </div>
      <div fxLayout="column" fxFlex="5">

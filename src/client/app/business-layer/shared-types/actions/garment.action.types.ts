@@ -16,3 +16,5 @@ export const SET_SUBSET_OF_COLLECTION = '[GarmentActions] set subset of garments
 export const GET_SUBSET_OF_COLLECTION = '[GarmentActions] get subset of garments from collection';
 
 export const UPDATE_SORTED_COLLECTION = '[GarmentActions] update new sorted collection';
+
+export const SEARCH_COLLECTION_BY_TERM =  '[GarmentActions] search collection by term';

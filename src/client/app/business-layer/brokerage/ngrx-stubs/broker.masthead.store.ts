@@ -22,7 +22,7 @@ export class BrokerMastheadStore {
        return  Object.assign({
                    brokerLabel:this.brokerLabel,
                    storeObs:{
-                        brokerRevealAddRowState$: this.store.select(fromRoot.getRevealAddGarmentRow),
+                        brokerGarmentAddLock$: this.store.select(fromRoot.getGarmentAddLock),
                     },
                    storeDsp:{
                        UPDATE_REVEAL_GARMENT_ADD_ROW:this.brkrActnBuilder.create(  PortalActionTypes.UPDATE_REVEAL_GARMENT_ADD_ROW,

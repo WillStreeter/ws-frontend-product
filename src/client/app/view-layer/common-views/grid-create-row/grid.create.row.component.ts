@@ -12,6 +12,8 @@ import { GarmentModel } from '../../../business-layer/models';
 })
 export class GridCreateRowComponent{
     @Output() addGarmentModel = new EventEmitter<GarmentModel>();
+    @Output() removeAddRow = new EventEmitter<boolean>();
+
      liveInput_Class='noStyle';
      revealPublish_Class='un-revealed';
      updatedType:string ='Physical';
@@ -42,15 +44,8 @@ export class GridCreateRowComponent{
 
     }
 
-    validate(evt:any) {
-          let theEvent = evt || window.event;
-          let key = theEvent.keyCode;
-          key = String.fromCharCode( key );
-          let  regex = /[0-9]|\./;
-          if( !regex.test(key) ) {
-            theEvent.returnValue = false;
-            if(theEvent.preventDefault) theEvent.preventDefault();
-          }
-    }
+    exitAddRow(){
+        this.removeAddRow.emit(false)
+    };
 
 }

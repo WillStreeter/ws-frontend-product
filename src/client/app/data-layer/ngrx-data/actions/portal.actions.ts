@@ -24,9 +24,15 @@ export class UpdateAddRowGarment implements Action{
   constructor(public payload:boolean) {  }
 }
 
+export class SetGarmentAddBtnStatus implements Action{
+    public readonly type = PortalActionTypes.SET_GARMENT_ADD_BTN_STATUS;
+    constructor(public payload:boolean) {  }
+}
+
 
 export type Actions
   = UpdateViewablePerPageCount
   | SetCurrentPageNumber
   | UpdateAddRowGarment
-  | UpdateCurrentSortState;
+  | UpdateCurrentSortState
+  | SetGarmentAddBtnStatus;

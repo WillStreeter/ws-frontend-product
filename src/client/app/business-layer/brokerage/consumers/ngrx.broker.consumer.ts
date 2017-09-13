@@ -4,7 +4,7 @@ import { BrokerAction  } from '../../pubsub-broker/models/broker.action.model';
 import { IConsumer } from '../../pubsub-broker/interfaces/IConsumer'
 
 import {  BrokerResponse } from "../../pubsub-broker/models/broker.response.model";
-import {  BrokerGridStore, BrokerMastheadStore, BrokerPaginatorStore }  from "../ngrx-stubs/index";
+import {  BrokerGridStore, BrokerMastheadStore, BrokerPaginatorStore, BrokerSearchStore }  from "../ngrx-stubs/index";
 
 
 @Injectable()
@@ -12,7 +12,8 @@ export class NGRxBrokerConsumer implements IConsumer{
 
     constructor(  private brokerGridStore:BrokerGridStore,
                   private brokerMastheadStore:BrokerMastheadStore,
-                  private brokerPaginatorStore:BrokerPaginatorStore){ }
+                  private brokerPaginatorStore:BrokerPaginatorStore,
+                  private brokerSearchStore:BrokerSearchStore){ }
 
     public ReceiveBrokerAction( brokerAction:BrokerAction){
         switch(brokerAction.brokerType){
@@ -24,6 +25,9 @@ export class NGRxBrokerConsumer implements IConsumer{
             break;
             case this.brokerPaginatorStore.brokerLabel:
                   this.brokerPaginatorStore.dispatchAction(brokerAction);
+            break;
+            case this.brokerSearchStore.brokerLabel:
+                this.brokerSearchStore.dispatchAction(brokerAction);
             break;
         }
     }
@@ -40,6 +44,9 @@ export class NGRxBrokerConsumer implements IConsumer{
             case this.brokerPaginatorStore.brokerLabel:
                   brokerResponse.brokerRequested = this.brokerPaginatorStore.getComponentSupplies();
             break;
+            case this.brokerSearchStore.brokerLabel:
+                brokerResponse.brokerRequested = this.brokerSearchStore.getComponentSupplies();
+                break;
         }
         return brokerResponse;
     }

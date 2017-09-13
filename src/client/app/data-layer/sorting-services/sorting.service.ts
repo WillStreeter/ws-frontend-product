@@ -14,85 +14,130 @@ import { SORT_BASES  } from "../../business-layer/shared-types/sorters/sort.conf
 @Injectable()
 export class SortingServices {
 
-    sortState$:Subscription;
-    currentGarmentCollection:Subscription;
-    portalState:Subscription;
-    sortStateVal:any;
+    private sortState$:Subscription;
+    private garmentStore$:Subscription;
+    private currentGarmentCollection:GarmentCollectionModel;
+    private garmentProducts:GarmentModel[];
+    private sortStateVal:any;
 
-    currentPage:any;
-    viewablePerPage:any;
-    collectionId:string;
+    private currentPage:any;
+    private viewablePerPage:any;
+    private collectionId:string;
+
+
     constructor( private store: Store<fromRoot.State>){}
 
 
 
-    sortGarmentCollection(products:GarmentModel[]){
-       let collectionSubset;
-        this.currentGarmentCollection = this.store.select(fromRoot.getGarmentsState).subscribe((val)=>{
-            this.collectionId = val.currentCollectionId;
-        });
-        this.currentGarmentCollection.unsubscribe();
 
-        this.sortState$= this.store.select(fromRoot.getPortalState).subscribe((val)=>{
-              this.sortStateVal = val;
-        });
-        this.sortState$.unsubscribe();
-        const collectionList= this.sortCollection(products);
-        if(collectionList.length){
-           const pages = Math.ceil(collectionList.length/this.sortStateVal.viewablePerPage);
-           const start = (this.sortStateVal.currentPage - 1) * this.sortStateVal.viewablePerPage;
-           const end = (this.sortStateVal.currentPage === pages) ?
-                             collectionList.length:
-                             this.sortStateVal.viewablePerPage;
-           collectionSubset = collectionList.slice(start, end );
-        }
-        return Observable.of(<GarmentSortModel>{ collectionId:this.collectionId,
-                                                  sortType:this.sortStateVal.sortType,
-                                                  subSetCollection:collectionSubset,
-                                                  products:collectionList });
-     }
-
-
-    sortCollection(collectionList:GarmentModel[]){
-
-       if(SORT_BASES[this.sortStateVal.sortBase].dataType === "string"){
-          collectionList = this.doAlphaSort(collectionList,  SORT_BASES[this.sortStateVal.sortBase].attr);
-          if(  this.sortStateVal.sortDirection == "Descending"){
-             collectionList = collectionList.reverse();
-          }
-       }else if(SORT_BASES[  this.sortStateVal.sortBase].dataType === "number"){
-          collectionList = this.doNumericalSort(collectionList,   SORT_BASES[this.sortStateVal.sortBase].attr);
-          if(  this.sortStateVal.sortDirection == "Descending"){
-             collectionList = collectionList.reverse();
-          }
-       }else{
-          collectionList = this.doTypeSort(collectionList,   SORT_BASES[this.sortStateVal.sortBase].attr);
-
-       }
-
-       return collectionList;
-
+    getCollectionSubset(){
+        this.setMostCurrentStoreValues();
+        let collectionSubset = this.createGarmentSubSet();
+        return Observable.of(<GarmentSortModel>{  collectionId:this.collectionId,
+            sortType:this.sortStateVal.sortType,
+            subSetCollection:collectionSubset,
+            products:this.garmentProducts })
     }
 
+
+    sortGarmentCollection(){
+        this.setMostCurrentStoreValues();
+        this.sortCollection();
+        let collectionSubset = this.createGarmentSubSet();
+        return Observable.of(<GarmentSortModel>{  collectionId:this.collectionId,
+                                                  sortType:this.sortStateVal.sortType,
+                                                  subSetCollection:collectionSubset,
+                                                  products:this.garmentProducts });
+     }
+
+     searchGarmentCollection(searchTerm:string){
+         this.setMostCurrentStoreValues();
+         let termsInset:any[] = this.findTermsInCollectionNames(searchTerm);
+         let clonedGM:GarmentModel[] = [...this.garmentProducts];
+         termsInset.forEach( (item, index)=>{
+             this.moveElementsInList(item.index, index, clonedGM)
+         });
+         return Observable.of(<GarmentSortModel>{  collectionId:this.collectionId,
+             sortType:this.sortStateVal.sortType,
+             subSetCollection:clonedGM,
+             products:this.garmentProducts });
+
+
+     }
+
+     private findTermsInCollectionNames(searchTerm:string){
+           let stringObjects:any = { rank:-1, index:-1  };
+           let termList = [];
+           this.garmentProducts.forEach((item, index)=> {
+               const rank: number = item.name.search(searchTerm);
+               if (rank > -1) {
+                   termList.push({rank: (rank+1), index: index})
+               }
+           });
+
+           if(termList.length>0){
+             return this.doNumericalSort( termList, 'rank');
+           }else{
+             return termList;
+           }
+
+     }
+
+    private sortCollection(){
+       if(SORT_BASES[this.sortStateVal.sortBase].dataType === "string"){
+          this.garmentProducts = this.doAlphaSort(this.garmentProducts,  SORT_BASES[this.sortStateVal.sortBase].attr);
+          if(  this.sortStateVal.sortDirection == "Descending"){
+             this.garmentProducts = this.garmentProducts.reverse();
+          }
+       }else if(SORT_BASES[  this.sortStateVal.sortBase].dataType === "number"){
+          this.garmentProducts = this.doNumericalSort(this.garmentProducts,   SORT_BASES[this.sortStateVal.sortBase].attr);
+          if(  this.sortStateVal.sortDirection == "Descending"){
+             this.garmentProducts = this.garmentProducts.reverse();
+          }
+       }else{
+          this.garmentProducts = this.doTypeSort(this.garmentProducts,   SORT_BASES[this.sortStateVal.sortBase].attr);
+
+       }
+       return this.garmentProducts;
+    }
+
+
+    private setMostCurrentStoreValues(){
+
+        this.garmentStore$ = this.store.select(fromRoot.getGarmentsState).subscribe((val)=>{
+            this.collectionId = val.currentCollectionId;
+            this.currentGarmentCollection = val.entities[this.collectionId];
+            this.garmentProducts =  this.currentGarmentCollection.products;
+        });
+        this.garmentStore$.unsubscribe();
+
+        this.sortState$= this.store.select(fromRoot.getPortalState).subscribe((val)=>{
+            this.sortStateVal = val;
+        });
+        this.sortState$.unsubscribe();
+    }
+        
     private doAlphaSort(list:any, base:string){
-    let value:any = [...list].sort((firstTerm, secondTerm):number =>{
-            const a = firstTerm[base].toLowerCase();
-            const b = secondTerm[base].toLowerCase();
-            if (a > b) {
-                return 1;
-            }
+            let value:any = [...list].sort((firstTerm, secondTerm):number =>{
+                    const a = firstTerm[base].toLowerCase();
+                    const b = secondTerm[base].toLowerCase();
+                    if (a > b) {
+                        return 1;
+                    }
 
-            if (a < b) {
-                return -1;
-            }
+                    if (a < b) {
+                        return -1;
+                    }
 
-            return 0;
-            });
-     return value;
+                    return 0;
+                    });
+             return value;
     }
 
     private doNumericalSort(list:any, base:string){
-        return  [...list].sort((firstTerm, secondTerm) =>(firstTerm[base] - (secondTerm)[base]));
+        return  [...list].sort((firstTerm, secondTerm) =>{
+            return (firstTerm[base] - (secondTerm)[base])
+        });
     }
 
     private doTypeSort(list:GarmentModel[] , type:string){
@@ -128,6 +173,21 @@ export class SortingServices {
           break;
       }
       return typeSorted;
+    }
+
+
+    private moveElementsInList(crntIndex:number, newIndex:number, list:any[]){
+        list.splice(newIndex, 0, list.splice(crntIndex, 1)[0]);
+    }
+
+
+    private createGarmentSubSet(){
+        const pages = Math.ceil(this.garmentProducts.length / this.sortStateVal.viewablePerPage);
+        const start = (this.sortStateVal.currentPage - 1) * this.sortStateVal.viewablePerPage;
+        const end = (this.sortStateVal.currentPage === pages) ?
+            this.garmentProducts.length :
+            this.sortStateVal.viewablePerPage * this.sortStateVal.currentPage;
+        return this.garmentProducts.slice(start, end);
     }
 
 

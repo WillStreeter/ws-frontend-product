@@ -12,7 +12,9 @@ import { GarmentModel } from '../../../business-layer/models';
 })
 export class GridRowComponent{
     @Input() garment:GarmentModel;
+    @Input()rowUpdateState:boolean;
     @Output() updateGarmentModel = new EventEmitter<GarmentModel>();
+    @Output() addRowState = new EventEmitter<boolean>();
     isChecked:boolean = false;
     isReadOnly:boolean = true;
      liveInput_Class='noStyle';
@@ -50,6 +52,8 @@ export class GridRowComponent{
     }
 
 
+
+
     turnPublishingOn(garmentId:string){
         this.isChecked = !this.isChecked ;
         if(this.isChecked){
@@ -61,6 +65,7 @@ export class GridRowComponent{
             this.liveInput_Class = 'noStyle';
             this.revealPublish_Class='un-revealed';
         }
+        this.updateEditRowState();
     };
 
     publishGarmentUpdate(f: NgForm){
@@ -73,11 +78,16 @@ export class GridRowComponent{
                                                   id:this.garment.id,
                                                   name:f.value.garmentName,
                                                   type: this.updatedType,
-                                                  price:f.value.garmentPrice,
-                                                  inventory:f.value.garmentInventory,
+                                                  price:(f.value.garmentPrice).replace(/(?:[a-zA-Z]|\s|,|\$)+/ig,''),
+                                                  inventory:parseInt(f.value.garmentInventory),
                                                   thumbnail:this.garment.thumbnail
                                                  };
         this.updateGarmentModel.emit(updateGM)
+
+    }
+
+    private updateEditRowState(){
+        this.addRowState.emit(this.isChecked)
 
     }
 

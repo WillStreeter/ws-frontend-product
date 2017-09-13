@@ -23,13 +23,12 @@ import * as fromRoot from '../reducers/index';
 export class PortalEffects {
     @Effect()  portalActionUpdate = this.actions$
       .ofType(portalActions.PortalTypes.UPDATE_SORT_STATE)
-      .withLatestFrom( this.store.select(fromRoot.getCurrentGarmentCollection) )
-      .map( ([action, garmentCollection]) => [action.payload, garmentCollection] )
-      .switchMap((garmentCollection)=>( this.sortingServices.sortGarmentCollection(garmentCollection[1].products)))
+      .map( (action) => action.payload )
+      .switchMap(()=> this.sortingServices.sortGarmentCollection())
       .map((payload) =>  new garmentActions.UpdateSortedCollection(payload));
 
     @Effect()  updateAddRowRevealState = this.actions$
-      .ofType(garmentActions.GarmentTypes.ADD_GARMENT_TO_COLLECTION_SUCCESS)
+       .ofType(garmentActions.GarmentTypes.ADD_GARMENT_TO_COLLECTION_SUCCESS)
         .map(action => action.payload)
         .switchMap(payload =>{
             return Observable.of( new portalActions.UpdateAddRowGarment(false));
@@ -37,17 +36,15 @@ export class PortalEffects {
 
      @Effect()  updateAfterPageChange= this.actions$
       .ofType(portalActions.PortalTypes.SET_CURRENT_PAGE_NUMBER)
-      .withLatestFrom( this.store.select(fromRoot.getCurrentGarmentCollection) )
-      .map( ([action, garmentCollection]) => [action.payload, garmentCollection] )
-      .switchMap((garmentCollection)=>( this.sortingServices.sortGarmentCollection(garmentCollection[1].products)))
-      .map((payload) =>  new garmentActions.UpdateSortedCollection(payload));
+         .map( (action) => action.payload )
+         .switchMap(()=> this.sortingServices.getCollectionSubset())
+         .map((payload) =>  new garmentActions.UpdateSortedCollection(payload));
 
      @Effect()  updateAfterViewableUpdate= this.actions$
       .ofType(portalActions.PortalTypes.UPDATE_VIEWABLE_PER_PAGE_COUNT)
-      .withLatestFrom( this.store.select(fromRoot.getCurrentGarmentCollection) )
-      .map( ([action, garmentCollection]) => [action.payload, garmentCollection] )
-      .switchMap((garmentCollection)=>( this.sortingServices.sortGarmentCollection(garmentCollection[1].products)))
-      .map((payload) =>  new garmentActions.UpdateSortedCollection(payload));
+         .map( (action) => action.payload )
+         .switchMap(()=> this.sortingServices.getCollectionSubset())
+         .map((payload) =>  new garmentActions.UpdateSortedCollection(payload));
 
   constructor(private store:Store<fromRoot.State>,
               private actions$: Actions,

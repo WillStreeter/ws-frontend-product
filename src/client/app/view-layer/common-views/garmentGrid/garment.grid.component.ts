@@ -26,7 +26,6 @@ export class GarmentGridComponent implements OnInit {
 
 
     constructor(private bDS:BrokerDispatcherService) {
-
         var brokerResponse:BrokerResponse = this.bDS.dispatchBrokerSelector(BrokerList.BROKER_GRID_STORE);
         this.brokerRef = brokerResponse.brokerRequested;
     }
@@ -40,16 +39,33 @@ export class GarmentGridComponent implements OnInit {
        });
     }
 
+    exitEditState(val){
+        console.log('GarmentGridComponent  --- exitEditState  =', val)
+        var note = this.brokerRef.storeDsp.UPDATE_REVEAL_GARMENT_ADD_ROW;
+        note.payLoad = val;
+        this.bDS.dispatchBrokerAction(note);
+    }
+
+    updateEditRowState(val:boolean){
+        this.exitEditState(false)
+        var note = this.brokerRef.storeDsp.SET_GARMENT_ADD_BTN_STATUS;
+        note.payLoad = val;
+        this.bDS.dispatchBrokerAction(note);
+    }
+
     garmentModelAdd(garment:GarmentModel){
          var note = this.brokerRef.storeDsp.ADD_GARMENT_TO_COLLECTION_ATTEMPT;
          note.payLoad = garment;
          this.bDS.dispatchBrokerAction(note);
     }
+
     garmentModelUpdate(garment:GarmentModel){
+        this.exitEditState(false)
          var note = this.brokerRef.storeDsp.UPDATE_GARMENT_IN_COLLECTION_ATTEMPT;
          note.payLoad = garment;
          this.bDS.dispatchBrokerAction(note);
     }
+
     toolbarSortUpdate(newSort:SortRequestModel){
          var note = this.brokerRef.storeDsp.UPDATE_SORT_STATE;
          note.payLoad = newSort;

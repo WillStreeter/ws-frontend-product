@@ -39,6 +39,12 @@ export class BrokerGridStore {
                                                             GarmentActionTypes.ADD_GARMENT_TO_COLLECTION_ATTEMPT,
                                                             this.brokerLabel,
                                                              null),
+                       SET_GARMENT_ADD_BTN_STATUS:this.brkrActnBuilder.create(  PortalActionTypes.SET_GARMENT_ADD_BTN_STATUS,
+                           this.brokerLabel,
+                           null),
+                       UPDATE_REVEAL_GARMENT_ADD_ROW:this.brkrActnBuilder.create(  PortalActionTypes.UPDATE_REVEAL_GARMENT_ADD_ROW,
+                           this.brokerLabel,
+                           null),
                       }
                 });
 
@@ -47,15 +53,18 @@ export class BrokerGridStore {
     dispatchAction(brokerAction:BrokerAction):void {
          switch(brokerAction.actionType){
              case PortalActionTypes.UPDATE_SORT_STATE:
-                 console.log('BrokerGridStore  ---- dispatchAction =',brokerAction)
                  this.store.dispatch(new portalActions.UpdateCurrentSortState(brokerAction.payLoad));
              break;
+             case PortalActionTypes.SET_GARMENT_ADD_BTN_STATUS:
+                 this.store.dispatch(new portalActions.SetGarmentAddBtnStatus(brokerAction.payLoad));
+                 break;
+             case PortalActionTypes.UPDATE_REVEAL_GARMENT_ADD_ROW:
+                 this.store.dispatch(new portalActions.UpdateAddRowGarment(brokerAction.payLoad));
+                 break;
              case GarmentActionTypes.UPDATE_GARMENT_IN_COLLECTION_ATTEMPT:
-                 console.log('BrokerGridStore  ---- dispatchAction =',brokerAction)
                  this.store.dispatch(new garmentActions.UpdateGarmentAttempt(brokerAction.payLoad));
              break;
              case GarmentActionTypes.ADD_GARMENT_TO_COLLECTION_ATTEMPT:
-                 console.log('BrokerGridStore  ---- dispatchAction =',brokerAction)
                  this.store.dispatch(new garmentActions.AddGarmentToCollectionAttempt(brokerAction.payLoad));
              break;
          }

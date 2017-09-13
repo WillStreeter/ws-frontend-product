@@ -30,15 +30,13 @@ export class GridMastheadComponent implements OnInit {
 
     ngOnInit() {
 
-      this.addBtnDisable$ = this.brokerRef.storeObs.brokerRevealAddRowState$;
+      this.addBtnDisable$ = this.brokerRef.storeObs.brokerGarmentAddLock$;
     }
 
     showCreateGarment(){
-        console.log('GridMasthead  ---- showCreateGarment ');
          var note = this.brokerRef.storeDsp.UPDATE_REVEAL_GARMENT_ADD_ROW;
          note.payLoad = true;
         this.bDS.dispatchBrokerAction(note);
-
     }
 
 }

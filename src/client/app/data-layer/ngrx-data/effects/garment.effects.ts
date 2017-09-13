@@ -38,13 +38,17 @@ export class GarmentEffects {
     @Effect()  garmentCollectionFetched = this.actions$
       .ofType(garmentActions.GarmentTypes.FETCH_GARMENT_COLLECTION_SUCCESS)
       .map(action => action.payload)
-      .switchMap( (payload)=>( this.sortingServices.sortGarmentCollection(payload)))
+      .switchMap( (payload)=>( this.sortingServices.sortGarmentCollection()))
       .map((payload) =>  {
            localStorage.setItem('products', JSON.stringify(payload.products));
           return new garmentActions.UpdateSortedCollection(payload)
       });
 
-
+    @Effect()  sortCollectionBySearchTerm = this.actions$
+        .ofType(garmentActions.GarmentTypes.SEARCH_COLLECTION_BY_TERM)
+        .map(action => action.payload)
+        .switchMap((action, garmentCollection)=>this.sortingServices.searchGarmentCollection(action))
+        .map(payload =>  new garmentActions.UpdateSortedCollection(payload));
 
 
     @Effect() upddateGarementInCollection = this.actions$
@@ -59,9 +63,8 @@ export class GarmentEffects {
 
     @Effect() garmentUpdatedInCollection = this.actions$
         .ofType(garmentActions.GarmentTypes.UPDATE_GARMENT_IN_COLLECTION_SUCCESS)
-        .withLatestFrom( this.store.select(fromRoot.getCurrentGarmentCollection) )
-        .map( ([action, garmentCollection]) => [action.payload, garmentCollection] )
-        .switchMap( (garmentCollection)=>this.sortingServices.sortGarmentCollection(garmentCollection[1].products))
+        .map(action => action.payload)
+        .switchMap( (garmentCollection)=>this.sortingServices.sortGarmentCollection())
         .map(payload =>  new garmentActions.UpdateSortedCollection(payload));
 
 
@@ -79,9 +82,8 @@ export class GarmentEffects {
 
     @Effect() garmentAddedToCollection = this.actions$
         .ofType(garmentActions.GarmentTypes.ADD_GARMENT_TO_COLLECTION_SUCCESS)
-        .withLatestFrom( this.store.select(fromRoot.getCurrentGarmentCollection) )
-        .map( ([action, garmentCollection]) => [action.payload, garmentCollection] )
-        .switchMap( (garmentCollection)=>this.sortingServices.sortGarmentCollection(garmentCollection[1].products))
+        .map(action => action.payload)
+        .switchMap( (garmentCollection)=>this.sortingServices.sortGarmentCollection())
         .map(payload =>  new garmentActions.UpdateSortedCollection(payload));
 
 

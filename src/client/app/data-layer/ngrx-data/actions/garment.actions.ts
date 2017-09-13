@@ -68,7 +68,10 @@ export class UpdateSortedCollection implements Action {
  public readonly type =  GarmentActionTypes.UPDATE_SORTED_COLLECTION;
   constructor(public payload:GarmentSortModel) {  }
 }
-
+export class SearchCollectionByTerm implements Action {
+ public readonly type =  GarmentActionTypes.SEARCH_COLLECTION_BY_TERM;
+ constructor(public payload:string) {  }
+}
 
 export type Actions =
 GetGarmentCollection
@@ -82,6 +85,7 @@ GetGarmentCollection
      | AddGarmentToCollectionSuccess
      | GetSubsetOfCollection
      | UpdateSortedCollection
+     | SearchCollectionByTerm;
 
 
 

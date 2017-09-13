@@ -4,6 +4,7 @@ import { SortRequestModel } from "../../../../business-layer/models/sortRequest.
 
 
 export interface State {
+   garmentAddLock:boolean;
   viewablePerPage:number;
   revealAddGarmentRow:boolean,
   currentPage:number;
@@ -13,6 +14,7 @@ export interface State {
 }
 
 const initialState: State = {
+  garmentAddLock:false,
   viewablePerPage:10,
   revealAddGarmentRow:false,
   currentPage:1,
@@ -30,8 +32,11 @@ export function reducer(state = initialState, action: portal.Actions): State {
         return Object.assign({}, state,   {currentPage:action.payload});
     }
 
+    case PortalActionTypes.SET_GARMENT_ADD_BTN_STATUS: {
+        return Object.assign({}, state,   {garmentAddLock:action.payload});
+    }
     case PortalActionTypes.UPDATE_REVEAL_GARMENT_ADD_ROW: {
-        return Object.assign({}, state,   {revealAddGarmentRow:action.payload});
+      return Object.assign({}, state,   {revealAddGarmentRow:action.payload, garmentAddLock:action.payload});
     }
     case PortalActionTypes.UPDATE_SORT_STATE: {
       const sortRequest:SortRequestModel = <SortRequestModel>(action.payload);
@@ -53,5 +58,6 @@ export const getViewablePerPage = (state: State) => state.viewablePerPage;
 export const getCurrentPage = (state: State) => state.currentPage;
 export const getSortType = (state: State) => state.sortDirection;
 export const getSortBase = (state: State) => state.sortBase;
+export const getGarmentAddLock= (state: State) => state.garmentAddLock;
 export const getSortState = (state: State) => Object.assign({},{sortDirection:state.sortDirection, sortBase:state.sortBase});
 
