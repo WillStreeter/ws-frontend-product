@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <base href="/">
+  <base href="<%= APP_BASE %>">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>NG2 Login Demo!</title>
+  <title><%= APP_TITLE %></title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="/assets/favicon/favicon-DEV.ico" type="image/x-icon">
+  <link rel="icon" href="<%= APP_BASE %>assets/favicon/favicon-<%= ENV_CONFIG.ENV %>.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- inject:css -->
-  <link rel="stylesheet" href="/css/main.css?1505319124188">
   <!-- endinject -->
 </head>
 <body>
@@ -22,7 +21,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-XXXXXXXX-X', 'auto');
+    ga('create', '<%= GOOGLE_ANALYTICS_ID %>', 'auto');
     ga('send', 'pageview');
   </script>
 
@@ -32,34 +31,27 @@
   </script>
 
   <!-- shims:js -->
-  <script src="/node_modules/core-js/client/shim.min.js?1505319124179"></script>
-  <script src="/node_modules/intl/dist/Intl.min.js?1505319124180"></script>
-  <script src="/node_modules/systemjs/dist/system.src.js?1505319124181"></script>
   <!-- endinject -->
 
-  
-  <script src="/app/system-config.js"></script>
-  
+  <% if (BUILD_TYPE === 'dev') { %>
+  <script src="<%= APP_BASE %>app/system-config.js"></script>
+  <% } %>
 
   <!-- libs:js -->
-  <script src="/node_modules/zone.js/dist/zone.js?1505319124183"></script>
-  <script src="/node_modules/zone.js/dist/long-stack-trace-zone.js?1505319124184"></script>
-  <script src="/node_modules/.tmp/Rx.min.js?1505319124185"></script>
-  <script src="/node_modules/hammerjs/hammer.min.js?1505319124185"></script>
   <!-- endinject -->
 
   <!-- inject:js -->
   <!-- endinject -->
 
-  
+  <% if (BUILD_TYPE === 'dev') { %>
   <script>
-  System.import('app/main')
+  System.import('<%= BOOTSTRAP_MODULE %>')
     .catch(function (e) {
       console.error(e.stack || e,
         'Not expecting this error? Report it at https://github.com/mgechev/angular-seed/issues');
     });
   </script>
-  
+  <% } %>
 
 </body>
 </html>
