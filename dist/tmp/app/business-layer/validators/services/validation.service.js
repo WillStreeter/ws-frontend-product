@@ -1,10 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var ValidationService = (function () {
-    function ValidationService() {
-    }
-    ValidationService.getValidatorErrorMessage = function (validatorName, validatorValue) {
-        var config = {
+export class ValidationService {
+    static getValidatorErrorMessage(validatorName, validatorValue) {
+        let config = {
             'required': 'Required',
             'isAlphanumeric': 'Only Alpha and Numerical characters.',
             'isAlpha': 'Only Alpha characters.',
@@ -12,19 +8,19 @@ var ValidationService = (function () {
             'userNameAvailable': 'This username has been taken',
             'emailMatcher': 'The email address you have entered do not match',
             'invalidPassword': 'Only AlphaNumeric and the "$" sign.',
-            'minlength': "Minimum length " + validatorValue.requiredLength,
-            'maxlength': "Maximum length " + validatorValue.requiredLength
+            'minlength': `Minimum length ${validatorValue.requiredLength}`,
+            'maxlength': `Maximum length ${validatorValue.requiredLength}`
         };
         return config[validatorName];
-    };
-    ValidationService.passwordValidator = function () {
-        return function (options) {
-            return function (c) {
+    }
+    static passwordValidator() {
+        return (options) => {
+            return (c) => {
                 if (c.value === null) {
                     return null;
                 }
-                var regexStr = '^[A-Za-z0-9$]+$';
-                var regex = new RegExp(regexStr);
+                let regexStr = '^[A-Za-z0-9$]+$';
+                let regex = new RegExp(regexStr);
                 if (regex.test(c.value)) {
                     return null;
                 }
@@ -33,8 +29,5 @@ var ValidationService = (function () {
                 }
             };
         };
-    };
-    return ValidationService;
-}());
-exports.ValidationService = ValidationService;
-//# sourceMappingURL=validation.service.js.map
+    }
+}

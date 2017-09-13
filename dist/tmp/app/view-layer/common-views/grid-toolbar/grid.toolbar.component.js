@@ -1,39 +1,44 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var GridToolbarComponent = (function () {
-    function GridToolbarComponent() {
-        this.updateSort = new core_1.EventEmitter();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+import { Component, Output, EventEmitter } from '@angular/core';
+let GridToolbarComponent = class GridToolbarComponent {
+    constructor() {
+        this.updateSort = new EventEmitter();
     }
-    GridToolbarComponent.prototype.updateChangeDirection = function () {
-        var newSort = {
+    updateChangeDirection() {
+        let newSort = {
             directionChange: true,
             base: '',
             direction: ''
         };
         this.updateSort.emit(newSort);
-    };
-    GridToolbarComponent.prototype.updateGridSortBase = function (baseId) {
-        var newSort = {
+    }
+    updateGridSortBase(baseId) {
+        let newSort = {
             directionChange: false,
             base: baseId,
             direction: ''
         };
         this.updateSort.emit(newSort);
-    };
-    return GridToolbarComponent;
-}());
-GridToolbarComponent.decorators = [
-    { type: core_1.Component, args: [{
-                moduleId: module.id,
-                selector: 'grid-toolbar',
-                templateUrl: 'grid.toolbar.component.html',
-                styleUrls: ['grid.toolbar.component.css']
-            },] },
-];
-GridToolbarComponent.ctorParameters = function () { return []; };
-GridToolbarComponent.propDecorators = {
-    'updateSort': [{ type: core_1.Output },],
+    }
 };
-exports.GridToolbarComponent = GridToolbarComponent;
-//# sourceMappingURL=grid.toolbar.component.js.map
+__decorate([
+    Output(),
+    __metadata("design:type", Object)
+], GridToolbarComponent.prototype, "updateSort", void 0);
+GridToolbarComponent = __decorate([
+    Component({
+        moduleId: module.id,
+        selector: 'grid-toolbar',
+        templateUrl: 'grid.toolbar.component.html',
+        styleUrls: ['grid.toolbar.component.css']
+    })
+], GridToolbarComponent);
+export { GridToolbarComponent };

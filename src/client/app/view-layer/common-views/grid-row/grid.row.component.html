@@ -32,11 +32,11 @@
      </div>
      <div class="garment-price" fxLayout="column" fxFlex="10">
          <input id="garmentPrice" [className]="liveInput_Class"
-          [(ngModel)]="price" [readonly]="isReadOnly"  placeholder="" name="garmentPrice">
+          [(ngModel)]="garment.price" [readonly]="isReadOnly"  placeholder="" name="garmentPrice">
      </div>
      <div class="garment-inventory" fxLayout="column" fxFlex="10">
          <input id="garmentInventory" [className]="liveInput_Class"
-            [(ngModel)]="inventory" [readonly]="isReadOnly"  placeholder="" name="garmentInventory">
+            [(ngModel)]="garment.inventory" [readonly]="isReadOnly"  placeholder="" name="garmentInventory">
      </div>
 
      <div fxLayout="column" fxFlex="5"  [className]="revealPublish_Class">

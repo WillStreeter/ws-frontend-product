@@ -1,64 +1,67 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var Observable_1 = require("rxjs/Observable");
-var core_1 = require("@angular/core");
-require("rxjs/add/observable/fromEvent");
-var broker_dispatcher_service_1 = require("../../../business-layer/pubsub-broker/services/broker.dispatcher.service");
-var brokerlist_1 = require("../../../business-layer/brokerage/ngrx-stubs/brokerlist");
-var SearchAheadComponent = (function () {
-    function SearchAheadComponent(bDS) {
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+import { Observable } from 'rxjs/Observable';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import "rxjs/add/observable/fromEvent";
+import { BrokerDispatcherService } from '../../../business-layer/pubsub-broker/services/broker.dispatcher.service';
+import { BrokerList } from '../../../business-layer/brokerage/ngrx-stubs/brokerlist';
+let SearchAheadComponent = class SearchAheadComponent {
+    constructor(bDS) {
         this.bDS = bDS;
         this.searchTerm = [];
-        var brokerResponse = this.bDS.dispatchBrokerSelector(brokerlist_1.BrokerList.BROKER_SEARCH_STORE);
+        var brokerResponse = this.bDS.dispatchBrokerSelector(BrokerList.BROKER_SEARCH_STORE);
         this.brokerRef = brokerResponse.brokerRequested;
     }
-    SearchAheadComponent.prototype.ngOnInit = function () {
+    ngOnInit() {
         this.portalState$ = this.brokerRef.storeObs.brokerPortalState;
-    };
-    SearchAheadComponent.prototype.ngAfterViewInit = function () {
-        var _this = this;
-        var searchValue$ = Observable_1.Observable.fromEvent(this.input.nativeElement, 'keyup')
-            .map(function (x) {
+    }
+    ngAfterViewInit() {
+        let searchValue$ = Observable.fromEvent(this.input.nativeElement, 'keyup')
+            .map(x => {
             return x['key'];
         })
             .debounceTime(100);
-        var value = searchValue$.subscribe(function (x) {
+        const value = searchValue$.subscribe(x => {
             if (x.length > 1) {
-                if (x === 'Backspace' && _this.searchTerm.length > 0) {
-                    _this.searchTerm.pop();
+                if (x === 'Backspace' && this.searchTerm.length > 0) {
+                    this.searchTerm.pop();
                 }
                 if (x === 'Enter') {
                 }
             }
             else {
                 console.log(' doSearch  doSearch =', x);
-                _this.searchTerm.push(x);
-                _this.doSearch(_this.searchTerm.join('').replace(/[^A-Za-z0-9]/g, ''));
+                this.searchTerm.push(x);
+                this.doSearch(this.searchTerm.join('').replace(/[^A-Za-z0-9]/g, ''));
             }
             return x;
         });
-    };
-    SearchAheadComponent.prototype.doSearch = function (terrm) {
+    }
+    doSearch(terrm) {
         console.log(' doSearch  doSearch =', terrm);
-        var note = this.brokerRef.storeDsp.SEARCH_COLLECTION_BY_TERM;
+        let note = this.brokerRef.storeDsp.SEARCH_COLLECTION_BY_TERM;
         note.payLoad = terrm && terrm[0].toUpperCase() + terrm.slice(1);
         this.bDS.dispatchBrokerAction(note);
-    };
-    return SearchAheadComponent;
-}());
-SearchAheadComponent.decorators = [
-    { type: core_1.Component, args: [{
-                moduleId: module.id,
-                selector: 'search-ahead',
-                templateUrl: 'search.ahead.component.html',
-                styleUrls: ['search.ahead.component.css']
-            },] },
-];
-SearchAheadComponent.ctorParameters = function () { return [
-    { type: broker_dispatcher_service_1.BrokerDispatcherService, },
-]; };
-SearchAheadComponent.propDecorators = {
-    'input': [{ type: core_1.ViewChild, args: ['searchBox',] },],
+    }
 };
-exports.SearchAheadComponent = SearchAheadComponent;
-//# sourceMappingURL=search.ahead.component.js.map
+__decorate([
+    ViewChild('searchBox'),
+    __metadata("design:type", ElementRef)
+], SearchAheadComponent.prototype, "input", void 0);
+SearchAheadComponent = __decorate([
+    Component({
+        moduleId: module.id,
+        selector: 'search-ahead',
+        templateUrl: 'search.ahead.component.html',
+        styleUrls: ['search.ahead.component.css']
+    }),
+    __metadata("design:paramtypes", [BrokerDispatcherService])
+], SearchAheadComponent);
+export { SearchAheadComponent };

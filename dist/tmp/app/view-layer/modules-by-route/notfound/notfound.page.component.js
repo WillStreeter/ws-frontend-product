@@ -1,20 +1,19 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var NotfoundPageComponent = (function () {
-    function NotfoundPageComponent() {
-    }
-    return NotfoundPageComponent;
-}());
-NotfoundPageComponent.decorators = [
-    { type: core_1.Component, args: [{
-                moduleId: module.id,
-                selector: 'notfound-page',
-                templateUrl: 'notfound.page.component.html',
-                styleUrls: ['notfound.page.component.css'],
-                changeDetection: core_1.ChangeDetectionStrategy.OnPush,
-            },] },
-];
-NotfoundPageComponent.ctorParameters = function () { return []; };
-exports.NotfoundPageComponent = NotfoundPageComponent;
-//# sourceMappingURL=notfound.page.component.js.map
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+let NotfoundPageComponent = class NotfoundPageComponent {
+};
+NotfoundPageComponent = __decorate([
+    Component({
+        moduleId: module.id,
+        selector: 'notfound-page',
+        templateUrl: 'notfound.page.component.html',
+        styleUrls: ['notfound.page.component.css'],
+        changeDetection: ChangeDetectionStrategy.OnPush,
+    })
+], NotfoundPageComponent);
+export { NotfoundPageComponent };

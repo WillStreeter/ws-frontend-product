@@ -1,63 +1,46 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var GridRowComponent = (function () {
-    function GridRowComponent() {
-        this.updateGarmentModel = new core_1.EventEmitter();
-        this.addRowState = new core_1.EventEmitter();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+let GridRowComponent = class GridRowComponent {
+    constructor() {
+        this.updateGarmentModel = new EventEmitter();
+        this.addRowState = new EventEmitter();
         this.isChecked = false;
         this.isReadOnly = true;
         this.liveInput_Class = 'noStyle';
         this.revealPublish_Class = 'un-revealed';
         this.updatedType = '';
     }
-    Object.defineProperty(GridRowComponent.prototype, "id", {
-        get: function () {
-            return this.garment.id;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(GridRowComponent.prototype, "name", {
-        get: function () {
-            return this.garment.name;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(GridRowComponent.prototype, "type", {
-        get: function () {
-            this.updatedType = this.garment.type;
-            return this.updatedType;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(GridRowComponent.prototype, "price", {
-        get: function () {
-            return "$" + this.garment.price;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(GridRowComponent.prototype, "inventory", {
-        get: function () {
-            return this.garment.inventory;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(GridRowComponent.prototype, "thumbnail", {
-        get: function () {
-            return this.garment.thumbnail;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    GridRowComponent.prototype.updateGarmentType = function (value) {
+    get id() {
+        return this.garment.id;
+    }
+    get name() {
+        return this.garment.name;
+    }
+    get type() {
+        this.updatedType = this.garment.type;
+        return this.updatedType;
+    }
+    get price() {
+        return "$" + this.garment.price;
+    }
+    get inventory() {
+        return this.garment.inventory;
+    }
+    get thumbnail() {
+        return this.garment.thumbnail;
+    }
+    updateGarmentType(value) {
         this.updatedType = value;
-    };
-    GridRowComponent.prototype.turnPublishingOn = function (garmentId) {
+    }
+    turnPublishingOn(garmentId) {
         this.isChecked = !this.isChecked;
         if (this.isChecked) {
             this.isReadOnly = false;
@@ -70,42 +53,49 @@ var GridRowComponent = (function () {
             this.revealPublish_Class = 'un-revealed';
         }
         this.updateEditRowState();
-    };
+    }
     ;
-    GridRowComponent.prototype.publishGarmentUpdate = function (f) {
+    publishGarmentUpdate(f) {
         this.isReadOnly = true;
         this.isChecked = false;
         this.liveInput_Class = 'noStyle';
         this.revealPublish_Class = 'un-revealed';
-        var updateGM = {
+        let updateGM = {
             id: this.garment.id,
             name: f.value.garmentName,
             type: this.updatedType,
-            price: (f.value.garmentPrice).replace(/(?:[a-zA-Z]|\s|,|\$)+/ig, ''),
+            price: parseInt((f.value.garmentPrice).replace(/(?:[a-zA-Z]|\s|,|\$)+/ig, '')),
             inventory: parseInt(f.value.garmentInventory),
             thumbnail: this.garment.thumbnail
         };
         this.updateGarmentModel.emit(updateGM);
-    };
-    GridRowComponent.prototype.updateEditRowState = function () {
+    }
+    updateEditRowState() {
         this.addRowState.emit(this.isChecked);
-    };
-    return GridRowComponent;
-}());
-GridRowComponent.decorators = [
-    { type: core_1.Component, args: [{
-                moduleId: module.id,
-                selector: 'grid-row',
-                templateUrl: 'grid.row.component.html',
-                styleUrls: ['grid.row.component.css']
-            },] },
-];
-GridRowComponent.ctorParameters = function () { return []; };
-GridRowComponent.propDecorators = {
-    'garment': [{ type: core_1.Input },],
-    'rowUpdateState': [{ type: core_1.Input },],
-    'updateGarmentModel': [{ type: core_1.Output },],
-    'addRowState': [{ type: core_1.Output },],
+    }
 };
-exports.GridRowComponent = GridRowComponent;
-//# sourceMappingURL=grid.row.component.js.map
+__decorate([
+    Input(),
+    __metadata("design:type", Object)
+], GridRowComponent.prototype, "garment", void 0);
+__decorate([
+    Input(),
+    __metadata("design:type", Boolean)
+], GridRowComponent.prototype, "rowUpdateState", void 0);
+__decorate([
+    Output(),
+    __metadata("design:type", Object)
+], GridRowComponent.prototype, "updateGarmentModel", void 0);
+__decorate([
+    Output(),
+    __metadata("design:type", Object)
+], GridRowComponent.prototype, "addRowState", void 0);
+GridRowComponent = __decorate([
+    Component({
+        moduleId: module.id,
+        selector: 'grid-row',
+        templateUrl: 'grid.row.component.html',
+        styleUrls: ['grid.row.component.css']
+    })
+], GridRowComponent);
+export { GridRowComponent };

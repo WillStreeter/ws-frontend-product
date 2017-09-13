@@ -1,45 +1,32 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var PortalActionTypes = require("../../../business-layer/shared-types/actions/portal.action.types");
-exports.PortalTypes = PortalActionTypes;
-var UpdateViewablePerPageCount = (function () {
-    function UpdateViewablePerPageCount(payload) {
+import * as PortalActionTypes from '../../../business-layer/shared-types/actions/portal.action.types';
+export const PortalTypes = PortalActionTypes;
+export class UpdateViewablePerPageCount {
+    constructor(payload) {
         this.payload = payload;
         this.type = PortalActionTypes.UPDATE_VIEWABLE_PER_PAGE_COUNT;
     }
-    return UpdateViewablePerPageCount;
-}());
-exports.UpdateViewablePerPageCount = UpdateViewablePerPageCount;
-var SetCurrentPageNumber = (function () {
-    function SetCurrentPageNumber(payload) {
+}
+export class SetCurrentPageNumber {
+    constructor(payload) {
         this.payload = payload;
         this.type = PortalActionTypes.SET_CURRENT_PAGE_NUMBER;
     }
-    return SetCurrentPageNumber;
-}());
-exports.SetCurrentPageNumber = SetCurrentPageNumber;
-var UpdateCurrentSortState = (function () {
-    function UpdateCurrentSortState(payload) {
+}
+export class UpdateCurrentSortState {
+    constructor(payload) {
         this.payload = payload;
         this.type = PortalActionTypes.UPDATE_SORT_STATE;
     }
-    return UpdateCurrentSortState;
-}());
-exports.UpdateCurrentSortState = UpdateCurrentSortState;
-var UpdateAddRowGarment = (function () {
-    function UpdateAddRowGarment(payload) {
+}
+export class UpdateAddRowGarment {
+    constructor(payload) {
         this.payload = payload;
         this.type = PortalActionTypes.UPDATE_REVEAL_GARMENT_ADD_ROW;
     }
-    return UpdateAddRowGarment;
-}());
-exports.UpdateAddRowGarment = UpdateAddRowGarment;
-var SetGarmentAddBtnStatus = (function () {
-    function SetGarmentAddBtnStatus(payload) {
+}
+export class SetGarmentAddBtnStatus {
+    constructor(payload) {
         this.payload = payload;
         this.type = PortalActionTypes.SET_GARMENT_ADD_BTN_STATUS;
     }
-    return SetGarmentAddBtnStatus;
-}());
-exports.SetGarmentAddBtnStatus = SetGarmentAddBtnStatus;
-//# sourceMappingURL=portal.actions.js.map
+}

@@ -1,24 +1,27 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var broker_publisher_1 = require("../outlet/broker.publisher");
-var BrokerDispatcherService = (function () {
-    function BrokerDispatcherService(brokerPublisher) {
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+import { Injectable } from '@angular/core';
+import { BrokerPublisher } from '../outlet/broker.publisher';
+let BrokerDispatcherService = class BrokerDispatcherService {
+    constructor(brokerPublisher) {
         this.brokerPublisher = brokerPublisher;
     }
-    BrokerDispatcherService.prototype.dispatchBrokerAction = function (brokerAction) {
+    dispatchBrokerAction(brokerAction) {
         this.brokerPublisher.NotifyBrokerActionConsumers(brokerAction);
-    };
-    BrokerDispatcherService.prototype.dispatchBrokerSelector = function (brokerType) {
+    }
+    dispatchBrokerSelector(brokerType) {
         return this.brokerPublisher.NotifyBrokerSelectorConsumer(brokerType);
-    };
-    return BrokerDispatcherService;
-}());
-BrokerDispatcherService.decorators = [
-    { type: core_1.Injectable },
-];
-BrokerDispatcherService.ctorParameters = function () { return [
-    { type: broker_publisher_1.BrokerPublisher, },
-]; };
-exports.BrokerDispatcherService = BrokerDispatcherService;
-//# sourceMappingURL=broker.dispatcher.service.js.map
+    }
+};
+BrokerDispatcherService = __decorate([
+    Injectable(),
+    __metadata("design:paramtypes", [BrokerPublisher])
+], BrokerDispatcherService);
+export { BrokerDispatcherService };

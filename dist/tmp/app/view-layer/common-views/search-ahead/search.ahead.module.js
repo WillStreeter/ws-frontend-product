@@ -1,27 +1,26 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var forms_1 = require("@angular/forms");
-var common_1 = require("@angular/common");
-var flex_layout_1 = require("@angular/flex-layout");
-var search_ahead_component_1 = require("./search.ahead.component");
-var material_1 = require("@angular/material");
-var SearchAheadModule = (function () {
-    function SearchAheadModule() {
-    }
-    return SearchAheadModule;
-}());
-SearchAheadModule.decorators = [
-    { type: core_1.NgModule, args: [{
-                imports: [forms_1.FormsModule,
-                    forms_1.ReactiveFormsModule,
-                    common_1.CommonModule,
-                    material_1.MaterialModule,
-                    flex_layout_1.FlexLayoutModule],
-                declarations: [search_ahead_component_1.SearchAheadComponent],
-                exports: [search_ahead_component_1.SearchAheadComponent]
-            },] },
-];
-SearchAheadModule.ctorParameters = function () { return []; };
-exports.SearchAheadModule = SearchAheadModule;
-//# sourceMappingURL=search.ahead.module.js.map
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { SearchAheadComponent } from './search.ahead.component';
+import { MaterialModule } from '@angular/material';
+let SearchAheadModule = class SearchAheadModule {
+};
+SearchAheadModule = __decorate([
+    NgModule({
+        imports: [FormsModule,
+            ReactiveFormsModule,
+            CommonModule,
+            MaterialModule,
+            FlexLayoutModule],
+        declarations: [SearchAheadComponent],
+        exports: [SearchAheadComponent]
+    })
+], SearchAheadModule);
+export { SearchAheadModule };

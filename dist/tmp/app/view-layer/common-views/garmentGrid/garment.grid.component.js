@@ -1,63 +1,65 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var broker_dispatcher_service_1 = require("../../../business-layer/pubsub-broker/services/broker.dispatcher.service");
-var brokerlist_1 = require("../../../business-layer/brokerage/ngrx-stubs/brokerlist");
-var GarmentGridComponent = (function () {
-    function GarmentGridComponent(bDS) {
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+import { Component } from '@angular/core';
+import { BrokerDispatcherService } from '../../../business-layer/pubsub-broker/services/broker.dispatcher.service';
+import { BrokerList } from '../../../business-layer/brokerage/ngrx-stubs/brokerlist';
+let GarmentGridComponent = class GarmentGridComponent {
+    constructor(bDS) {
         this.bDS = bDS;
         this.revealCreateRow = false;
-        var brokerResponse = this.bDS.dispatchBrokerSelector(brokerlist_1.BrokerList.BROKER_GRID_STORE);
+        var brokerResponse = this.bDS.dispatchBrokerSelector(BrokerList.BROKER_GRID_STORE);
         this.brokerRef = brokerResponse.brokerRequested;
     }
-    GarmentGridComponent.prototype.ngOnInit = function () {
-        var _this = this;
+    ngOnInit() {
         this.currentGarmentSubset$ = this.brokerRef.storeObs.brokerGarmentSubset;
-        this.currentPortalStateSub = this.brokerRef.storeObs.brokerPortalState.subscribe(function (value) {
-            _this.currentPortalState = (value);
-            _this.revealCreateRow = _this.currentPortalState.revealAddGarmentRow;
+        this.currentPortalStateSub = this.brokerRef.storeObs.brokerPortalState.subscribe(value => {
+            this.currentPortalState = (value);
+            this.revealCreateRow = this.currentPortalState.revealAddGarmentRow;
         });
-    };
-    GarmentGridComponent.prototype.exitEditState = function (val) {
+    }
+    exitEditState(val) {
         console.log('GarmentGridComponent  --- exitEditState  =', val);
         var note = this.brokerRef.storeDsp.UPDATE_REVEAL_GARMENT_ADD_ROW;
         note.payLoad = val;
         this.bDS.dispatchBrokerAction(note);
-    };
-    GarmentGridComponent.prototype.updateEditRowState = function (val) {
+    }
+    updateEditRowState(val) {
         this.exitEditState(false);
         var note = this.brokerRef.storeDsp.SET_GARMENT_ADD_BTN_STATUS;
         note.payLoad = val;
         this.bDS.dispatchBrokerAction(note);
-    };
-    GarmentGridComponent.prototype.garmentModelAdd = function (garment) {
+    }
+    garmentModelAdd(garment) {
         var note = this.brokerRef.storeDsp.ADD_GARMENT_TO_COLLECTION_ATTEMPT;
         note.payLoad = garment;
         this.bDS.dispatchBrokerAction(note);
-    };
-    GarmentGridComponent.prototype.garmentModelUpdate = function (garment) {
+    }
+    garmentModelUpdate(garment) {
         this.exitEditState(false);
         var note = this.brokerRef.storeDsp.UPDATE_GARMENT_IN_COLLECTION_ATTEMPT;
         note.payLoad = garment;
         this.bDS.dispatchBrokerAction(note);
-    };
-    GarmentGridComponent.prototype.toolbarSortUpdate = function (newSort) {
+    }
+    toolbarSortUpdate(newSort) {
         var note = this.brokerRef.storeDsp.UPDATE_SORT_STATE;
         note.payLoad = newSort;
         this.bDS.dispatchBrokerAction(note);
-    };
-    return GarmentGridComponent;
-}());
-GarmentGridComponent.decorators = [
-    { type: core_1.Component, args: [{
-                moduleId: module.id,
-                selector: 'garment-grid',
-                templateUrl: 'garment.grid.component.html',
-                styleUrls: ['garment.grid.component.css']
-            },] },
-];
-GarmentGridComponent.ctorParameters = function () { return [
-    { type: broker_dispatcher_service_1.BrokerDispatcherService, },
-]; };
-exports.GarmentGridComponent = GarmentGridComponent;
-//# sourceMappingURL=garment.grid.component.js.map
+    }
+};
+GarmentGridComponent = __decorate([
+    Component({
+        moduleId: module.id,
+        selector: 'garment-grid',
+        templateUrl: 'garment.grid.component.html',
+        styleUrls: ['garment.grid.component.css']
+    }),
+    __metadata("design:paramtypes", [BrokerDispatcherService])
+], GarmentGridComponent);
+export { GarmentGridComponent };

@@ -1,100 +1,73 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var GarmentActionTypes = require("../../../business-layer/shared-types/actions/garment.action.types");
-exports.GarmentTypes = GarmentActionTypes;
-var GetGarmentCollection = (function () {
-    function GetGarmentCollection() {
+import * as GarmentActionTypes from '../../../business-layer/shared-types/actions/garment.action.types';
+export const GarmentTypes = GarmentActionTypes;
+export class GetGarmentCollection {
+    constructor() {
         this.type = GarmentActionTypes.FETCH_GARMENT_COLLECTION_ATTEMPT;
     }
-    return GetGarmentCollection;
-}());
-exports.GetGarmentCollection = GetGarmentCollection;
-var GetGarmentCollectionFailure = (function () {
-    function GetGarmentCollectionFailure(payload) {
+}
+export class GetGarmentCollectionFailure {
+    constructor(payload) {
         this.payload = payload;
         this.type = GarmentActionTypes.FETCH_GARMENT_COLLECTION_FAILURE;
     }
-    return GetGarmentCollectionFailure;
-}());
-exports.GetGarmentCollectionFailure = GetGarmentCollectionFailure;
-var GetGarmentCollectionSuccess = (function () {
-    function GetGarmentCollectionSuccess(payload) {
+}
+export class GetGarmentCollectionSuccess {
+    constructor(payload) {
         this.payload = payload;
         this.type = GarmentActionTypes.FETCH_GARMENT_COLLECTION_SUCCESS;
     }
-    return GetGarmentCollectionSuccess;
-}());
-exports.GetGarmentCollectionSuccess = GetGarmentCollectionSuccess;
-var UpdateGarmentAttempt = (function () {
-    function UpdateGarmentAttempt(payload) {
+}
+export class UpdateGarmentAttempt {
+    constructor(payload) {
         this.payload = payload;
         this.type = GarmentActionTypes.UPDATE_GARMENT_IN_COLLECTION_ATTEMPT;
     }
-    return UpdateGarmentAttempt;
-}());
-exports.UpdateGarmentAttempt = UpdateGarmentAttempt;
-var UpdateGarmentFailure = (function () {
-    function UpdateGarmentFailure(payload) {
+}
+export class UpdateGarmentFailure {
+    constructor(payload) {
         this.payload = payload;
         this.type = GarmentActionTypes.UPDATE_GARMENT_IN_COLLECTION_FAILURE;
     }
-    return UpdateGarmentFailure;
-}());
-exports.UpdateGarmentFailure = UpdateGarmentFailure;
-var UpdateGarmentSuccess = (function () {
-    function UpdateGarmentSuccess(payload) {
+}
+export class UpdateGarmentSuccess {
+    constructor(payload) {
         this.payload = payload;
         this.type = GarmentActionTypes.UPDATE_GARMENT_IN_COLLECTION_SUCCESS;
     }
-    return UpdateGarmentSuccess;
-}());
-exports.UpdateGarmentSuccess = UpdateGarmentSuccess;
-var AddGarmentToCollectionAttempt = (function () {
-    function AddGarmentToCollectionAttempt(payload) {
+}
+export class AddGarmentToCollectionAttempt {
+    constructor(payload) {
         this.payload = payload;
         this.type = GarmentActionTypes.ADD_GARMENT_TO_COLLECTION_ATTEMPT;
     }
-    return AddGarmentToCollectionAttempt;
-}());
-exports.AddGarmentToCollectionAttempt = AddGarmentToCollectionAttempt;
-var AddGarmentToCollectionFailure = (function () {
-    function AddGarmentToCollectionFailure(payload) {
+}
+export class AddGarmentToCollectionFailure {
+    constructor(payload) {
         this.payload = payload;
         this.type = GarmentActionTypes.ADD_GARMENT_TO_COLLECTION_FAILURE;
     }
-    return AddGarmentToCollectionFailure;
-}());
-exports.AddGarmentToCollectionFailure = AddGarmentToCollectionFailure;
-var AddGarmentToCollectionSuccess = (function () {
-    function AddGarmentToCollectionSuccess(payload) {
+}
+export class AddGarmentToCollectionSuccess {
+    constructor(payload) {
         this.payload = payload;
         this.type = GarmentActionTypes.ADD_GARMENT_TO_COLLECTION_SUCCESS;
     }
-    return AddGarmentToCollectionSuccess;
-}());
-exports.AddGarmentToCollectionSuccess = AddGarmentToCollectionSuccess;
-var GetSubsetOfCollection = (function () {
-    function GetSubsetOfCollection(payload) {
+}
+export class GetSubsetOfCollection {
+    constructor(payload) {
         this.payload = payload;
         this.type = GarmentActionTypes.GET_SUBSET_OF_COLLECTION;
     }
-    return GetSubsetOfCollection;
-}());
-exports.GetSubsetOfCollection = GetSubsetOfCollection;
-var UpdateSortedCollection = (function () {
-    function UpdateSortedCollection(payload) {
+}
+export class UpdateSortedCollection {
+    constructor(payload) {
         this.payload = payload;
         this.type = GarmentActionTypes.UPDATE_SORTED_COLLECTION;
     }
-    return UpdateSortedCollection;
-}());
-exports.UpdateSortedCollection = UpdateSortedCollection;
-var SearchCollectionByTerm = (function () {
-    function SearchCollectionByTerm(payload) {
+}
+export class SearchCollectionByTerm {
+    constructor(payload) {
         this.payload = payload;
         this.type = GarmentActionTypes.SEARCH_COLLECTION_BY_TERM;
     }
-    return SearchCollectionByTerm;
-}());
-exports.SearchCollectionByTerm = SearchCollectionByTerm;
-//# sourceMappingURL=garment.actions.js.map
+}

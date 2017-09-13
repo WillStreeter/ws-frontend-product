@@ -1,6 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.SORT_BASES = {
+export const SORT_BASES = {
     "Name": {
         attr: "name",
         dataType: "string"
@@ -26,9 +24,8 @@ exports.SORT_BASES = {
         dataType: "number"
     },
 };
-exports.SORT_CRITERIA = {
+export const SORT_CRITERIA = {
     "Descending": "Descending",
     "Ascending": "Ascending",
 };
-exports.TYPE_LIST = ["Physical", "Digital", "Service"];
-//# sourceMappingURL=sort.config.types.js.map
+export const TYPE_LIST = ["Physical", "Digital", "Service"];

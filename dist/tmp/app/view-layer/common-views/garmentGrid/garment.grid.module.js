@@ -1,41 +1,40 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var forms_1 = require("@angular/forms");
-var control_messaging_component_1 = require("../../common-views/custom-validators/control.messaging.component");
-var validation_service_1 = require("../../../business-layer/validators/services/validation.service");
-var common_1 = require("@angular/common");
-var flex_layout_1 = require("@angular/flex-layout");
-var garment_grid_component_1 = require("./garment.grid.component");
-var grid_row_component_1 = require("../grid-row/grid.row.component");
-var grid_create_row_component_1 = require("../grid-create-row/grid.create.row.component");
-var grid_toolbar_component_1 = require("../grid-toolbar/grid.toolbar.component");
-var material_1 = require("@angular/material");
-var GarmentGridModule = (function () {
-    function GarmentGridModule() {
-    }
-    return GarmentGridModule;
-}());
-GarmentGridModule.decorators = [
-    { type: core_1.NgModule, args: [{
-                imports: [forms_1.FormsModule,
-                    forms_1.ReactiveFormsModule,
-                    common_1.CommonModule,
-                    material_1.MaterialModule,
-                    flex_layout_1.FlexLayoutModule],
-                providers: [validation_service_1.ValidationService],
-                declarations: [garment_grid_component_1.GarmentGridComponent,
-                    control_messaging_component_1.ControlMessagesComponent,
-                    grid_create_row_component_1.GridCreateRowComponent,
-                    grid_toolbar_component_1.GridToolbarComponent,
-                    grid_row_component_1.GridRowComponent],
-                exports: [garment_grid_component_1.GarmentGridComponent,
-                    control_messaging_component_1.ControlMessagesComponent,
-                    grid_create_row_component_1.GridCreateRowComponent,
-                    grid_toolbar_component_1.GridToolbarComponent,
-                    grid_row_component_1.GridRowComponent]
-            },] },
-];
-GarmentGridModule.ctorParameters = function () { return []; };
-exports.GarmentGridModule = GarmentGridModule;
-//# sourceMappingURL=garment.grid.module.js.map
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ControlMessagesComponent } from '../../common-views/custom-validators/control.messaging.component';
+import { ValidationService } from '../../../business-layer/validators/services/validation.service';
+import { CommonModule } from '@angular/common';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { GarmentGridComponent } from './garment.grid.component';
+import { GridRowComponent } from '../grid-row/grid.row.component';
+import { GridCreateRowComponent } from '../grid-create-row/grid.create.row.component';
+import { GridToolbarComponent } from '../grid-toolbar/grid.toolbar.component';
+import { MaterialModule } from '@angular/material';
+let GarmentGridModule = class GarmentGridModule {
+};
+GarmentGridModule = __decorate([
+    NgModule({
+        imports: [FormsModule,
+            ReactiveFormsModule,
+            CommonModule,
+            MaterialModule,
+            FlexLayoutModule],
+        providers: [ValidationService],
+        declarations: [GarmentGridComponent,
+            ControlMessagesComponent,
+            GridCreateRowComponent,
+            GridToolbarComponent,
+            GridRowComponent],
+        exports: [GarmentGridComponent,
+            ControlMessagesComponent,
+            GridCreateRowComponent,
+            GridToolbarComponent,
+            GridRowComponent]
+    })
+], GarmentGridModule);
+export { GarmentGridModule };

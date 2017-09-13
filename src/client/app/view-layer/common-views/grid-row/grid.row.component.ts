@@ -54,7 +54,7 @@ export class GridRowComponent{
 
 
 
-    turnPublishingOn(garmentId:string){
+    turnPublishingOn(garmentId:number){
         this.isChecked = !this.isChecked ;
         if(this.isChecked){
             this.isReadOnly = false;
@@ -78,7 +78,7 @@ export class GridRowComponent{
                                                   id:this.garment.id,
                                                   name:f.value.garmentName,
                                                   type: this.updatedType,
-                                                  price:(f.value.garmentPrice).replace(/(?:[a-zA-Z]|\s|,|\$)+/ig,''),
+                                                  price:parseInt((f.value.garmentPrice).replace(/(?:[a-zA-Z]|\s|,|\$)+/ig,'')),
                                                   inventory:parseInt(f.value.garmentInventory),
                                                   thumbnail:this.garment.thumbnail
                                                  };

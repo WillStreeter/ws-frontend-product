@@ -1,19 +1,26 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var store_1 = require("@ngrx/store");
-var broker_action_builder_1 = require("../../pubsub-broker/services/broker.action.builder");
-var fromRoot = require("../../../data-layer/ngrx-data/reducers/index");
-var portalActions = require("../../../data-layer/ngrx-data/actions/portal.actions");
-var PortalActionTypes = require("../../shared-types/actions/portal.action.types");
-var brokerlist_1 = require("./brokerlist");
-var BrokerMastheadStore = (function () {
-    function BrokerMastheadStore(store, brkrActnBuilder) {
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+import { Injectable } from "@angular/core";
+import { Store } from "@ngrx/store";
+import { BrokerActionBuilder } from '../../pubsub-broker/services/broker.action.builder';
+import * as fromRoot from '../../../data-layer/ngrx-data/reducers/index';
+import * as portalActions from '../../../data-layer/ngrx-data/actions/portal.actions';
+import * as PortalActionTypes from '../../shared-types/actions/portal.action.types';
+import { BrokerList } from './brokerlist';
+let BrokerMastheadStore = class BrokerMastheadStore {
+    constructor(store, brkrActnBuilder) {
         this.store = store;
         this.brkrActnBuilder = brkrActnBuilder;
-        this.brokerLabel = brokerlist_1.BrokerList.BROKER_MASTHEAD_STORE;
+        this.brokerLabel = BrokerList.BROKER_MASTHEAD_STORE;
     }
-    BrokerMastheadStore.prototype.getComponentSupplies = function () {
+    getComponentSupplies() {
         return Object.assign({
             brokerLabel: this.brokerLabel,
             storeObs: {
@@ -23,22 +30,18 @@ var BrokerMastheadStore = (function () {
                 UPDATE_REVEAL_GARMENT_ADD_ROW: this.brkrActnBuilder.create(PortalActionTypes.UPDATE_REVEAL_GARMENT_ADD_ROW, this.brokerLabel, null),
             }
         });
-    };
-    BrokerMastheadStore.prototype.dispatchAction = function (brokerAction) {
+    }
+    dispatchAction(brokerAction) {
         switch (brokerAction.actionType) {
             case PortalActionTypes.UPDATE_REVEAL_GARMENT_ADD_ROW:
                 this.store.dispatch(new portalActions.UpdateAddRowGarment(brokerAction.payLoad));
                 break;
         }
-    };
-    return BrokerMastheadStore;
-}());
-BrokerMastheadStore.decorators = [
-    { type: core_1.Injectable },
-];
-BrokerMastheadStore.ctorParameters = function () { return [
-    { type: store_1.Store, },
-    { type: broker_action_builder_1.BrokerActionBuilder, },
-]; };
-exports.BrokerMastheadStore = BrokerMastheadStore;
-//# sourceMappingURL=broker.masthead.store.js.map
+    }
+};
+BrokerMastheadStore = __decorate([
+    Injectable(),
+    __metadata("design:paramtypes", [Store,
+        BrokerActionBuilder])
+], BrokerMastheadStore);
+export { BrokerMastheadStore };

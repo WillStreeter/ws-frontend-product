@@ -5,7 +5,7 @@
 import { enableProdMode } from '@angular/core';
 import { platformBrowser } from '@angular/platform-browser';
 
-import { AppStageModuleeNgFactory } from './app-stage/app.stage.module.ngfactory';
+import { AppStageModuleNgFactory } from './app-stage/app.stage.module.ngfactory';
 
 enableProdMode();
 

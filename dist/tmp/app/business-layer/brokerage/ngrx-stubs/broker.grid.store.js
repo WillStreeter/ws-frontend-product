@@ -1,21 +1,28 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var store_1 = require("@ngrx/store");
-var broker_action_builder_1 = require("../../pubsub-broker/services/broker.action.builder");
-var fromRoot = require("../../../data-layer/ngrx-data/reducers/index");
-var garmentActions = require("../../../data-layer/ngrx-data/actions/garment.actions");
-var portalActions = require("../../../data-layer/ngrx-data/actions/portal.actions");
-var GarmentActionTypes = require("../../shared-types/actions/garment.action.types");
-var PortalActionTypes = require("../../shared-types/actions/portal.action.types");
-var brokerlist_1 = require("./brokerlist");
-var BrokerGridStore = (function () {
-    function BrokerGridStore(store, brkrActnBuilder) {
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+import { Injectable } from "@angular/core";
+import { Store } from "@ngrx/store";
+import { BrokerActionBuilder } from '../../pubsub-broker/services/broker.action.builder';
+import * as fromRoot from '../../../data-layer/ngrx-data/reducers/index';
+import * as garmentActions from '../../../data-layer/ngrx-data/actions/garment.actions';
+import * as portalActions from '../../../data-layer/ngrx-data/actions/portal.actions';
+import * as GarmentActionTypes from '../../shared-types/actions/garment.action.types';
+import * as PortalActionTypes from '../../shared-types/actions/portal.action.types';
+import { BrokerList } from './brokerlist';
+let BrokerGridStore = class BrokerGridStore {
+    constructor(store, brkrActnBuilder) {
         this.store = store;
         this.brkrActnBuilder = brkrActnBuilder;
-        this.brokerLabel = brokerlist_1.BrokerList.BROKER_GRID_STORE;
+        this.brokerLabel = BrokerList.BROKER_GRID_STORE;
     }
-    BrokerGridStore.prototype.getComponentSupplies = function () {
+    getComponentSupplies() {
         return Object.assign({
             brokerLabel: this.brokerLabel,
             storeObs: {
@@ -30,8 +37,8 @@ var BrokerGridStore = (function () {
                 UPDATE_REVEAL_GARMENT_ADD_ROW: this.brkrActnBuilder.create(PortalActionTypes.UPDATE_REVEAL_GARMENT_ADD_ROW, this.brokerLabel, null),
             }
         });
-    };
-    BrokerGridStore.prototype.dispatchAction = function (brokerAction) {
+    }
+    dispatchAction(brokerAction) {
         switch (brokerAction.actionType) {
             case PortalActionTypes.UPDATE_SORT_STATE:
                 this.store.dispatch(new portalActions.UpdateCurrentSortState(brokerAction.payLoad));
@@ -49,15 +56,11 @@ var BrokerGridStore = (function () {
                 this.store.dispatch(new garmentActions.AddGarmentToCollectionAttempt(brokerAction.payLoad));
                 break;
         }
-    };
-    return BrokerGridStore;
-}());
-BrokerGridStore.decorators = [
-    { type: core_1.Injectable },
-];
-BrokerGridStore.ctorParameters = function () { return [
-    { type: store_1.Store, },
-    { type: broker_action_builder_1.BrokerActionBuilder, },
-]; };
-exports.BrokerGridStore = BrokerGridStore;
-//# sourceMappingURL=broker.grid.store.js.map
+    }
+};
+BrokerGridStore = __decorate([
+    Injectable(),
+    __metadata("design:paramtypes", [Store,
+        BrokerActionBuilder])
+], BrokerGridStore);
+export { BrokerGridStore };

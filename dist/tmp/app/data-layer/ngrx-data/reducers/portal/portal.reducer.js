@@ -1,7 +1,5 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var PortalActionTypes = require("../../../../business-layer/shared-types/actions/portal.action.types");
-var initialState = {
+import * as PortalActionTypes from '../../../../business-layer/shared-types/actions/portal.action.types';
+const initialState = {
     garmentAddLock: false,
     viewablePerPage: 10,
     revealAddGarmentRow: false,
@@ -10,8 +8,7 @@ var initialState = {
     sortDirection: 'Ascending',
     sortBase: 'Name',
 };
-function reducer(state, action) {
-    if (state === void 0) { state = initialState; }
+export function reducer(state = initialState, action) {
     switch (action.type) {
         case PortalActionTypes.UPDATE_VIEWABLE_PER_PAGE_COUNT: {
             return Object.assign({}, state, { viewablePerPage: action.payload });
@@ -26,7 +23,7 @@ function reducer(state, action) {
             return Object.assign({}, state, { revealAddGarmentRow: action.payload, garmentAddLock: action.payload });
         }
         case PortalActionTypes.UPDATE_SORT_STATE: {
-            var sortRequest = (action.payload);
+            const sortRequest = (action.payload);
             return Object.assign({}, state, { sortDirection: !sortRequest.directionChange ?
                     state.sortDirection : (state.sortDirection === "Ascending") ?
                     "Descending" : "Ascending",
@@ -36,12 +33,10 @@ function reducer(state, action) {
             return state;
     }
 }
-exports.reducer = reducer;
-exports.getRevealAddGarmentRow = function (state) { return state.revealAddGarmentRow; };
-exports.getViewablePerPage = function (state) { return state.viewablePerPage; };
-exports.getCurrentPage = function (state) { return state.currentPage; };
-exports.getSortType = function (state) { return state.sortDirection; };
-exports.getSortBase = function (state) { return state.sortBase; };
-exports.getGarmentAddLock = function (state) { return state.garmentAddLock; };
-exports.getSortState = function (state) { return Object.assign({}, { sortDirection: state.sortDirection, sortBase: state.sortBase }); };
-//# sourceMappingURL=portal.reducer.js.map
+export const getRevealAddGarmentRow = (state) => state.revealAddGarmentRow;
+export const getViewablePerPage = (state) => state.viewablePerPage;
+export const getCurrentPage = (state) => state.currentPage;
+export const getSortType = (state) => state.sortDirection;
+export const getSortBase = (state) => state.sortBase;
+export const getGarmentAddLock = (state) => state.garmentAddLock;
+export const getSortState = (state) => Object.assign({}, { sortDirection: state.sortDirection, sortBase: state.sortBase });
