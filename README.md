@@ -1,3 +1,3 @@
-# Frontend Trial Project (Weebly)
+# Frontend Trial Project 
 
 WIP preview
