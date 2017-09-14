@@ -1,5 +1,7 @@
-import * as PortalActionTypes from '../../../../business-layer/shared-types/actions/portal.action.types';
-const initialState = {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var PortalActionTypes = require("../../../../business-layer/shared-types/actions/portal.action.types");
+var initialState = {
     garmentAddLock: false,
     viewablePerPage: 10,
     revealAddGarmentRow: false,
@@ -8,7 +10,8 @@ const initialState = {
     sortDirection: 'Ascending',
     sortBase: 'Name',
 };
-export function reducer(state = initialState, action) {
+function reducer(state, action) {
+    if (state === void 0) { state = initialState; }
     switch (action.type) {
         case PortalActionTypes.UPDATE_VIEWABLE_PER_PAGE_COUNT: {
             return Object.assign({}, state, { viewablePerPage: action.payload });
@@ -23,20 +26,21 @@ export function reducer(state = initialState, action) {
             return Object.assign({}, state, { revealAddGarmentRow: action.payload, garmentAddLock: action.payload });
         }
         case PortalActionTypes.UPDATE_SORT_STATE: {
-            const sortRequest = (action.payload);
+            var sortRequest = (action.payload);
             return Object.assign({}, state, { sortDirection: !sortRequest.directionChange ?
-                    state.sortDirection : (state.sortDirection === "Ascending") ?
-                    "Descending" : "Ascending",
+                    state.sortDirection : (state.sortDirection === 'Ascending') ?
+                    'Descending' : 'Ascending',
                 sortBase: sortRequest.base ? sortRequest.base : state.sortBase });
         }
         default:
             return state;
     }
 }
-export const getRevealAddGarmentRow = (state) => state.revealAddGarmentRow;
-export const getViewablePerPage = (state) => state.viewablePerPage;
-export const getCurrentPage = (state) => state.currentPage;
-export const getSortType = (state) => state.sortDirection;
-export const getSortBase = (state) => state.sortBase;
-export const getGarmentAddLock = (state) => state.garmentAddLock;
-export const getSortState = (state) => Object.assign({}, { sortDirection: state.sortDirection, sortBase: state.sortBase });
+exports.reducer = reducer;
+exports.getRevealAddGarmentRow = function (state) { return state.revealAddGarmentRow; };
+exports.getViewablePerPage = function (state) { return state.viewablePerPage; };
+exports.getCurrentPage = function (state) { return state.currentPage; };
+exports.getSortType = function (state) { return state.sortDirection; };
+exports.getSortBase = function (state) { return state.sortBase; };
+exports.getGarmentAddLock = function (state) { return state.garmentAddLock; };
+exports.getSortState = function (state) { return Object.assign({}, { sortDirection: state.sortDirection, sortBase: state.sortBase }); };

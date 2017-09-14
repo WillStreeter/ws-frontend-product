@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7,20 +8,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Injectable } from "@angular/core";
-import { Store } from "@ngrx/store";
-import { BrokerActionBuilder } from '../../pubsub-broker/services/broker.action.builder';
-import * as fromRoot from '../../../data-layer/ngrx-data/reducers/index';
-import * as garmentActions from '../../../data-layer/ngrx-data/actions/garment.actions';
-import * as GarmentActionTypes from '../../shared-types/actions/garment.action.types';
-import { BrokerList } from './brokerlist';
-let BrokerSearchStore = class BrokerSearchStore {
-    constructor(store, brkrActnBuilder) {
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var store_1 = require("@ngrx/store");
+var broker_action_builder_1 = require("../../pubsub-broker/services/broker.action.builder");
+var fromRoot = require("../../../data-layer/ngrx-data/reducers/index");
+var garmentActions = require("../../../data-layer/ngrx-data/actions/garment.actions");
+var GarmentActionTypes = require("../../shared-types/actions/garment.action.types");
+var brokerlist_1 = require("./brokerlist");
+var BrokerSearchStore = (function () {
+    function BrokerSearchStore(store, brkrActnBuilder) {
         this.store = store;
         this.brkrActnBuilder = brkrActnBuilder;
-        this.brokerLabel = BrokerList.BROKER_SEARCH_STORE;
+        this.brokerLabel = brokerlist_1.BrokerList.BROKER_SEARCH_STORE;
     }
-    getComponentSupplies() {
+    BrokerSearchStore.prototype.getComponentSupplies = function () {
         return Object.assign({
             brokerLabel: this.brokerLabel,
             storeObs: {
@@ -30,8 +32,8 @@ let BrokerSearchStore = class BrokerSearchStore {
                 SEARCH_COLLECTION_BY_TERM: this.brkrActnBuilder.create(GarmentActionTypes.SEARCH_COLLECTION_BY_TERM, this.brokerLabel, null),
             }
         });
-    }
-    dispatchAction(brokerAction) {
+    };
+    BrokerSearchStore.prototype.dispatchAction = function (brokerAction) {
         console.log(' dispatchAction brokerAction =', brokerAction);
         switch (brokerAction.actionType) {
             case GarmentActionTypes.SEARCH_COLLECTION_BY_TERM:
@@ -39,11 +41,12 @@ let BrokerSearchStore = class BrokerSearchStore {
                 this.store.dispatch(new garmentActions.SearchCollectionByTerm(brokerAction.payLoad));
                 break;
         }
-    }
-};
+    };
+    return BrokerSearchStore;
+}());
 BrokerSearchStore = __decorate([
-    Injectable(),
-    __metadata("design:paramtypes", [Store,
-        BrokerActionBuilder])
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [store_1.Store,
+        broker_action_builder_1.BrokerActionBuilder])
 ], BrokerSearchStore);
-export { BrokerSearchStore };
+exports.BrokerSearchStore = BrokerSearchStore;

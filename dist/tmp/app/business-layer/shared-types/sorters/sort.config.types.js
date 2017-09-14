@@ -1,4 +1,6 @@
-export const SORT_BASES = {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.SORT_BASES = {
     "Name": {
         attr: "name",
         dataType: "string"
@@ -24,8 +26,8 @@ export const SORT_BASES = {
         dataType: "number"
     },
 };
-export const SORT_CRITERIA = {
+exports.SORT_CRITERIA = {
     "Descending": "Descending",
     "Ascending": "Ascending",
 };
-export const TYPE_LIST = ["Physical", "Digital", "Service"];
+exports.TYPE_LIST = ["Physical", "Digital", "Service"];

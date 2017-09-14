@@ -1,16 +1,19 @@
-import { createSelector } from 'reselect';
-import * as GarmentActionTypes from '../../../../business-layer/shared-types/actions/garment.action.types';
-export const initialState = {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var reselect_1 = require("reselect");
+var GarmentActionTypes = require("../../../../business-layer/shared-types/actions/garment.action.types");
+exports.initialState = {
     ids: [],
     entities: {},
     currentSubSet: [],
     currentCollectionId: ''
 };
-export function reducer(state = initialState, action) {
+function reducer(state, action) {
+    if (state === void 0) { state = exports.initialState; }
     switch (action.type) {
         case GarmentActionTypes.FETCH_GARMENT_COLLECTION_SUCCESS: {
             if (action.payload) {
-                let garmentCollection = {};
+                var garmentCollection = {};
                 garmentCollection.id = '' + state.ids.length + Math.floor(Math.random() * (100 - 1)) + 1,
                     garmentCollection.products = action.payload;
                 if (state.ids.indexOf(garmentCollection.id) > -1) {
@@ -18,10 +21,10 @@ export function reducer(state = initialState, action) {
                 }
                 state = Object.assign({
                     currentSubSet: state.currentSubSet,
-                    ids: [...state.ids, garmentCollection.id],
-                    entities: Object.assign({}, state.entities, {
-                        [garmentCollection.id]: garmentCollection
-                    }),
+                    ids: state.ids.concat([garmentCollection.id]),
+                    entities: Object.assign({}, state.entities, (_a = {},
+                        _a[garmentCollection.id] = garmentCollection,
+                        _a)),
                     currentCollectionId: garmentCollection.id,
                 });
             }
@@ -29,16 +32,16 @@ export function reducer(state = initialState, action) {
         }
         case GarmentActionTypes.UPDATE_SORTED_COLLECTION: {
             if (action.payload) {
-                let garmentCollection = {};
-                const garmentSorted = (action.payload);
+                var garmentCollection = {};
+                var garmentSorted = (action.payload);
                 garmentCollection.id = garmentSorted.collectionId;
-                garmentCollection.products = [...(garmentSorted.products)];
+                garmentCollection.products = (garmentSorted.products).slice();
                 state = Object.assign({
                     currentSubSet: garmentSorted.subSetCollection,
                     ids: state.ids,
-                    entities: Object.assign({}, state.entities, {
-                        [garmentCollection.id]: garmentCollection
-                    }),
+                    entities: Object.assign({}, state.entities, (_b = {},
+                        _b[garmentCollection.id] = garmentCollection,
+                        _b)),
                     currentCollectionId: state.currentCollectionId
                 });
             }
@@ -46,24 +49,24 @@ export function reducer(state = initialState, action) {
         }
         case GarmentActionTypes.UPDATE_GARMENT_IN_COLLECTION_SUCCESS: {
             if (action.payload) {
-                const garmentUpdate = (action.payload);
-                let currentGarmentCollection = state.entities[state.currentCollectionId];
-                let garmentProducts = [...currentGarmentCollection.products];
-                garmentProducts = garmentProducts.map((product) => {
-                    if (product.id === garmentUpdate.id) {
-                        product = Object.assign({}, garmentUpdate);
+                var garmentUpdate_1 = (action.payload);
+                var currentGarmentCollection = state.entities[state.currentCollectionId];
+                var garmentProducts = currentGarmentCollection.products.slice();
+                garmentProducts = garmentProducts.map(function (product) {
+                    if (product.id === garmentUpdate_1.id) {
+                        product = Object.assign({}, garmentUpdate_1);
                     }
                     return product;
                 });
                 state = Object.assign({
                     currentSubSet: state.currentSubSet,
                     ids: state.ids,
-                    entities: Object.assign({}, state.entities, {
-                        [currentGarmentCollection.id]: ({
+                    entities: Object.assign({}, state.entities, (_c = {},
+                        _c[currentGarmentCollection.id] = ({
                             id: currentGarmentCollection.id,
                             products: garmentProducts
-                        })
-                    }),
+                        }),
+                        _c)),
                     currentCollectionId: state.currentCollectionId
                 });
             }
@@ -71,18 +74,18 @@ export function reducer(state = initialState, action) {
         }
         case GarmentActionTypes.ADD_GARMENT_TO_COLLECTION_SUCCESS: {
             if (action.payload) {
-                const garmentToAdd = (action.payload);
-                let currentGarmentCollection = state.entities[state.currentCollectionId];
-                let garmentProducts = [...currentGarmentCollection.products, garmentToAdd];
+                var garmentToAdd = (action.payload);
+                var currentGarmentCollection = state.entities[state.currentCollectionId];
+                var garmentProducts = currentGarmentCollection.products.concat([garmentToAdd]);
                 state = Object.assign({
                     currentSubSet: state.currentSubSet,
                     ids: state.ids,
-                    entities: Object.assign({}, state.entities, {
-                        [currentGarmentCollection.id]: ({
+                    entities: Object.assign({}, state.entities, (_d = {},
+                        _d[currentGarmentCollection.id] = ({
                             id: currentGarmentCollection.id,
                             products: garmentProducts
-                        })
-                    }),
+                        }),
+                        _d)),
                     currentCollectionId: state.currentCollectionId
                 });
             }
@@ -92,11 +95,13 @@ export function reducer(state = initialState, action) {
             return state;
         }
     }
+    var _a, _b, _c, _d;
 }
-export const getEntities = (state) => state.entities;
-export const getIds = (state) => state.ids;
-export const getCurrentCollectionId = (state) => state.currentCollectionId;
-export const getCurrentSubSet = (state) => state.currentSubSet;
-export const getCurrentGarmentCollection = createSelector(getEntities, getCurrentCollectionId, (entities, currentCollectionId) => {
+exports.reducer = reducer;
+exports.getEntities = function (state) { return state.entities; };
+exports.getIds = function (state) { return state.ids; };
+exports.getCurrentCollectionId = function (state) { return state.currentCollectionId; };
+exports.getCurrentSubSet = function (state) { return state.currentSubSet; };
+exports.getCurrentGarmentCollection = reselect_1.createSelector(exports.getEntities, exports.getCurrentCollectionId, function (entities, currentCollectionId) {
     return entities[currentCollectionId];
 });

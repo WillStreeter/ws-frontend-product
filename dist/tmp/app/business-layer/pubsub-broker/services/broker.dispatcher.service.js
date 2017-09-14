@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7,21 +8,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Injectable } from '@angular/core';
-import { BrokerPublisher } from '../outlet/broker.publisher';
-let BrokerDispatcherService = class BrokerDispatcherService {
-    constructor(brokerPublisher) {
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var broker_publisher_1 = require("../outlet/broker.publisher");
+var BrokerDispatcherService = (function () {
+    function BrokerDispatcherService(brokerPublisher) {
         this.brokerPublisher = brokerPublisher;
     }
-    dispatchBrokerAction(brokerAction) {
+    BrokerDispatcherService.prototype.dispatchBrokerAction = function (brokerAction) {
         this.brokerPublisher.NotifyBrokerActionConsumers(brokerAction);
-    }
-    dispatchBrokerSelector(brokerType) {
+    };
+    BrokerDispatcherService.prototype.dispatchBrokerSelector = function (brokerType) {
         return this.brokerPublisher.NotifyBrokerSelectorConsumer(brokerType);
-    }
-};
+    };
+    return BrokerDispatcherService;
+}());
 BrokerDispatcherService = __decorate([
-    Injectable(),
-    __metadata("design:paramtypes", [BrokerPublisher])
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [broker_publisher_1.BrokerPublisher])
 ], BrokerDispatcherService);
-export { BrokerDispatcherService };
+exports.BrokerDispatcherService = BrokerDispatcherService;

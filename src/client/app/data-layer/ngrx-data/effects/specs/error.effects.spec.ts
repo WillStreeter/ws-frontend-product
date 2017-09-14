@@ -93,7 +93,7 @@ export function main() {
         })
     );
 
-     it('should return an observable of router location "/error", with  error2', fakeAsync( () => {
+     it('should return an observable of router location '/error', with  error2', fakeAsync( () => {
           const error2 = {id: '222',
                           action_type:'random error',
                           message:'bad api call' } as ErrorModel;

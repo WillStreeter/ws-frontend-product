@@ -13,8 +13,8 @@ import * as portalActions from '../actions/portal.actions';
 import * as garmentActions from '../actions/garment.actions';
 import { GarmentService } from '../../api-services/garment.service';
 import * as fromRoot from '../reducers/index';
-import {GarmentSortModel, GarmentModel} from "../../../business-layer/models";
-import {SortingServices} from "../../sorting-services/sorting.service";
+import {GarmentSortModel, GarmentModel} from '../../../business-layer/models';
+import {SortingServices} from '../../sorting-services/sorting.service';
 
 
 

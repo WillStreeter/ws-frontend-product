@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { BrokerAction  } from '../../pubsub-broker/models/broker.action.model';
 
-import { IConsumer } from '../../pubsub-broker/interfaces/IConsumer'
+import { IConsumer } from '../../pubsub-broker/interfaces/IConsumer';
 
-import {  BrokerResponse } from "../../pubsub-broker/models/broker.response.model";
-import {  BrokerGridStore, BrokerMastheadStore, BrokerPaginatorStore, BrokerSearchStore }  from "../ngrx-stubs/index";
+import {  BrokerResponse } from '../../pubsub-broker/models/broker.response.model';
+import {  BrokerGridStore, BrokerMastheadStore, BrokerPaginatorStore, BrokerSearchStore }  from '../ngrx-stubs/index';
 
 
 @Injectable()

@@ -35,7 +35,7 @@ Strictly enforcing these directions fo Publish and Subscribe (PubSub) helps prev
 effect of having Subscriptions capture Publishing request before the effect of the ultimate goal of the Publish
 action has taken effect.
 
-Adding the  use of  **'Observables"**, the basis of the [ReactiveX/JS](https://github.com/ReactiveX/rxjs) is a tremendous
+Adding the  use of  **'Observables''**, the basis of the [ReactiveX/JS](https://github.com/ReactiveX/rxjs) is a tremendous
 aid, if not the perfect remedy to PubSub's complexity.
 
   + Observables are accessed through '.subscribe()' functions, essentially fulfilling the roll of Subscribe

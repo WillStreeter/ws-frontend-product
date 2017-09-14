@@ -1,6 +1,6 @@
 import * as portal from '../../actions/portal.actions';
 import * as PortalActionTypes from '../../../../business-layer/shared-types/actions/portal.action.types';
-import { SortRequestModel } from "../../../../business-layer/models/sortRequest.model";
+import { SortRequestModel } from '../../../../business-layer/models/sortRequest.model';
 
 
 export interface State {
@@ -42,8 +42,8 @@ export function reducer(state = initialState, action: portal.Actions): State {
       const sortRequest:SortRequestModel = <SortRequestModel>(action.payload);
 
       return Object.assign({}, state,   {sortDirection:!sortRequest.directionChange?
-                                                       state.sortDirection:(state.sortDirection==="Ascending")?
-                                                       "Descending":"Ascending",
+                                                       state.sortDirection:(state.sortDirection==='Ascending')?
+                                                       'Descending':'Ascending',
 
                                          sortBase:sortRequest.base?sortRequest.base:state.sortBase });
     }

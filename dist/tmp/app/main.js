@@ -1,7 +1,9 @@
-import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { AppStageModule } from './app-stage/app.stage.module';
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var platform_browser_dynamic_1 = require("@angular/platform-browser-dynamic");
+var app_stage_module_1 = require("./app-stage/app.stage.module");
 if (String('prod') === 'prod') {
-    enableProdMode();
+    core_1.enableProdMode();
 }
-platformBrowserDynamic().bootstrapModule(AppStageModule);
+platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_stage_module_1.AppStageModule);

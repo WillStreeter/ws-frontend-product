@@ -14,7 +14,7 @@ import { Actions, Effect  } from '@ngrx/effects';
 import { Observable } from 'rxjs/Observable';
 import * as portalActions from '../actions/portal.actions';
 import * as garmentActions from '../actions/garment.actions';
-import { SortingServices } from "../../sorting-services/sorting.service";
+import { SortingServices } from '../../sorting-services/sorting.service';
 import * as fromRoot from '../reducers/index';
 
 

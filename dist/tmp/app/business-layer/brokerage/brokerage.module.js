@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -10,34 +11,34 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-import { NgModule, Optional, SkipSelf } from "@angular/core";
-import { CommonModule } from '@angular/common';
-import { NGRxBrokerConsumer } from './consumers/ngrx.broker.consumer';
-import { NGRxDataModule } from "../../data-layer/ngrx-data/ngrx.data.module";
-import { BROKER_PROVIDERS } from './ngrx-stubs/index';
-let BrokerageModule = BrokerageModule_1 = class BrokerageModule {
-    constructor(parentModule) {
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var common_1 = require("@angular/common");
+var ngrx_broker_consumer_1 = require("./consumers/ngrx.broker.consumer");
+var ngrx_data_module_1 = require("../../data-layer/ngrx-data/ngrx.data.module");
+var index_1 = require("./ngrx-stubs/index");
+var BrokerageModule = BrokerageModule_1 = (function () {
+    function BrokerageModule(parentModule) {
         if (parentModule) {
             throw new Error('PubSubBrokerageModule already loaded; Import in root module only.');
         }
     }
-    static forRoot() {
+    BrokerageModule.forRoot = function () {
         return {
             ngModule: BrokerageModule_1,
-            providers: [...BROKER_PROVIDERS,
-                NGRxBrokerConsumer]
+            providers: index_1.BROKER_PROVIDERS.concat([ngrx_broker_consumer_1.NGRxBrokerConsumer])
         };
-    }
-};
+    };
+    return BrokerageModule;
+}());
 BrokerageModule = BrokerageModule_1 = __decorate([
-    NgModule({
-        imports: [CommonModule,
-            NGRxDataModule],
-        providers: [...BROKER_PROVIDERS,
-            NGRxBrokerConsumer]
+    core_1.NgModule({
+        imports: [common_1.CommonModule,
+            ngrx_data_module_1.NGRxDataModule],
+        providers: index_1.BROKER_PROVIDERS.concat([ngrx_broker_consumer_1.NGRxBrokerConsumer])
     }),
-    __param(0, Optional()), __param(0, SkipSelf()),
+    __param(0, core_1.Optional()), __param(0, core_1.SkipSelf()),
     __metadata("design:paramtypes", [BrokerageModule])
 ], BrokerageModule);
-export { BrokerageModule };
+exports.BrokerageModule = BrokerageModule;
 var BrokerageModule_1;

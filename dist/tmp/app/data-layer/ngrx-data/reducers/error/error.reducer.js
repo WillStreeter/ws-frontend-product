@@ -1,27 +1,30 @@
-import { createSelector } from 'reselect';
-import * as ErrorActionTypes from '../../../../business-layer/shared-types/actions/error.action.types';
-export const initialState = {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var reselect_1 = require("reselect");
+var ErrorActionTypes = require("../../../../business-layer/shared-types/actions/error.action.types");
+exports.initialState = {
     ids: [],
     entities: {}
 };
-export function reducer(state = initialState, action) {
+function reducer(state, action) {
+    if (state === void 0) { state = exports.initialState; }
     switch (action.type) {
         case ErrorActionTypes.REPORT_ERROR: {
-            let errorObj = Object.assign({}, action.payload, { id: (Date.now()).toString() });
-            const error = action.payload;
+            var errorObj = Object.assign({}, action.payload, { id: (Date.now()).toString() });
+            var error = action.payload;
             return {
-                ids: [...state.ids, error.id],
-                entities: Object.assign({}, state.entities, { [error.id]: error })
+                ids: state.ids.concat([error.id]),
+                entities: Object.assign({}, state.entities, (_a = {}, _a[error.id] = error, _a))
             };
         }
         case ErrorActionTypes.REMOVE_ERROR: {
-            const errorId = action.payload;
-            if (state.ids.indexOf(errorId) > -1) {
+            var errorId_1 = action.payload;
+            if (state.ids.indexOf(errorId_1) > -1) {
                 return state;
             }
-            const errorIdsPostRemoval = state.ids.filter(id => id !== errorId);
-            let errorEntities = Object.assign({}, state.entities);
-            delete errorEntities[errorId];
+            var errorIdsPostRemoval = state.ids.filter(function (id) { return id !== errorId_1; });
+            var errorEntities = Object.assign({}, state.entities);
+            delete errorEntities[errorId_1];
             return Object.assign({}, state, {
                 ids: errorIdsPostRemoval,
                 entities: errorEntities
@@ -31,9 +34,11 @@ export function reducer(state = initialState, action) {
             return state;
         }
     }
+    var _a;
 }
-export const getEntities = (state) => state.entities;
-export const getIds = (state) => state.ids;
-export const getAll = createSelector(getEntities, getIds, (entities, ids) => {
-    return ids.map(id => entities[id]);
+exports.reducer = reducer;
+exports.getEntities = function (state) { return state.entities; };
+exports.getIds = function (state) { return state.ids; };
+exports.getAll = reselect_1.createSelector(exports.getEntities, exports.getIds, function (entities, ids) {
+    return ids.map(function (id) { return entities[id]; });
 });

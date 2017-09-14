@@ -1,14 +1,19 @@
-import { BrokerGridStore } from './broker.grid.store';
-import { BrokerMastheadStore } from './broker.masthead.store';
-import { BrokerPaginatorStore } from './broker.paginator.store';
-import { BrokerSearchStore } from './broker.search.store';
-export const BROKER_PROVIDERS = [
-    BrokerGridStore,
-    BrokerMastheadStore,
-    BrokerPaginatorStore,
-    BrokerSearchStore,
+"use strict";
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+Object.defineProperty(exports, "__esModule", { value: true });
+var broker_grid_store_1 = require("./broker.grid.store");
+var broker_masthead_store_1 = require("./broker.masthead.store");
+var broker_paginator_store_1 = require("./broker.paginator.store");
+var broker_search_store_1 = require("./broker.search.store");
+exports.BROKER_PROVIDERS = [
+    broker_grid_store_1.BrokerGridStore,
+    broker_masthead_store_1.BrokerMastheadStore,
+    broker_paginator_store_1.BrokerPaginatorStore,
+    broker_search_store_1.BrokerSearchStore,
 ];
-export * from './broker.grid.store';
-export * from './broker.masthead.store';
-export * from './broker.paginator.store';
-export * from './broker.search.store';
+__export(require("./broker.grid.store"));
+__export(require("./broker.masthead.store"));
+__export(require("./broker.paginator.store"));
+__export(require("./broker.search.store"));

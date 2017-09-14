@@ -23,7 +23,7 @@ export class GarmentService {
                ErrorActionType:string, SpecificErrorType:string, SuccessType:string) {
                console.log('GarmentService === updateProduct', payload)
     let postParams: HttpParams = {
-      errorActionType:ErrorActionType,
+      errorActionType: ErrorActionType,
       specificErrorType: SpecificErrorType,
       payload: payload,
       responseObject: 'product',
@@ -48,7 +48,5 @@ export class GarmentService {
     // console.log('value callback ', value)
     // return value;
   }
-
-
 
 }

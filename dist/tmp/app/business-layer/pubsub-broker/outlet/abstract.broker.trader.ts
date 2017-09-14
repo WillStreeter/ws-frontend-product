@@ -1,9 +1,9 @@
 
 // Abstract classes came into the language with v1.6 around 10/2015
-import { ISupplier } from "../interfaces/ISupplier";
-import { IConsumer } from "../interfaces/IConsumer";
+import { ISupplier } from '../interfaces/ISupplier';
+import { IConsumer } from '../interfaces/IConsumer';
 import { BrokerAction } from '../models/broker.action.model';
-import { BrokerResponse } from "../models/broker.response.model";
+import { BrokerResponse } from '../models/broker.response.model';
 
 export abstract class AbstractBrokerTrader implements ISupplier{
 

@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7,33 +8,36 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/observable/of';
-import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
-import { Actions, Effect } from '@ngrx/effects';
-import * as errorActions from '../actions/error.actions';
-let ErrorEffects = class ErrorEffects {
-    constructor(actions$, router) {
+Object.defineProperty(exports, "__esModule", { value: true });
+var Observable_1 = require("rxjs/Observable");
+require("rxjs/add/operator/map");
+require("rxjs/add/operator/switchMap");
+require("rxjs/add/observable/of");
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var effects_1 = require("@ngrx/effects");
+var errorActions = require("../actions/error.actions");
+var ErrorEffects = (function () {
+    function ErrorEffects(actions$, router) {
+        var _this = this;
         this.actions$ = actions$;
         this.router = router;
         this.catchAllRemoteError$ = this.actions$
             .ofType(errorActions.ErrorTypes.REPORT_ERROR)
-            .map(action => action.payload)
-            .switchMap(payload => {
-            return Observable.of(this.router.navigateByUrl('/error'));
+            .map(function (action) { return action.payload; })
+            .switchMap(function (payload) {
+            return Observable_1.Observable.of(_this.router.navigateByUrl('/error'));
         });
     }
-};
+    return ErrorEffects;
+}());
 __decorate([
-    Effect(),
+    effects_1.Effect(),
     __metadata("design:type", Object)
 ], ErrorEffects.prototype, "catchAllRemoteError$", void 0);
 ErrorEffects = __decorate([
-    Injectable(),
-    __metadata("design:paramtypes", [Actions,
-        Router])
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [effects_1.Actions,
+        router_1.Router])
 ], ErrorEffects);
-export { ErrorEffects };
+exports.ErrorEffects = ErrorEffects;

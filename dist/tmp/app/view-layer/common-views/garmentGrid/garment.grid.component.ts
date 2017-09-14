@@ -7,7 +7,7 @@ import { GarmentModel,
          SortRequestModel,
          GarmentSortModel } from '../../../business-layer/models'
 import { BrokerDispatcherService } from '../../../business-layer/pubsub-broker/services/broker.dispatcher.service';
-import { BrokerResponse } from "../../../business-layer/pubsub-broker/models/broker.response.model";
+import { BrokerResponse } from '../../../business-layer/pubsub-broker/models/broker.response.model';
 import { BrokerList } from '../../../business-layer/brokerage/ngrx-stubs/brokerlist';
 
 @Component({

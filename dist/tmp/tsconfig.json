@@ -5,10 +5,7 @@
     "declaration": false,
     "removeComments": true,
     "noLib": false,
-    "lib": [
-      "es2016",
-      "dom"
-    ],
+    "lib": ["es2016", "dom"],
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "sourceMap": true,
@@ -38,9 +35,5 @@
     "dist",
     "src"
   ],
-  "compileOnSave": false,
-  "files": [
-    "/Users/williestreeter/WebstormProjects/vue/ws-garment-ex/tools/manual_typings/project/sample.package.d.ts",
-    "app/main.ts"
-  ]
+  "compileOnSave": false
 }

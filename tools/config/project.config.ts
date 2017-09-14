@@ -69,6 +69,8 @@ export class ProjectConfig extends SeedConfig {
                         }
                       }
      ];
+
+
     this.addPackagesBundles(additionalPackages);
 
     /* Add proxy middlewar */

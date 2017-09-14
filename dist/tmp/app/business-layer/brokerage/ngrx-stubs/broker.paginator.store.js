@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7,20 +8,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Injectable } from "@angular/core";
-import { Store } from "@ngrx/store";
-import { BrokerActionBuilder } from '../../pubsub-broker/services/broker.action.builder';
-import * as fromRoot from '../../../data-layer/ngrx-data/reducers/index';
-import * as portalActions from '../../../data-layer/ngrx-data/actions/portal.actions';
-import * as PortalActionTypes from '../../shared-types/actions/portal.action.types';
-import { BrokerList } from './brokerlist';
-let BrokerPaginatorStore = class BrokerPaginatorStore {
-    constructor(store, brkrActnBuilder) {
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var store_1 = require("@ngrx/store");
+var broker_action_builder_1 = require("../../pubsub-broker/services/broker.action.builder");
+var fromRoot = require("../../../data-layer/ngrx-data/reducers/index");
+var portalActions = require("../../../data-layer/ngrx-data/actions/portal.actions");
+var PortalActionTypes = require("../../shared-types/actions/portal.action.types");
+var brokerlist_1 = require("./brokerlist");
+var BrokerPaginatorStore = (function () {
+    function BrokerPaginatorStore(store, brkrActnBuilder) {
         this.store = store;
         this.brkrActnBuilder = brkrActnBuilder;
-        this.brokerLabel = BrokerList.BROKER_PAGINATOR_STORE;
+        this.brokerLabel = brokerlist_1.BrokerList.BROKER_PAGINATOR_STORE;
     }
-    getComponentSupplies() {
+    BrokerPaginatorStore.prototype.getComponentSupplies = function () {
         return Object.assign({
             brokerLabel: this.brokerLabel,
             storeObs: {
@@ -32,8 +34,8 @@ let BrokerPaginatorStore = class BrokerPaginatorStore {
                 UPDATE_VIEWABLE_PER_PAGE_COUNT: this.brkrActnBuilder.create(PortalActionTypes.UPDATE_VIEWABLE_PER_PAGE_COUNT, this.brokerLabel, null),
             }
         });
-    }
-    dispatchAction(brokerAction) {
+    };
+    BrokerPaginatorStore.prototype.dispatchAction = function (brokerAction) {
         switch (brokerAction.actionType) {
             case PortalActionTypes.SET_CURRENT_PAGE_NUMBER:
                 this.store.dispatch(new portalActions.SetCurrentPageNumber(brokerAction.payLoad));
@@ -42,11 +44,12 @@ let BrokerPaginatorStore = class BrokerPaginatorStore {
                 this.store.dispatch(new portalActions.UpdateViewablePerPageCount(brokerAction.payLoad));
                 break;
         }
-    }
-};
+    };
+    return BrokerPaginatorStore;
+}());
 BrokerPaginatorStore = __decorate([
-    Injectable(),
-    __metadata("design:paramtypes", [Store,
-        BrokerActionBuilder])
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [store_1.Store,
+        broker_action_builder_1.BrokerActionBuilder])
 ], BrokerPaginatorStore);
-export { BrokerPaginatorStore };
+exports.BrokerPaginatorStore = BrokerPaginatorStore;

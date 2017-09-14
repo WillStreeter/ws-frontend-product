@@ -2,8 +2,8 @@
  * Created by williestreeter on 9/12/17.
  */
 
-import { Injectable } from "@angular/core";
-import { Store } from "@ngrx/store";
+import { Injectable } from '@angular/core';
+import { Store } from '@ngrx/store';
 
 import { BrokerActionBuilder }  from '../../pubsub-broker/services/broker.action.builder';
 import { BrokerAction  } from '../../pubsub-broker/models/broker.action.model'

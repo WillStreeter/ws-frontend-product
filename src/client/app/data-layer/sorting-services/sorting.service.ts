@@ -1,34 +1,27 @@
 /**
  * Created by willstreeter on 9/8/17.
  */
-import {Injectable} from "@angular/core";
-import { Store } from "@ngrx/store";
+import {Injectable} from '@angular/core';
+import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs/Subscription';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import * as fromRoot from '../ngrx-data/reducers/index';
-import { GarmentModel, GarmentCollectionModel, GarmentSortModel } from "../../business-layer/models/index";
-import { SORT_BASES  } from "../../business-layer/shared-types/sorters/sort.config.types";
-
+import { GarmentModel, GarmentCollectionModel, GarmentSortModel } from '../../business-layer/models/index';
+import { SORT_BASES  } from '../../business-layer/shared-types/sorters/sort.config.types';
 
 @Injectable()
 export class SortingServices {
-
     private sortState$:Subscription;
     private garmentStore$:Subscription;
     private currentGarmentCollection:GarmentCollectionModel;
     private garmentProducts:GarmentModel[];
     private sortStateVal:any;
-
     private currentPage:any;
     private viewablePerPage:any;
     private collectionId:string;
 
-
     constructor( private store: Store<fromRoot.State>){}
-
-
-
 
     getCollectionSubset(){
         this.setMostCurrentStoreValues();
@@ -38,7 +31,6 @@ export class SortingServices {
             subSetCollection:collectionSubset,
             products:this.garmentProducts })
     }
-
 
     sortGarmentCollection(){
         this.setMostCurrentStoreValues();
@@ -50,7 +42,7 @@ export class SortingServices {
                                                   products:this.garmentProducts });
      }
 
-     searchGarmentCollection(searchTerm:string){
+    searchGarmentCollection(searchTerm:string){
          this.setMostCurrentStoreValues();
          let termsInset:any[] = this.findTermsInCollectionNames(searchTerm);
          let clonedGM:GarmentModel[] = [...this.garmentProducts];
@@ -61,11 +53,9 @@ export class SortingServices {
              sortType:this.sortStateVal.sortType,
              subSetCollection:clonedGM,
              products:this.garmentProducts });
+    }
 
-
-     }
-
-     private findTermsInCollectionNames(searchTerm:string){
+    private findTermsInCollectionNames(searchTerm:string){
            let stringObjects:any = { rank:-1, index:-1  };
            let termList = [];
            this.garmentProducts.forEach((item, index)=> {
@@ -84,14 +74,14 @@ export class SortingServices {
      }
 
     private sortCollection(){
-       if(SORT_BASES[this.sortStateVal.sortBase].dataType === "string"){
+       if(SORT_BASES[this.sortStateVal.sortBase].dataType === 'string'){
           this.garmentProducts = this.doAlphaSort(this.garmentProducts,  SORT_BASES[this.sortStateVal.sortBase].attr);
-          if(  this.sortStateVal.sortDirection == "Descending"){
+          if(  this.sortStateVal.sortDirection == 'Descending'){
              this.garmentProducts = this.garmentProducts.reverse();
           }
-       }else if(SORT_BASES[  this.sortStateVal.sortBase].dataType === "number"){
+       }else if(SORT_BASES[  this.sortStateVal.sortBase].dataType === 'number'){
           this.garmentProducts = this.doNumericalSort(this.garmentProducts,   SORT_BASES[this.sortStateVal.sortBase].attr);
-          if(  this.sortStateVal.sortDirection == "Descending"){
+          if(  this.sortStateVal.sortDirection == 'Descending'){
              this.garmentProducts = this.garmentProducts.reverse();
           }
        }else{
@@ -100,7 +90,6 @@ export class SortingServices {
        }
        return this.garmentProducts;
     }
-
 
     private setMostCurrentStoreValues(){
 
@@ -116,7 +105,7 @@ export class SortingServices {
         });
         this.sortState$.unsubscribe();
     }
-        
+
     private doAlphaSort(list:any, base:string){
             let value:any = [...list].sort((firstTerm, secondTerm):number =>{
                     const a = firstTerm[base].toLowerCase();
@@ -147,13 +136,13 @@ export class SortingServices {
 
       list.forEach( (item)=>{
           switch(item.type){
-              case "Physical":
+              case 'Physical':
                 Physical.push(item);
               break;
-              case "Digital":
+              case 'Digital':
                 Digital.push(item);
               break;
-              case "Service":
+              case 'Service':
                 Service.push(item);
               break;
           }
@@ -162,24 +151,22 @@ export class SortingServices {
       let typeSorted:GarmentModel[] ;
 
       switch(type){
-          case "Physical":
+          case 'Physical':
               typeSorted= [...Physical,...Digital, ...Service];
           break;
-          case "Digital":
+          case 'Digital':
               typeSorted= [...Digital,...Physical, ...Service];
           break;
-          case "Service":
+          case 'Service':
               typeSorted= [...Service,...Physical, ...Digital];
           break;
       }
       return typeSorted;
     }
 
-
     private moveElementsInList(crntIndex:number, newIndex:number, list:any[]){
         list.splice(newIndex, 0, list.splice(crntIndex, 1)[0]);
     }
-
 
     private createGarmentSubSet(){
         const pages = Math.ceil(this.garmentProducts.length / this.sortStateVal.viewablePerPage);
@@ -189,6 +176,4 @@ export class SortingServices {
             this.sortStateVal.viewablePerPage * this.sortStateVal.currentPage;
         return this.garmentProducts.slice(start, end);
     }
-
-
 }

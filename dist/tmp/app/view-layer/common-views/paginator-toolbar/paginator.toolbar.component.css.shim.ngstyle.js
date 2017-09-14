@@ -1,1 +1,0 @@
-export const styles = ['.paginator-toolbar[_ngcontent-%COMP%]{padding-top:10px}.pp-btn-group[_ngcontent-%COMP%]{-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end}.pages-trigger[_ngcontent-%COMP%]{width:20px;min-width:20px;text-align:left}.page-ahead[_ngcontent-%COMP%]{margin-left:20px}'];

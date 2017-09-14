@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7,14 +8,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Injectable } from '@angular/core';
-import { HttpWrapperService } from './http.wrapper.service';
-let GarmentService = class GarmentService {
-    constructor(httpWrapperService) {
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var http_wrapper_service_1 = require("./http.wrapper.service");
+var GarmentService = (function () {
+    function GarmentService(httpWrapperService) {
         this.httpWrapperService = httpWrapperService;
     }
-    getProducts(ErrorActionType, SpecificErrorType, SuccessType) {
-        let getParams = {
+    GarmentService.prototype.getProducts = function (ErrorActionType, SpecificErrorType, SuccessType) {
+        var getParams = {
             errorActionType: ErrorActionType,
             specificErrorType: SpecificErrorType,
             responseObject: 'products',
@@ -22,10 +24,10 @@ let GarmentService = class GarmentService {
             uri: 'http://private-anon-85f7209c9f-weeblyfrontendtrialapi.apiary-mock.com/products'
         };
         return this.httpWrapperService.get(getParams);
-    }
-    updateProduct(payload, ErrorActionType, SpecificErrorType, SuccessType) {
+    };
+    GarmentService.prototype.updateProduct = function (payload, ErrorActionType, SpecificErrorType, SuccessType) {
         console.log('GarmentService === updateProduct', payload);
-        let postParams = {
+        var postParams = {
             errorActionType: ErrorActionType,
             specificErrorType: SpecificErrorType,
             payload: payload,
@@ -34,9 +36,9 @@ let GarmentService = class GarmentService {
             uri: 'products/update'
         };
         return this.httpWrapperService.post(postParams);
-    }
-    addNewProduct(payload, ErrorActionType, SpecificErrorType, SuccessType) {
-        let postParams = {
+    };
+    GarmentService.prototype.addNewProduct = function (payload, ErrorActionType, SpecificErrorType, SuccessType) {
+        var postParams = {
             errorActionType: ErrorActionType,
             specificErrorType: SpecificErrorType,
             payload: payload,
@@ -45,10 +47,11 @@ let GarmentService = class GarmentService {
             uri: 'products/add'
         };
         return this.httpWrapperService.post(postParams);
-    }
-};
+    };
+    return GarmentService;
+}());
 GarmentService = __decorate([
-    Injectable(),
-    __metadata("design:paramtypes", [HttpWrapperService])
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_wrapper_service_1.HttpWrapperService])
 ], GarmentService);
-export { GarmentService };
+exports.GarmentService = GarmentService;

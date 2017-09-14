@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BrokerPublisher } from '../outlet/broker.publisher';
 import { BrokerAction  } from '../models/broker.action.model';
-import { BrokerResponse } from "../models/broker.response.model";
+import { BrokerResponse } from '../models/broker.response.model';
 
 
 

@@ -38,8 +38,8 @@ import { AppStageRoutingModule } from './app.stage.routing.module';
    a good practice
  */
 
-import { fakeBackendProvider } from '../shared-utils/dev-mocked-backend/index';
-import { MockBackend } from '@angular/http/testing';
+//import { fakeBackendProvider } from '../shared-utils/dev-mocked-backend/index';
+//import { MockBackend } from '@angular/http/testing';
 import { BaseRequestOptions } from '@angular/http';
 
 @NgModule({
@@ -62,8 +62,8 @@ import { BaseRequestOptions } from '@angular/http';
   providers: [
     NGRxBrokerRegistrationService,
     // providers used to create fake backend
-    fakeBackendProvider,
-    MockBackend,
+   /// fakeBackendProvider,
+  ///  MockBackend,
     BaseRequestOptions,
    {
     provide: APP_BASE_HREF,
@@ -74,5 +74,5 @@ import { BaseRequestOptions } from '@angular/http';
 })
 
 export class AppStageModule {
-    constructor(private ngrxBRS:NGRxBrokerRegistrationService){}
+    constructor(private ngrxBRS:NGRxBrokerRegistrationService) { }
 }

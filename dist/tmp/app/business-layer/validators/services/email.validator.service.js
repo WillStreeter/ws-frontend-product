@@ -1,6 +1,8 @@
-export const emailMatcher = (control) => {
-    const email = control.get('email');
-    const confirm = control.get('confirm');
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.emailMatcher = function (control) {
+    var email = control.get('email');
+    var confirm = control.get('confirm');
     if (!email || !confirm) {
         return null;
     }

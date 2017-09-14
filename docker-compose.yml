@@ -2,16 +2,17 @@ version: '3'
 
 services:
 
-  ws-ngx-login-demo:
+  ws-frontend-product:
     restart: always
-    container_name: ws-ngx-login-demo-container
+    image: local-ws-frontend-product:latest
+    container_name: local-ws-frontend-product
     build:
-      context: ./.
+      context: .
       dockerfile: ./Dockerfile.dev
-    image: local-ws-ngx-login-demo-dev:latest
     command: ['npm', 'run', 'start']
     volumes:
       - ./dist:/app/dist
+      - ./docs:/app/src/docs
       - ./tools:/app/tools
       - ./src:/app/src
       - ./yarn.lock:/app/yarn.lock:rw
@@ -21,3 +22,18 @@ services:
     ports:
       - '5555:5555'
       - '3001:3001'
+
+  gh-pages-harness:
+    restart: always
+    image: local-gh-pages-harness:latest
+    container_name: local-gh-pages-harness
+    build:
+      context: .
+      dockerfile: ./Dockerfile.nginx.dev
+    volumes:
+      - ./etc/nginx:/etc/nginx/
+      - ./dist/prod:/app/
+    links:
+      - "ws-frontend-product"
+    ports:
+      - "80:80"

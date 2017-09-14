@@ -1,7 +1,8 @@
 import { Http, BaseRequestOptions, Response, ResponseOptions,
          ResponseType, RequestMethod, XHRBackend, RequestOptions } from '@angular/http';
 
-import { MockBackend, MockConnection } from '@angular/http/testing';
+import {MockBackend, MockConnection} from '@angular/http/testing/index';
+
 
 class MockError extends Response implements Error {
     name:any;

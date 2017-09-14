@@ -1,7 +1,7 @@
 {
-  "name": "ws-ngx-login-demo",
+  "name": "ws-frontend-product",
   "version": "1.0.0",
-  "description": "Angular 4.1.x login and registrtion demo.",
+  "description": "Angular 4.1.x login and product demo.",
   "author": "Will Streeter <WillStreeter>",
   "license": "MIT",
   "repository": {
@@ -46,8 +46,8 @@
     "serve.compodoc": "node_modules/.bin/compodoc -s"
   },
   "devDependencies": {
-    "@angular/compiler-cli": "^4.1.1",
-    "@angular/platform-server": "^4.1.1",
+    "@angular/compiler-cli": "4.3.6",
+    "@angular/platform-server": "4.3.6",
     "@compodoc/compodoc": "^1.0.0-beta.7",
     "@types/async": "^2.0.32",
     "@types/browser-sync": "^0.0.34",
@@ -140,17 +140,17 @@
     "yargs": "^8.0.1"
   },
   "dependencies": {
-    "@angular/animations": "^4.1.1",
-    "@angular/common": "^4.1.1",
-    "@angular/compiler": "^4.1.1",
-    "@angular/core": "^4.1.1",
+    "@angular/animations": "4.3.6",
+    "@angular/common": "4.3.6",
+    "@angular/compiler": "4.3.6",
+    "@angular/core": "4.3.6",
     "@angular/flex-layout": "^2.0.0-rc.1",
-    "@angular/forms": "^4.1.1",
-    "@angular/http": "^4.1.1",
+    "@angular/forms": "4.3.6",
+    "@angular/http": "4.3.6",
     "@angular/material": "2.0.0-beta.5",
-    "@angular/platform-browser": "^4.1.1",
-    "@angular/platform-browser-dynamic": "^4.1.1",
-    "@angular/router": "^4.1.1",
+    "@angular/platform-browser": "4.3.6",
+    "@angular/platform-browser-dynamic": "4.3.6",
+    "@angular/router": "4.3.6",
     "@angular/service-worker": "^1.0.0-beta.14",
     "@ngrx/core": "^1.2.0",
     "@ngrx/effects": "~2.0.3",

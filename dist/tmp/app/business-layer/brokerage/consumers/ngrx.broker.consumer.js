@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7,17 +8,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Injectable } from '@angular/core';
-import { BrokerResponse } from "../../pubsub-broker/models/broker.response.model";
-import { BrokerGridStore, BrokerMastheadStore, BrokerPaginatorStore, BrokerSearchStore } from "../ngrx-stubs/index";
-let NGRxBrokerConsumer = class NGRxBrokerConsumer {
-    constructor(brokerGridStore, brokerMastheadStore, brokerPaginatorStore, brokerSearchStore) {
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var broker_response_model_1 = require("../../pubsub-broker/models/broker.response.model");
+var index_1 = require("../ngrx-stubs/index");
+var NGRxBrokerConsumer = (function () {
+    function NGRxBrokerConsumer(brokerGridStore, brokerMastheadStore, brokerPaginatorStore, brokerSearchStore) {
         this.brokerGridStore = brokerGridStore;
         this.brokerMastheadStore = brokerMastheadStore;
         this.brokerPaginatorStore = brokerPaginatorStore;
         this.brokerSearchStore = brokerSearchStore;
     }
-    ReceiveBrokerAction(brokerAction) {
+    NGRxBrokerConsumer.prototype.ReceiveBrokerAction = function (brokerAction) {
         switch (brokerAction.brokerType) {
             case this.brokerGridStore.brokerLabel:
                 this.brokerGridStore.dispatchAction(brokerAction);
@@ -32,9 +34,9 @@ let NGRxBrokerConsumer = class NGRxBrokerConsumer {
                 this.brokerSearchStore.dispatchAction(brokerAction);
                 break;
         }
-    }
-    ReceivedBrokerSelectorRequest(brokerType) {
-        var brokerResponse = new BrokerResponse();
+    };
+    NGRxBrokerConsumer.prototype.ReceivedBrokerSelectorRequest = function (brokerType) {
+        var brokerResponse = new broker_response_model_1.BrokerResponse();
         switch (brokerType) {
             case this.brokerGridStore.brokerLabel:
                 brokerResponse.brokerRequested = this.brokerGridStore.getComponentSupplies();
@@ -50,13 +52,14 @@ let NGRxBrokerConsumer = class NGRxBrokerConsumer {
                 break;
         }
         return brokerResponse;
-    }
-};
+    };
+    return NGRxBrokerConsumer;
+}());
 NGRxBrokerConsumer = __decorate([
-    Injectable(),
-    __metadata("design:paramtypes", [BrokerGridStore,
-        BrokerMastheadStore,
-        BrokerPaginatorStore,
-        BrokerSearchStore])
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [index_1.BrokerGridStore,
+        index_1.BrokerMastheadStore,
+        index_1.BrokerPaginatorStore,
+        index_1.BrokerSearchStore])
 ], NGRxBrokerConsumer);
-export { NGRxBrokerConsumer };
+exports.NGRxBrokerConsumer = NGRxBrokerConsumer;

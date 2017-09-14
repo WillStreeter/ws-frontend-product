@@ -144,7 +144,7 @@ export class SeedConfig {
    * `index.html`.
    * @type {string}
    */
-  APP_TITLE = 'NG2 Login Demo!';
+  APP_TITLE = 'Garment Products!';
 
   /**
    * Tracking ID.
