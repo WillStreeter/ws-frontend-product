@@ -134,6 +134,7 @@
     "tildify": "^1.2.0",
     "traceur": "^0.0.111",
     "ts-node": "^3.0.4",
+    "tslib": "1.7.1",
     "tslint": "^5.0.0",
     "typescript": "~2.2.2",
     "walk": "^2.3.9",

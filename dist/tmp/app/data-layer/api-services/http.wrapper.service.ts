@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, Response, RequestOptions } from '@angular/http';
+import { HttpClient, HttpHeaders, HttpResponse, HttpRequest } from '@angular/common/http';
+import { RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Config } from '../../shared-utils/app-env/env.config';
 import { HttpParams } from './interfaces/httpParams.model';
@@ -12,83 +13,87 @@ export class HttpWrapperService {
     This keeps the api-services DRY, easier to test, and scalable.
   */
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
 
   public delete(params: HttpParams) {
     let {apiUrl, options} = this.configRequest(params.uri);
 
-    return this.http.delete(apiUrl, options)
-      .map(res => ({
+    return this.http.delete<Object>(apiUrl, options)
+      .map(
+      data =>({
         type: params.successActionType,
-        payload: res.json()[params.responseObject]
-      }))
-      .catch(res => Observable.of({
+        payload: data[params.responseObject]
+      }),
+      err => (data => Observable.of({
         type: params.errorActionType,
         payload: {
           action_type: params.specificErrorType,
-          message: res.json().error
+          message: data.error
         }
-      }));
+      })));
   }
 
-  public get(params: HttpParams) {
+  public get(params: HttpParams){
     let {apiUrl, options} = this.configRequest(params.uri);
-    return this.http.get('http://private-anon-85f7209c9f-weeblyfrontendtrialapi.apiary-mock.com/products', options)
-      .map(res =>({
+    return this.http.get<Object>('http://private-anon-85f7209c9f-weeblyfrontendtrialapi.apiary-mock.com/products', options)
+      .map(
+      data =>({
         type: params.successActionType,
-        payload: res.json()
-      }))
-      .catch(res => Observable.of({
+        payload: data
+      }),
+      err => (data => Observable.of({
         type: params.errorActionType,
         payload: {
           action_type: params.specificErrorType,
-          message: res.json()
+          message: data.error
         }
-      }));
+      })));
   }
 
-  public post(params: HttpParams) {
+  public post(params: HttpParams){
 
     let {apiUrl, options} = this.configRequest(params.uri);
-    return this.http.post(apiUrl, params.payload, options)
-      .map(res => ({
+    return this.http.post<Object>(apiUrl, params.payload, options)
+      .map(
+      data =>({
         type: params.successActionType,
-        payload: res.json()[params.responseObject]
-      }))
-      .catch(res => Observable.of({
+        payload: data[params.responseObject]
+      }),
+      err => (data => Observable.of({
         type: params.errorActionType,
         payload: {
           action_type: params.specificErrorType,
-          message: res.json().error
+          message: data.error
         }
-      }));
+      })));
   }
 
-  public put(params: HttpParams) {
+  public put(params: HttpParams){
     let {apiUrl, options} = this.configRequest(params.uri);
 
-    return this.http.put(apiUrl, params.payload, options)
-      .map(res => ({
+    return this.http.put<Object>(apiUrl, params.payload, options)
+      .map(
+      data =>({
         type: params.successActionType,
-        payload: res.json()[params.responseObject]
-      }))
-      .catch(res => Observable.of({
+        payload: data[params.responseObject]
+      }),
+      err => (data => Observable.of({
         type: params.errorActionType,
         payload: {
           action_type: params.specificErrorType,
-          message: res.json().error
+          message: data.error
         }
-      }));
+      })));
   }
 
 
 
-  private configRequest(uri: string): {apiUrl: string, options: RequestOptions} {
+  private configRequest(uri: string): {apiUrl: string, options:any} {
     let apiUrl = `${Config.HOST}/${Config.API}/${uri}`;
 
-    let headers = new Headers({'Content-Type': 'application/json'});
-    let options = new RequestOptions({ headers: headers });
+    let headers = new HttpHeaders().set('Content-Type', 'application/json');
+    let options = { headers: headers };
 
     return {apiUrl, options};
   }

@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var http_1 = require("@angular/http");
+var http_1 = require("@angular/common/http");
 var common_1 = require("@angular/common");
 var platform_browser_1 = require("@angular/platform-browser");
 var animations_1 = require("@angular/platform-browser/animations");
@@ -40,7 +40,7 @@ AppStageModule = __decorate([
             animations_1.BrowserAnimationsModule,
             forms_1.FormsModule,
             forms_1.ReactiveFormsModule,
-            http_1.HttpModule,
+            http_1.HttpClientModule,
             ngrx_data_module_1.NGRxDataModule.forRoot(),
             pubsub_broker_module_1.PubSubBrokerModule.forRoot(),
             brokerage_module_1.BrokerageModule.forRoot(),

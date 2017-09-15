@@ -1,6 +1,6 @@
 import { ModuleWithProviders,  NgModule, Optional, SkipSelf} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { HttpWrapperService } from '../api-services/http.wrapper.service';
@@ -32,7 +32,7 @@ import { PortalEffects } from './effects/portal.effects';
 
 @NgModule({
     imports: [ CommonModule,
-               HttpModule,
+               HttpClientModule,
                RouterModule,
                StoreModule.provideStore(reducer),
                RouterStoreModule.connectRouter(),

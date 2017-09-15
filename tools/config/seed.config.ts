@@ -410,6 +410,7 @@ export class SeedConfig {
       '@angular/animations': 'node_modules/@angular/animations/bundles/animations.umd.js',
       '@angular/platform-browser/animations': 'node_modules/@angular/platform-browser/bundles/platform-browser-animations.umd.js',
       '@angular/common': 'node_modules/@angular/common/bundles/common.umd.js',
+      '@angular/common/http': 'node_modules/@angular/common/bundles/common-http.umd.js',
       '@angular/compiler': 'node_modules/@angular/compiler/bundles/compiler.umd.js',
       '@angular/core': 'node_modules/@angular/core/bundles/core.umd.js',
       '@angular/forms': 'node_modules/@angular/forms/bundles/forms.umd.js',
@@ -439,6 +440,7 @@ export class SeedConfig {
       '@ngrx/effects': 'node_modules/@ngrx/effects/bundles/effects.umd.js',
       '@ngrx/router-store': 'node_modules/@ngrx/router-store/bundles/router-store.umd.js',
       'deep-freeze-strict': 'node_modules/deep-freeze-strict/index.js',
+      'tslib': 'node_modules/tslib/tslib.js',
 
 
 
@@ -481,6 +483,7 @@ export class SeedConfig {
       [join(this.TMP_DIR, this.BOOTSTRAP_DIR, '*')]: `${this.TMP_DIR}/${this.BOOTSTRAP_DIR}/*`,
       '@angular/platform-browser/animations': 'node_modules/@angular/platform-browser/bundles/platform-browser-animations.umd.js',
       '@angular/animations/browser': 'node_modules/@angular/animations/bundles/animations-browser.umd.js',
+      '@angular/common/http': 'node_modules/@angular/common/bundles/common-http.umd.js',
       'dist/tmp/node_modules/*': 'dist/tmp/node_modules/*',
       'node_modules/*': 'node_modules/*',
       '*': 'node_modules/*'
@@ -516,6 +519,10 @@ export class SeedConfig {
       },
       '@angular/platform-browser': {
         main: 'bundles/platform-browser.umd.js',
+        defaultExtension: 'js'
+      },
+      '@angular/common/http':{
+        main: 'bundles/common-http.umd.js',
         defaultExtension: 'js'
       },
       '@angular/platform-browser-dynamic': {
@@ -556,6 +563,10 @@ export class SeedConfig {
       },
       'validator':{
         main: 'validator.js',
+        defaultExtension: 'js'
+      },
+      'tslib':{
+        main: 'tslib.js',
         defaultExtension: 'js'
       }
     }

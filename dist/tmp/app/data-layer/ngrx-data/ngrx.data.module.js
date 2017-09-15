@@ -14,7 +14,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
-var http_1 = require("@angular/http");
+var http_1 = require("@angular/common/http");
 var router_1 = require("@angular/router");
 var http_wrapper_service_1 = require("../api-services/http.wrapper.service");
 var garment_service_1 = require("../api-services/garment.service");
@@ -45,7 +45,7 @@ var NGRxDataModule = NGRxDataModule_1 = (function () {
 NGRxDataModule = NGRxDataModule_1 = __decorate([
     core_1.NgModule({
         imports: [common_1.CommonModule,
-            http_1.HttpModule,
+            http_1.HttpClientModule,
             router_1.RouterModule,
             store_1.StoreModule.provideStore(index_1.reducer),
             router_store_1.RouterStoreModule.connectRouter(),
