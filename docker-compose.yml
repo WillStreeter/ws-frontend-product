@@ -8,17 +8,16 @@ services:
     container_name: local-ws-frontend-product
     build:
       context: .
-      dockerfile: ./Dockerfile.dev
+      dockea
     command: ['npm', 'run', 'start']
     volumes:
       - ./dist:/app/dist
-      - ./docs:/app/src/docs
       - ./tools:/app/tools
       - ./src:/app/src
       - ./yarn.lock:/app/yarn.lock:rw
       - ./tsconfig.json:/app/tsconfig.json
       - ./package.json:/app/package.json:rw
-      - ./gulpfile.ts:/app/gulpfile.ts:rw
+      - ./.angular-cli.json:/app/.angular-cli.json:rw
     ports:
       - '5555:5555'
       - '3001:3001'

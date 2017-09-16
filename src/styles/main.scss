@@ -1,0 +1,75 @@
+
+@import '../scss/vendor';
+
+@import "seed-main.css";
+
+@import '../../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+body{
+  background-color:$baby-powder;
+  backgroundcolor:$baby-powder;
+  font-family:$font-family;
+  font-size: 16px;
+
+}
+
+/* Set up a default font and some padding to provide breathing room */
+
+
+p {
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 20px;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+ul {
+  margin: 10px 0 0;
+  padding: 0 0 0 20px;
+}
+
+li {
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+
+md-dialog-container.mat-dialog-container,
+.mat-dialog-container {
+  background: transparent;
+  background-color: transparent;
+  box-shadow:none;
+}
+
+
+md-button-toggle.toolbar-name{
+  .mat-button-toggle-label-content{
+      padding-left:1px !important;
+  }
+}
+
+.garment-toolbar-type{
+  .mat-button-focus-overlay{
+      background-color:transparent!important;
+  }
+  button.mat-button.cdk-focused.cdk-mouse-focused{
+      background-color:transparent!important;
+  }
+}
+.grid-row{
+  .save-button.mat-button-focus-overlay{
+      background-color:transparent!important;
+  }
+  .save-button.mat-button.cdk-focused.cdk-mouse-focused{
+      background-color:transparent!important;
+  }
+}
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: rgb(27, 142, 241) !important;
+}
+
+.mat-ripple-element {
+  background: rgba(27, 142, 241, .4) !important;
+}

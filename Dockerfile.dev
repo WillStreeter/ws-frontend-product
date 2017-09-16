@@ -13,15 +13,13 @@ RUN mkdir -p /app/dist \
   && mkdir -p /app/src
 
 COPY dist /app/dist
-COPY test-config.js /app/test-config.js
+COPY.angular-cli.json /app/.angular-cli.json
 COPY test-main.js /app/test-main.js
 COPY karma.conf.js /app/karma.conf.js
 COPY protractor.conf.js /app/protractor.conf.js
 COPY tslint.json /app/tslint.json
 COPY package.json /app/package.json
 COPY tsconfig.json /app/tsconfig.json
-COPY tools /app/tools
-COPY gulpfile.ts /app/gulpfile.ts
 COPY src /app/src
 
 WORKDIR /app
