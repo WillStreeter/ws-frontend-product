@@ -1,0 +1,1895 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="48e1dacf-548d-4610-b990-acca88e3d1cc" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/favicon.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.angular-cli.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/builder.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/config.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/deploy-build.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/index.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/tasks.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/util.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/environments/environment.prod.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/environments/environment.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/polyfills.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tsconfig.app.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tsconfig.spec.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/typings.d.ts" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/app-stage/app.stage.component.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/app-stage/app.stage.component.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/app-stage/app.stage.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/app-stage/app.stage.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/app-stage/app.stage.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/app-stage/app.stage.routing.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/business-layer/brokerage/brokerage.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/business-layer/brokerage/consumers/ngrx.broker.consumer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/business-layer/brokerage/ngrx-stubs/broker.grid.store.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/business-layer/brokerage/ngrx-stubs/broker.masthead.store.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/business-layer/brokerage/ngrx-stubs/broker.paginator.store.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/business-layer/brokerage/ngrx-stubs/broker.search.store.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/business-layer/brokerage/ngrx-stubs/brokerlist.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/business-layer/brokerage/ngrx-stubs/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/business-layer/brokerage/registries/ngrx.broker.registration.service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/business-layer/models/error.model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/business-layer/models/garment.model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/business-layer/models/garmentAdd.model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/business-layer/models/garmentCollection.model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/business-layer/models/garmentSort.model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/business-layer/models/garmentSubset.model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/business-layer/models/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/business-layer/models/portal.model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/business-layer/models/sortRequest.model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/business-layer/pubsub-broker/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/business-layer/pubsub-broker/interfaces/IConsumer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/business-layer/pubsub-broker/interfaces/ISupplier.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/business-layer/pubsub-broker/models/broker.action.model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/business-layer/pubsub-broker/models/broker.response.model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/business-layer/pubsub-broker/outlet/abstract.broker.trader.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/business-layer/pubsub-broker/outlet/broker.publisher.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/business-layer/pubsub-broker/pubsub.broker.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/business-layer/pubsub-broker/services/broker.action.builder.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/business-layer/pubsub-broker/services/broker.dispatcher.service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/business-layer/shared-types/actions/error.action.types.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/business-layer/shared-types/actions/garment.action.types.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/business-layer/shared-types/actions/portal.action.types.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/business-layer/shared-types/sorters/sort.config.types.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/business-layer/validators/augmented.validator.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/business-layer/validators/services/augmented.wrapper.service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/business-layer/validators/services/email.validator.service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/business-layer/validators/services/validation.service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/data-layer/api-services/garment.service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/data-layer/api-services/http.wrapper.service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/data-layer/api-services/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/data-layer/api-services/interfaces/httpParams.model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/data-layer/ngrx-data/actions/error.actions.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/data-layer/ngrx-data/actions/garment.actions.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/data-layer/ngrx-data/actions/portal.actions.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/data-layer/ngrx-data/effects/error.effects.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/data-layer/ngrx-data/effects/garment.effects.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/data-layer/ngrx-data/effects/portal.effects.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/data-layer/ngrx-data/ngrx.data.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/data-layer/ngrx-data/reducers/error/error.reducer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/data-layer/ngrx-data/reducers/garment/garment.reducer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/data-layer/ngrx-data/reducers/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/data-layer/ngrx-data/reducers/portal/portal.reducer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/data-layer/sorting-services/sorting.service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/main.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/shared-utils/app-env/env.config.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/shared-utils/dev-mocked-backend/fake-backend.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/shared-utils/dev-mocked-backend/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/shared-utils/dev-mocked-backend/mock-data/garments.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/system-config.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/common-views/custom-validators/control.messaging.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/common-views/garmentGrid/garment.grid.component.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/common-views/garmentGrid/garment.grid.component.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/common-views/garmentGrid/garment.grid.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/common-views/garmentGrid/garment.grid.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/common-views/garmentGrid/garment.grid.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/common-views/grid-create-row/grid.create.row.component.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/common-views/grid-create-row/grid.create.row.component.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/common-views/grid-create-row/grid.create.row.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/common-views/grid-create-row/grid.create.row.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/common-views/grid-masthead/grid.masthead.component.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/common-views/grid-masthead/grid.masthead.component.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/common-views/grid-masthead/grid.masthead.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/common-views/grid-masthead/grid.masthead.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/common-views/grid-masthead/grid.masthead.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/common-views/grid-row/grid.row.component.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/common-views/grid-row/grid.row.component.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/common-views/grid-row/grid.row.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/common-views/grid-row/grid.row.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/common-views/grid-row/grid.row.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/common-views/grid-toolbar/grid.toolbar.component.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/common-views/grid-toolbar/grid.toolbar.component.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/common-views/grid-toolbar/grid.toolbar.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/common-views/grid-toolbar/grid.toolbar.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/common-views/grid-toolbar/grid.toolbar.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/common-views/paginator-toolbar/paginator.toolbar.component.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/common-views/paginator-toolbar/paginator.toolbar.component.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/common-views/paginator-toolbar/paginator.toolbar.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/common-views/paginator-toolbar/paginator.toolbar.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/common-views/paginator-toolbar/paginator.toolbar.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/common-views/search-ahead/search.ahead.component.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/common-views/search-ahead/search.ahead.component.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/common-views/search-ahead/search.ahead.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/common-views/search-ahead/search.ahead.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/common-views/search-ahead/search.ahead.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/modules-by-route/home/home.component.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/modules-by-route/home/home.component.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/modules-by-route/home/home.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/modules-by-route/home/home.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/modules-by-route/home/home.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/modules-by-route/home/home.routing.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/modules-by-route/notfound/notfound.page.component.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/modules-by-route/notfound/notfound.page.component.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/modules-by-route/notfound/notfound.page.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/modules-by-route/notfound/notfound.page.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/modules-by-route/notfound/notfound.page.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/app/view-layer/modules-by-route/notfound/notfound.page.routing.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/assets/bowtie-thumb.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/assets/favicon/favicon-DEV.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/assets/favicon/favicon-PROD.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/main.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/main.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/css/seed-main.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/dev/tsconfig.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/prod/app/business-layer/pubsub-broker/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/prod/app/shared-utils/dev-mocked-backend/mock-data/garments.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/prod/assets/bowtie-thumb.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/prod/assets/favicon/favicon-DEV.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/prod/assets/favicon/favicon-PROD.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/prod/css/main.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/prod/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/prod/js/app.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/prod/js/shims.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/app-stage/app.stage.component.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/app-stage/app.stage.component.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/app-stage/app.stage.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/app-stage/app.stage.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/app-stage/app.stage.component.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/app-stage/app.stage.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/app-stage/app.stage.module.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/app-stage/app.stage.routing.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/app-stage/app.stage.routing.module.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/brokerage/brokerage.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/brokerage/brokerage.module.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/brokerage/consumers/ngrx.broker.consumer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/brokerage/consumers/ngrx.broker.consumer.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/brokerage/ngrx-stubs/broker.grid.store.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/brokerage/ngrx-stubs/broker.grid.store.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/brokerage/ngrx-stubs/broker.masthead.store.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/brokerage/ngrx-stubs/broker.masthead.store.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/brokerage/ngrx-stubs/broker.paginator.store.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/brokerage/ngrx-stubs/broker.paginator.store.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/brokerage/ngrx-stubs/broker.search.store.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/brokerage/ngrx-stubs/broker.search.store.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/brokerage/ngrx-stubs/brokerlist.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/brokerage/ngrx-stubs/brokerlist.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/brokerage/ngrx-stubs/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/brokerage/ngrx-stubs/index.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/brokerage/registries/ngrx.broker.registration.service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/brokerage/registries/ngrx.broker.registration.service.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/models/error.model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/models/error.model.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/models/garment.model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/models/garment.model.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/models/garmentAdd.model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/models/garmentAdd.model.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/models/garmentCollection.model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/models/garmentCollection.model.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/models/garmentSort.model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/models/garmentSort.model.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/models/garmentSubset.model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/models/garmentSubset.model.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/models/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/models/index.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/models/portal.model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/models/portal.model.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/models/sortRequest.model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/models/sortRequest.model.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/pubsub-broker/interfaces/IConsumer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/pubsub-broker/interfaces/IConsumer.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/pubsub-broker/interfaces/ISupplier.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/pubsub-broker/interfaces/ISupplier.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/pubsub-broker/models/broker.action.model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/pubsub-broker/models/broker.action.model.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/pubsub-broker/models/broker.response.model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/pubsub-broker/models/broker.response.model.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/pubsub-broker/outlet/abstract.broker.trader.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/pubsub-broker/outlet/abstract.broker.trader.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/pubsub-broker/outlet/broker.publisher.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/pubsub-broker/outlet/broker.publisher.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/pubsub-broker/pubsub.broker.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/pubsub-broker/pubsub.broker.module.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/pubsub-broker/services/broker.action.builder.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/pubsub-broker/services/broker.action.builder.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/pubsub-broker/services/broker.dispatcher.service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/pubsub-broker/services/broker.dispatcher.service.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/shared-types/actions/error.action.types.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/shared-types/actions/error.action.types.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/shared-types/actions/garment.action.types.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/shared-types/actions/garment.action.types.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/shared-types/actions/portal.action.types.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/shared-types/actions/portal.action.types.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/shared-types/sorters/sort.config.types.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/shared-types/sorters/sort.config.types.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/validators/augmented.validator.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/validators/augmented.validator.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/validators/services/augmented.wrapper.service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/validators/services/augmented.wrapper.service.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/validators/services/email.validator.service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/validators/services/email.validator.service.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/validators/services/validation.service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/business-layer/validators/services/validation.service.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/data-layer/api-services/garment.service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/data-layer/api-services/garment.service.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/data-layer/api-services/http.wrapper.service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/data-layer/api-services/http.wrapper.service.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/data-layer/api-services/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/data-layer/api-services/index.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/data-layer/api-services/interfaces/httpParams.model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/data-layer/api-services/interfaces/httpParams.model.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/data-layer/ngrx-data/actions/error.actions.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/data-layer/ngrx-data/actions/error.actions.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/data-layer/ngrx-data/actions/garment.actions.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/data-layer/ngrx-data/actions/garment.actions.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/data-layer/ngrx-data/actions/portal.actions.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/data-layer/ngrx-data/actions/portal.actions.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/data-layer/ngrx-data/effects/error.effects.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/data-layer/ngrx-data/effects/error.effects.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/data-layer/ngrx-data/effects/garment.effects.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/data-layer/ngrx-data/effects/garment.effects.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/data-layer/ngrx-data/effects/portal.effects.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/data-layer/ngrx-data/effects/portal.effects.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/data-layer/ngrx-data/ngrx.data.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/data-layer/ngrx-data/ngrx.data.module.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/data-layer/ngrx-data/reducers/error/error.reducer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/data-layer/ngrx-data/reducers/error/error.reducer.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/data-layer/ngrx-data/reducers/garment/garment.reducer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/data-layer/ngrx-data/reducers/garment/garment.reducer.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/data-layer/ngrx-data/reducers/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/data-layer/ngrx-data/reducers/index.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/data-layer/ngrx-data/reducers/portal/portal.reducer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/data-layer/ngrx-data/reducers/portal/portal.reducer.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/data-layer/sorting-services/sorting.service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/data-layer/sorting-services/sorting.service.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/main-prod.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/main.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/main.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/shared-utils/app-env/env.config.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/shared-utils/app-env/env.config.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/shared-utils/dev-mocked-backend/fake-backend.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/shared-utils/dev-mocked-backend/fake-backend.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/shared-utils/dev-mocked-backend/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/shared-utils/dev-mocked-backend/index.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/shared-utils/dev-mocked-backend/mock-data/garments.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/system-config.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/system-config.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/custom-validators/control.messaging.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/custom-validators/control.messaging.component.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/garmentGrid/garment.grid.component.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/garmentGrid/garment.grid.component.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/garmentGrid/garment.grid.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/garmentGrid/garment.grid.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/garmentGrid/garment.grid.component.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/garmentGrid/garment.grid.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/garmentGrid/garment.grid.module.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/grid-create-row/grid.create.row.component.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/grid-create-row/grid.create.row.component.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/grid-create-row/grid.create.row.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/grid-create-row/grid.create.row.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/grid-create-row/grid.create.row.component.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/grid-masthead/grid.masthead.component.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/grid-masthead/grid.masthead.component.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/grid-masthead/grid.masthead.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/grid-masthead/grid.masthead.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/grid-masthead/grid.masthead.component.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/grid-masthead/grid.masthead.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/grid-masthead/grid.masthead.module.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/grid-row/grid.row.component.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/grid-row/grid.row.component.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/grid-row/grid.row.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/grid-row/grid.row.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/grid-row/grid.row.component.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/grid-row/grid.row.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/grid-row/grid.row.module.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/grid-toolbar/grid.toolbar.component.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/grid-toolbar/grid.toolbar.component.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/grid-toolbar/grid.toolbar.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/grid-toolbar/grid.toolbar.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/grid-toolbar/grid.toolbar.component.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/grid-toolbar/grid.toolbar.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/grid-toolbar/grid.toolbar.module.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/paginator-toolbar/paginator.toolbar.component.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/paginator-toolbar/paginator.toolbar.component.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/paginator-toolbar/paginator.toolbar.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/paginator-toolbar/paginator.toolbar.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/paginator-toolbar/paginator.toolbar.component.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/paginator-toolbar/paginator.toolbar.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/paginator-toolbar/paginator.toolbar.module.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/search-ahead/search.ahead.component.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/search-ahead/search.ahead.component.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/search-ahead/search.ahead.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/search-ahead/search.ahead.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/search-ahead/search.ahead.component.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/search-ahead/search.ahead.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/common-views/search-ahead/search.ahead.module.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/modules-by-route/home/home.component.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/modules-by-route/home/home.component.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/modules-by-route/home/home.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/modules-by-route/home/home.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/modules-by-route/home/home.component.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/modules-by-route/home/home.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/modules-by-route/home/home.module.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/modules-by-route/home/home.routing.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/modules-by-route/home/home.routing.module.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/modules-by-route/notfound/notfound.page.component.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/modules-by-route/notfound/notfound.page.component.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/modules-by-route/notfound/notfound.page.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/modules-by-route/notfound/notfound.page.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/modules-by-route/notfound/notfound.page.component.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/modules-by-route/notfound/notfound.page.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/modules-by-route/notfound/notfound.page.module.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/modules-by-route/notfound/notfound.page.routing.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/app/view-layer/modules-by-route/notfound/notfound.page.routing.module.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/css/main.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/css/main.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/css/seed-main.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/tmp/tsconfig.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/app-stage/app.stage.component.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/app-stage/app.stage.component.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/app-stage/app.stage.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/app-stage/app.stage.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/app-stage/app.stage.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/app-stage/app.stage.routing.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/business-layer/brokerage/brokerage.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/business-layer/brokerage/consumers/ngrx.broker.consumer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/business-layer/brokerage/ngrx-stubs/broker.grid.store.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/business-layer/brokerage/ngrx-stubs/broker.masthead.store.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/business-layer/brokerage/ngrx-stubs/broker.paginator.store.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/business-layer/brokerage/ngrx-stubs/broker.search.store.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/business-layer/brokerage/ngrx-stubs/brokerlist.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/business-layer/brokerage/ngrx-stubs/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/business-layer/brokerage/registries/ngrx.broker.registration.service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/business-layer/models/error.model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/business-layer/models/garment.model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/business-layer/models/garmentAdd.model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/business-layer/models/garmentCollection.model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/business-layer/models/garmentSort.model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/business-layer/models/garmentSubset.model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/business-layer/models/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/business-layer/models/portal.model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/business-layer/models/sortRequest.model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/business-layer/pubsub-broker/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/business-layer/pubsub-broker/interfaces/IConsumer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/business-layer/pubsub-broker/interfaces/ISupplier.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/business-layer/pubsub-broker/models/broker.action.model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/business-layer/pubsub-broker/models/broker.response.model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/business-layer/pubsub-broker/outlet/abstract.broker.trader.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/business-layer/pubsub-broker/outlet/broker.publisher.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/business-layer/pubsub-broker/pubsub.broker.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/business-layer/pubsub-broker/services/broker.action.builder.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/business-layer/pubsub-broker/services/broker.dispatcher.service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/business-layer/shared-types/actions/error.action.types.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/business-layer/shared-types/actions/garment.action.types.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/business-layer/shared-types/actions/portal.action.types.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/business-layer/shared-types/sorters/sort.config.types.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/business-layer/validators/augmented.validator.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/business-layer/validators/services/augmented.wrapper.service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/business-layer/validators/services/email.validator.service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/business-layer/validators/services/validation.service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/data-layer/api-services/garment.service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/data-layer/api-services/http.wrapper.service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/data-layer/api-services/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/data-layer/api-services/interfaces/httpParams.model.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/data-layer/ngrx-data/actions/error.actions.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/data-layer/ngrx-data/actions/garment.actions.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/data-layer/ngrx-data/actions/portal.actions.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/data-layer/ngrx-data/effects/error.effects.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/data-layer/ngrx-data/effects/garment.effects.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/data-layer/ngrx-data/effects/portal.effects.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/data-layer/ngrx-data/ngrx.data.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/data-layer/ngrx-data/reducers/error/error.reducer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/data-layer/ngrx-data/reducers/garment/garment.reducer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/data-layer/ngrx-data/reducers/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/data-layer/ngrx-data/reducers/portal/portal.reducer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/data-layer/sorting-services/sorting.service.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/main.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/shared-utils/app-env/env.config.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/shared-utils/dev-mocked-backend/fake-backend.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/shared-utils/dev-mocked-backend/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/system-config.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/common-views/custom-validators/control.messaging.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/common-views/garmentGrid/garment.grid.component.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/common-views/garmentGrid/garment.grid.component.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/common-views/garmentGrid/garment.grid.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/common-views/garmentGrid/garment.grid.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/common-views/garmentGrid/garment.grid.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/common-views/grid-create-row/grid.create.row.component.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/common-views/grid-create-row/grid.create.row.component.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/common-views/grid-create-row/grid.create.row.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/common-views/grid-create-row/grid.create.row.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/common-views/grid-masthead/grid.masthead.component.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/common-views/grid-masthead/grid.masthead.component.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/common-views/grid-masthead/grid.masthead.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/common-views/grid-masthead/grid.masthead.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/common-views/grid-masthead/grid.masthead.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/common-views/grid-row/grid.row.component.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/common-views/grid-row/grid.row.component.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/common-views/grid-row/grid.row.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/common-views/grid-row/grid.row.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/common-views/grid-row/grid.row.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/common-views/grid-toolbar/grid.toolbar.component.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/common-views/grid-toolbar/grid.toolbar.component.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/common-views/grid-toolbar/grid.toolbar.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/common-views/grid-toolbar/grid.toolbar.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/common-views/grid-toolbar/grid.toolbar.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/common-views/paginator-toolbar/paginator.toolbar.component.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/common-views/paginator-toolbar/paginator.toolbar.component.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/common-views/paginator-toolbar/paginator.toolbar.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/common-views/paginator-toolbar/paginator.toolbar.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/common-views/paginator-toolbar/paginator.toolbar.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/common-views/search-ahead/search.ahead.component.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/common-views/search-ahead/search.ahead.component.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/common-views/search-ahead/search.ahead.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/common-views/search-ahead/search.ahead.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/common-views/search-ahead/search.ahead.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/modules-by-route/home/home.component.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/modules-by-route/home/home.component.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/modules-by-route/home/home.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/modules-by-route/home/home.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/modules-by-route/home/home.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/modules-by-route/home/home.routing.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/modules-by-route/notfound/notfound.page.component.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/modules-by-route/notfound/notfound.page.component.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/modules-by-route/notfound/notfound.page.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/modules-by-route/notfound/notfound.page.component.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/modules-by-route/notfound/notfound.page.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/app/view-layer/modules-by-route/notfound/notfound.page.routing.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/assets/bowtie-thumb.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/assets/favicon/favicon-DEV.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/assets/favicon/favicon-PROD.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/css/main.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/css/main.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/css/seed-main.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/js/app.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/js/shims.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/tmp/app/app-stage/app.stage.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/tmp/app/view-layer/common-views/garmentGrid/garment.grid.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/tmp/app/view-layer/common-views/grid-create-row/grid.create.row.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/tmp/app/view-layer/common-views/grid-masthead/grid.masthead.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/tmp/app/view-layer/common-views/grid-row/grid.row.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/tmp/app/view-layer/common-views/grid-toolbar/grid.toolbar.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/tmp/app/view-layer/common-views/paginator-toolbar/paginator.toolbar.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/tmp/app/view-layer/common-views/search-ahead/search.ahead.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/tmp/app/view-layer/modules-by-route/home/home.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/tmp/app/view-layer/modules-by-route/notfound/notfound.page.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/tmp/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/tsconfig.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/gulpfile.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/client/app/main-prod.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/client/app/system-config.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/client/tsconfig.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test-config.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test-main.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/config.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/config/banner-256.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/config/banner.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/config/project.config.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/config/project.tasks.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/config/seed.config.interfaces.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/config/seed.config.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/config/seed.tasks.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/config/seed.tslint.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/debug.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/env/base.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/env/dev.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/env/env-config.interface.metadata.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/env/env-config.interface.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/env/prod.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/manual_typings/project/sample.package.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/manual_typings/seed/autoprefixer.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/manual_typings/seed/cssnano.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/manual_typings/seed/express-history-api-fallback.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/manual_typings/seed/istream.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/manual_typings/seed/karma.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/manual_typings/seed/merge-stream.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/manual_typings/seed/open.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/manual_typings/seed/operators.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/manual_typings/seed/slash.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/manual_typings/seed/systemjs-builder.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/manual_typings/seed/tildify.d.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/assets_task.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/css_task.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/project/sample.task.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/build.assets.dev.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/build.assets.prod.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/build.bundle.rxjs.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/build.bundles.app.aot.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/build.bundles.app.exp.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/build.bundles.app.rollup.aot.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/build.bundles.app.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/build.bundles.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/build.docs.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/build.html_css.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/build.index.dev.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/build.index.prod.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/build.js.dev.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/build.js.e2e.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/build.js.mockdata.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/build.js.prod.aot.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/build.js.prod.exp.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/build.js.prod.rollup.aot.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/build.js.prod.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/build.js.test.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/build.tools.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/check.tools.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/check.versions.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/clean.all.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/clean.coverage.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/clean.dev.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/clean.e2e.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/clean.mockdata.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/clean.prod.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/clean.tools.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/clear.files.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/compile.ahead.prod.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/copy.prod.rollup.aot.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/copy.prod.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/e2e.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/generate.manifest.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/karma.run.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/karma.run.with_coverage.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/karma.watch.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/minify.bundles.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/minify.index.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/noop.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/print.banner.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/serve.coverage.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/serve.coverage.watch.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/serve.docs.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/server.prod.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/server.start.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/start.deving.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/sw.manifest.static.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/transpile.bundles.rollup.aot.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/tslint.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/watch.dev.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/watch.e2e.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/watch.test.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/seed/webdriver.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/task.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/tasks/typescript_task.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/utils.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/utils/project.utils.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/utils/project/sample_util.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/utils/seed.utils.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/utils/seed/clean.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/utils/seed/code_change_tools.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/utils/seed/karma.start.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/utils/seed/server.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/utils/seed/tasks_tools.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/utils/seed/template_locals.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/utils/seed/tsproject.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/utils/seed/watch.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/yarn.lock" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/app-stage/app.stage.component.html" afterPath="$PROJECT_DIR$/src/app/app-stage/app.stage.component.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/app-stage/app.stage.component.scss" afterPath="$PROJECT_DIR$/src/app/app-stage/app.stage.component.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/app-stage/app.stage.component.ts" afterPath="$PROJECT_DIR$/src/app/app-stage/app.stage.component.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/app-stage/app.stage.module.ts" afterPath="$PROJECT_DIR$/src/app/app-stage/app.stage.module.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/app-stage/app.stage.routing.module.ts" afterPath="$PROJECT_DIR$/src/app/app-stage/app.stage.routing.module.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/business-layer/brokerage/brokerage.module.ts" afterPath="$PROJECT_DIR$/src/app/business-layer/brokerage/brokerage.module.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/business-layer/brokerage/consumers/ngrx.broker.consumer.ts" afterPath="$PROJECT_DIR$/src/app/business-layer/brokerage/consumers/ngrx.broker.consumer.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/business-layer/brokerage/ngrx-stubs/broker.grid.store.ts" afterPath="$PROJECT_DIR$/src/app/business-layer/brokerage/ngrx-stubs/broker.grid.store.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/business-layer/brokerage/ngrx-stubs/broker.masthead.store.ts" afterPath="$PROJECT_DIR$/src/app/business-layer/brokerage/ngrx-stubs/broker.masthead.store.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/business-layer/brokerage/ngrx-stubs/broker.paginator.store.ts" afterPath="$PROJECT_DIR$/src/app/business-layer/brokerage/ngrx-stubs/broker.paginator.store.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/business-layer/brokerage/ngrx-stubs/broker.search.store.ts" afterPath="$PROJECT_DIR$/src/app/business-layer/brokerage/ngrx-stubs/broker.search.store.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/business-layer/brokerage/ngrx-stubs/brokerlist.ts" afterPath="$PROJECT_DIR$/src/app/business-layer/brokerage/ngrx-stubs/brokerlist.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/business-layer/brokerage/ngrx-stubs/index.ts" afterPath="$PROJECT_DIR$/src/app/business-layer/brokerage/ngrx-stubs/index.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/business-layer/brokerage/registries/ngrx.broker.registration.service.ts" afterPath="$PROJECT_DIR$/src/app/business-layer/brokerage/registries/ngrx.broker.registration.service.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/business-layer/models/error.model.ts" afterPath="$PROJECT_DIR$/src/app/business-layer/models/error.model.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/business-layer/models/garment.model.ts" afterPath="$PROJECT_DIR$/src/app/business-layer/models/garment.model.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/business-layer/models/garmentAdd.model.ts" afterPath="$PROJECT_DIR$/src/app/business-layer/models/garmentAdd.model.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/business-layer/models/garmentCollection.model.ts" afterPath="$PROJECT_DIR$/src/app/business-layer/models/garmentCollection.model.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/business-layer/models/garmentSort.model.ts" afterPath="$PROJECT_DIR$/src/app/business-layer/models/garmentSort.model.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/business-layer/models/garmentSubset.model.ts" afterPath="$PROJECT_DIR$/src/app/business-layer/models/garmentSubset.model.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/business-layer/models/index.ts" afterPath="$PROJECT_DIR$/src/app/business-layer/models/index.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/business-layer/models/portal.model.ts" afterPath="$PROJECT_DIR$/src/app/business-layer/models/portal.model.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/business-layer/models/sortRequest.model.ts" afterPath="$PROJECT_DIR$/src/app/business-layer/models/sortRequest.model.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/business-layer/pubsub-broker/README.md" afterPath="$PROJECT_DIR$/src/app/business-layer/pubsub-broker/README.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/business-layer/pubsub-broker/interfaces/IConsumer.ts" afterPath="$PROJECT_DIR$/src/app/business-layer/pubsub-broker/interfaces/IConsumer.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/business-layer/pubsub-broker/interfaces/ISupplier.ts" afterPath="$PROJECT_DIR$/src/app/business-layer/pubsub-broker/interfaces/ISupplier.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/business-layer/pubsub-broker/models/broker.action.model.ts" afterPath="$PROJECT_DIR$/src/app/business-layer/pubsub-broker/models/broker.action.model.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/business-layer/pubsub-broker/models/broker.response.model.ts" afterPath="$PROJECT_DIR$/src/app/business-layer/pubsub-broker/models/broker.response.model.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/business-layer/pubsub-broker/outlet/abstract.broker.trader.ts" afterPath="$PROJECT_DIR$/src/app/business-layer/pubsub-broker/outlet/abstract.broker.trader.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/business-layer/pubsub-broker/outlet/broker.publisher.ts" afterPath="$PROJECT_DIR$/src/app/business-layer/pubsub-broker/outlet/broker.publisher.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/business-layer/pubsub-broker/pubsub.broker.module.ts" afterPath="$PROJECT_DIR$/src/app/business-layer/pubsub-broker/pubsub.broker.module.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/business-layer/pubsub-broker/services/broker.action.builder.ts" afterPath="$PROJECT_DIR$/src/app/business-layer/pubsub-broker/services/broker.action.builder.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/business-layer/pubsub-broker/services/broker.dispatcher.service.ts" afterPath="$PROJECT_DIR$/src/app/business-layer/pubsub-broker/services/broker.dispatcher.service.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/business-layer/shared-types/actions/error.action.types.ts" afterPath="$PROJECT_DIR$/src/app/business-layer/shared-types/actions/error.action.types.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/business-layer/shared-types/actions/garment.action.types.ts" afterPath="$PROJECT_DIR$/src/app/business-layer/shared-types/actions/garment.action.types.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/business-layer/shared-types/actions/portal.action.types.ts" afterPath="$PROJECT_DIR$/src/app/business-layer/shared-types/actions/portal.action.types.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/business-layer/shared-types/sorters/sort.config.types.ts" afterPath="$PROJECT_DIR$/src/app/business-layer/shared-types/sorters/sort.config.types.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/business-layer/validators/augmented.validator.ts" afterPath="$PROJECT_DIR$/src/app/business-layer/validators/augmented.validator.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/business-layer/validators/services/augmented.wrapper.service.ts" afterPath="$PROJECT_DIR$/src/app/business-layer/validators/services/augmented.wrapper.service.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/business-layer/validators/services/email.validator.service.ts" afterPath="$PROJECT_DIR$/src/app/business-layer/validators/services/email.validator.service.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/business-layer/validators/services/validation.service.ts" afterPath="$PROJECT_DIR$/src/app/business-layer/validators/services/validation.service.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/data-layer/api-services/garment.service.ts" afterPath="$PROJECT_DIR$/src/app/data-layer/api-services/garment.service.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/data-layer/api-services/http.wrapper.service.ts" afterPath="$PROJECT_DIR$/src/app/data-layer/api-services/http.wrapper.service.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/data-layer/api-services/index.ts" afterPath="$PROJECT_DIR$/src/app/data-layer/api-services/index.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/data-layer/api-services/interfaces/httpParams.model.ts" afterPath="$PROJECT_DIR$/src/app/data-layer/api-services/interfaces/httpParams.model.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/data-layer/ngrx-data/actions/error.actions.ts" afterPath="$PROJECT_DIR$/src/app/data-layer/ngrx-data/actions/error.actions.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/data-layer/ngrx-data/actions/garment.actions.ts" afterPath="$PROJECT_DIR$/src/app/data-layer/ngrx-data/actions/garment.actions.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/data-layer/ngrx-data/actions/portal.actions.ts" afterPath="$PROJECT_DIR$/src/app/data-layer/ngrx-data/actions/portal.actions.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/data-layer/ngrx-data/effects/error.effects.ts" afterPath="$PROJECT_DIR$/src/app/data-layer/ngrx-data/effects/error.effects.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/data-layer/ngrx-data/effects/garment.effects.ts" afterPath="$PROJECT_DIR$/src/app/data-layer/ngrx-data/effects/garment.effects.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/data-layer/ngrx-data/effects/portal.effects.ts" afterPath="$PROJECT_DIR$/src/app/data-layer/ngrx-data/effects/portal.effects.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/data-layer/ngrx-data/effects/specs/error.effects.spec.ts" afterPath="$PROJECT_DIR$/src/app/data-layer/ngrx-data/effects/specs/error.effects.spec.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/data-layer/ngrx-data/effects/specs/profile.effects.spec.ts" afterPath="$PROJECT_DIR$/src/app/data-layer/ngrx-data/effects/specs/profile.effects.spec.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/data-layer/ngrx-data/ngrx.data.module.ts" afterPath="$PROJECT_DIR$/src/app/data-layer/ngrx-data/ngrx.data.module.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/data-layer/ngrx-data/reducers/error/error.reducer.ts" afterPath="$PROJECT_DIR$/src/app/data-layer/ngrx-data/reducers/error/error.reducer.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/data-layer/ngrx-data/reducers/garment/garment.reducer.ts" afterPath="$PROJECT_DIR$/src/app/data-layer/ngrx-data/reducers/garment/garment.reducer.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/data-layer/ngrx-data/reducers/index.ts" afterPath="$PROJECT_DIR$/src/app/data-layer/ngrx-data/reducers/index.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/data-layer/ngrx-data/reducers/portal/portal.reducer.ts" afterPath="$PROJECT_DIR$/src/app/data-layer/ngrx-data/reducers/portal/portal.reducer.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/data-layer/sorting-services/sorting.service.ts" afterPath="$PROJECT_DIR$/src/app/data-layer/sorting-services/sorting.service.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/main.ts" afterPath="$PROJECT_DIR$/src/main.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/shared-utils/app-env/env.config.ts" afterPath="$PROJECT_DIR$/src/app/shared-utils/app-env/env.config.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/shared-utils/dev-mocked-backend/fake-backend.ts" afterPath="$PROJECT_DIR$/src/app/shared-utils/dev-mocked-backend/fake-backend.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/shared-utils/dev-mocked-backend/index.ts" afterPath="$PROJECT_DIR$/src/app/shared-utils/dev-mocked-backend/index.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/shared-utils/dev-mocked-backend/mock-data/garments.json" afterPath="$PROJECT_DIR$/src/app/shared-utils/dev-mocked-backend/mock-data/garments.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/view-layer/common-views/custom-validators/control.messaging.component.ts" afterPath="$PROJECT_DIR$/src/app/view-layer/common-views/custom-validators/control.messaging.component.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/view-layer/common-views/garmentGrid/garment.grid.component.html" afterPath="$PROJECT_DIR$/src/app/view-layer/common-views/garmentGrid/garment.grid.component.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/view-layer/common-views/garmentGrid/garment.grid.component.scss" afterPath="$PROJECT_DIR$/src/app/view-layer/common-views/garmentGrid/garment.grid.component.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/view-layer/common-views/garmentGrid/garment.grid.component.ts" afterPath="$PROJECT_DIR$/src/app/view-layer/common-views/garmentGrid/garment.grid.component.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/view-layer/common-views/garmentGrid/garment.grid.module.ts" afterPath="$PROJECT_DIR$/src/app/view-layer/common-views/garmentGrid/garment.grid.module.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/view-layer/common-views/grid-create-row/grid.create.row.component.html" afterPath="$PROJECT_DIR$/src/app/view-layer/common-views/grid-create-row/grid.create.row.component.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/view-layer/common-views/grid-create-row/grid.create.row.component.scss" afterPath="$PROJECT_DIR$/src/app/view-layer/common-views/grid-create-row/grid.create.row.component.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/view-layer/common-views/grid-create-row/grid.create.row.component.ts" afterPath="$PROJECT_DIR$/src/app/view-layer/common-views/grid-create-row/grid.create.row.component.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/view-layer/common-views/grid-masthead/grid.masthead.component.html" afterPath="$PROJECT_DIR$/src/app/view-layer/common-views/grid-masthead/grid.masthead.component.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/view-layer/common-views/grid-masthead/grid.masthead.component.scss" afterPath="$PROJECT_DIR$/src/app/view-layer/common-views/grid-masthead/grid.masthead.component.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/view-layer/common-views/grid-masthead/grid.masthead.component.ts" afterPath="$PROJECT_DIR$/src/app/view-layer/common-views/grid-masthead/grid.masthead.component.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/view-layer/common-views/grid-masthead/grid.masthead.module.ts" afterPath="$PROJECT_DIR$/src/app/view-layer/common-views/grid-masthead/grid.masthead.module.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/view-layer/common-views/grid-row/grid.row.component.html" afterPath="$PROJECT_DIR$/src/app/view-layer/common-views/grid-row/grid.row.component.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/view-layer/common-views/grid-row/grid.row.component.scss" afterPath="$PROJECT_DIR$/src/app/view-layer/common-views/grid-row/grid.row.component.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/view-layer/common-views/grid-row/grid.row.component.ts" afterPath="$PROJECT_DIR$/src/app/view-layer/common-views/grid-row/grid.row.component.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/view-layer/common-views/grid-row/grid.row.module.ts" afterPath="$PROJECT_DIR$/src/app/view-layer/common-views/grid-row/grid.row.module.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/view-layer/common-views/grid-toolbar/grid.toolbar.component.html" afterPath="$PROJECT_DIR$/src/app/view-layer/common-views/grid-toolbar/grid.toolbar.component.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/view-layer/common-views/grid-toolbar/grid.toolbar.component.scss" afterPath="$PROJECT_DIR$/src/app/view-layer/common-views/grid-toolbar/grid.toolbar.component.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/view-layer/common-views/grid-toolbar/grid.toolbar.component.ts" afterPath="$PROJECT_DIR$/src/app/view-layer/common-views/grid-toolbar/grid.toolbar.component.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/view-layer/common-views/grid-toolbar/grid.toolbar.module.ts" afterPath="$PROJECT_DIR$/src/app/view-layer/common-views/grid-toolbar/grid.toolbar.module.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/view-layer/common-views/paginator-toolbar/paginator.toolbar.component.html" afterPath="$PROJECT_DIR$/src/app/view-layer/common-views/paginator-toolbar/paginator.toolbar.component.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/view-layer/common-views/paginator-toolbar/paginator.toolbar.component.scss" afterPath="$PROJECT_DIR$/src/app/view-layer/common-views/paginator-toolbar/paginator.toolbar.component.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/view-layer/common-views/paginator-toolbar/paginator.toolbar.component.ts" afterPath="$PROJECT_DIR$/src/app/view-layer/common-views/paginator-toolbar/paginator.toolbar.component.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/view-layer/common-views/paginator-toolbar/paginator.toolbar.module.ts" afterPath="$PROJECT_DIR$/src/app/view-layer/common-views/paginator-toolbar/paginator.toolbar.module.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/view-layer/common-views/search-ahead/search.ahead.component.html" afterPath="$PROJECT_DIR$/src/app/view-layer/common-views/search-ahead/search.ahead.component.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/view-layer/common-views/search-ahead/search.ahead.component.scss" afterPath="$PROJECT_DIR$/src/app/view-layer/common-views/search-ahead/search.ahead.component.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/view-layer/common-views/search-ahead/search.ahead.component.ts" afterPath="$PROJECT_DIR$/src/app/view-layer/common-views/search-ahead/search.ahead.component.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/view-layer/common-views/search-ahead/search.ahead.module.ts" afterPath="$PROJECT_DIR$/src/app/view-layer/common-views/search-ahead/search.ahead.module.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/view-layer/modules-by-route/home/home.component.html" afterPath="$PROJECT_DIR$/src/app/view-layer/modules-by-route/home/home.component.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/view-layer/modules-by-route/home/home.component.scss" afterPath="$PROJECT_DIR$/src/app/view-layer/modules-by-route/home/home.component.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/view-layer/modules-by-route/home/home.component.ts" afterPath="$PROJECT_DIR$/src/app/view-layer/modules-by-route/home/home.component.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/view-layer/modules-by-route/home/home.module.ts" afterPath="$PROJECT_DIR$/src/app/view-layer/modules-by-route/home/home.module.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/view-layer/modules-by-route/home/home.routing.module.ts" afterPath="$PROJECT_DIR$/src/app/view-layer/modules-by-route/home/home.routing.module.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/view-layer/modules-by-route/notfound/notfound.page.component.html" afterPath="$PROJECT_DIR$/src/app/view-layer/modules-by-route/notfound/notfound.page.component.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/view-layer/modules-by-route/notfound/notfound.page.component.scss" afterPath="$PROJECT_DIR$/src/app/view-layer/modules-by-route/notfound/notfound.page.component.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/view-layer/modules-by-route/notfound/notfound.page.component.ts" afterPath="$PROJECT_DIR$/src/app/view-layer/modules-by-route/notfound/notfound.page.component.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/view-layer/modules-by-route/notfound/notfound.page.module.ts" afterPath="$PROJECT_DIR$/src/app/view-layer/modules-by-route/notfound/notfound.page.module.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/app/view-layer/modules-by-route/notfound/notfound.page.routing.module.ts" afterPath="$PROJECT_DIR$/src/app/view-layer/modules-by-route/notfound/notfound.page.routing.module.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/assets/bowtie-thumb.jpeg" afterPath="$PROJECT_DIR$/src/assets/bowtie-thumb.jpeg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/assets/favicon/favicon-DEV.ico" afterPath="$PROJECT_DIR$/src/assets/favicon/favicon-DEV.ico" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/assets/favicon/favicon-PROD.ico" afterPath="$PROJECT_DIR$/src/assets/favicon/favicon-PROD.ico" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/css/main.scss" afterPath="$PROJECT_DIR$/src/styles/main.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/css/seed-main.css" afterPath="$PROJECT_DIR$/src/styles/seed-main.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/index.html" afterPath="$PROJECT_DIR$/src/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/scss/_colorpalette.scss" afterPath="$PROJECT_DIR$/src/scss/_colorpalette.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/scss/_textstyles.scss" afterPath="$PROJECT_DIR$/src/scss/_textstyles.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/scss/_vendor.scss" afterPath="$PROJECT_DIR$/src/scss/_vendor.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/scss/core/_base-mixins.scss" afterPath="$PROJECT_DIR$/src/scss/core/_base-mixins.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/client/scss/custom-finds/_custom-variables.scss" afterPath="$PROJECT_DIR$/src/scss/custom-finds/_custom-variables.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/e2e/specs/app.stage.component.e2e-spec.ts" afterPath="$PROJECT_DIR$/e2e/specs/app.stage.component.e2e-spec.ts" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/e2e/tsconfig.json" afterPath="$PROJECT_DIR$/e2e/tsconfig.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dockerfile.dev" afterPath="$PROJECT_DIR$/Dockerfile.dev" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docker-compose.yml" afterPath="$PROJECT_DIR$/docker-compose.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/karma.conf.js" afterPath="$PROJECT_DIR$/karma.conf.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protractor.conf.js" afterPath="$PROJECT_DIR$/protractor.conf.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/testing-artifacts/tsconfig.json" afterPath="$PROJECT_DIR$/src/testing-artifacts/tsconfig.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tsconfig.json" afterPath="$PROJECT_DIR$/tsconfig.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tslint.json" afterPath="$PROJECT_DIR$/tslint.json" />
+    </list>
+    <ignored path="ws-frontend-product.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="ws-frontend-product" />
+  </component>
+  <component name="FileEditorManager">
+    <splitter split-orientation="horizontal" split-proportion="0.76462674">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="search.ahead.module.ts" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/app/view-layer/common-views/search-ahead/search.ahead.module.ts">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding>
+                    <element signature="n#!!doc" expanded="true" />
+                    <element signature="e#48#89#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name=".angular-cli.json" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/.angular-cli.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="15">
+                  <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="tsconfig.json" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/tsconfig.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="150">
+                  <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="tsconfig.app.json" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/tsconfig.app.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="75">
+                  <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="grid.masthead.component.ts" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/app/view-layer/common-views/grid-masthead/grid.masthead.component.ts">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="75">
+                  <caret line="6" column="63" selection-start-line="6" selection-start-column="63" selection-end-line="6" selection-end-column="63" />
+                  <folding>
+                    <element signature="n#!!doc" expanded="true" />
+                    <element signature="e#47#97#0" expanded="true" />
+                    <element signature="e#258#373#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.ts" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/app/data-layer/ngrx-data/reducers/index.ts">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1035">
+                  <caret line="79" column="62" selection-start-line="79" selection-start-column="62" selection-end-line="79" selection-end-column="62" />
+                  <folding>
+                    <element signature="e#0#66#0" expanded="true" />
+                    <element signature="e#451#503#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="error.reducer.ts" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/app/data-layer/ngrx-data/reducers/error/error.reducer.ts">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#0#76#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="garment.reducer.ts" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/app/data-layer/ngrx-data/reducers/garment/garment.reducer.ts">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-1574">
+                  <caret line="0" column="66" selection-start-line="0" selection-start-column="66" selection-end-line="0" selection-end-column="66" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="portal.reducer.ts" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/app/data-layer/ngrx-data/reducers/portal/portal.reducer.ts">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-389">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#0#55#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="typings.d.ts" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/typings.d.ts">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding>
+                    <element signature="n#!!doc" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="Makefile" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Makefile">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="90">
+                  <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="http.wrapper.service.ts" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/app/data-layer/api-services/http.wrapper.service.ts">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-195">
+                  <caret line="1" column="83" selection-start-line="1" selection-start-column="83" selection-end-line="1" selection-end-column="83" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="httpParams.model.ts" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/app/data-layer/api-services/interfaces/httpParams.model.ts">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="135">
+                  <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/dist/dev/index.html" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/Makefile" />
+        <option value="$PROJECT_DIR$/src/client/app/shared-utils/dev-mocked-backend/mock-data/garments.json" />
+        <option value="$PROJECT_DIR$/src/client/app/shared-utils/dev-mocked-backend/mock-http-wrapper.ts" />
+        <option value="$PROJECT_DIR$/src/client/app/data-layer/api-services/interfaces/httpParams.model.ts" />
+        <option value="$PROJECT_DIR$/src/client/app/data-layer/api-services/garment.service.ts" />
+        <option value="$PROJECT_DIR$/src/client/app/shared-utils/dev-mocked-backend/fake-backend.ts" />
+        <option value="$PROJECT_DIR$/src/client/app/data-layer/ngrx-data/ngrx.data.module.ts" />
+        <option value="$PROJECT_DIR$/src/client/app/app-stage/app.stage.module.ts" />
+        <option value="$PROJECT_DIR$/src/client/app/data-layer/api-services/http.wrapper.service.ts" />
+        <option value="$PROJECT_DIR$/tools/config/seed.config.ts" />
+        <option value="$PROJECT_DIR$/etc/nginx/nginx.conf" />
+        <option value="$PROJECT_DIR$/Dockerfile.nginx.dev" />
+        <option value="$PROJECT_DIR$/dist/prod/index.html" />
+        <option value="$PROJECT_DIR$/tslint.json" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/css/main.scss" />
+        <option value="$PROJECT_DIR$/src/index.html" />
+        <option value="$PROJECT_DIR$/Dockerfile.dev" />
+        <option value="$PROJECT_DIR$/src/app/main.ts" />
+        <option value="$PROJECT_DIR$/src/main.ts" />
+        <option value="$PROJECT_DIR$/docker-compose.yml" />
+        <option value="$PROJECT_DIR$/.angular-cli.json" />
+        <option value="$PROJECT_DIR$/tsconfig.json" />
+        <option value="$PROJECT_DIR$/src/tsconfig.app.json" />
+        <option value="$PROJECT_DIR$/src/app/view-layer/common-views/grid-masthead/grid.masthead.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/data-layer/ngrx-data/reducers/index.ts" />
+        <option value="$PROJECT_DIR$/src/app/data-layer/ngrx-data/reducers/error/error.reducer.ts" />
+        <option value="$PROJECT_DIR$/src/app/data-layer/ngrx-data/reducers/garment/garment.reducer.ts" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
+    <package-json value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-1771" />
+    <option name="y" value="-125" />
+    <option name="width" value="1880" />
+    <option name="height" value="1055" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws-frontend-product" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws-frontend-product" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws-frontend-product" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws-frontend-product" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws-frontend-product" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws-frontend-product" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws-frontend-product" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view-layer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws-frontend-product" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws-frontend-product" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view-layer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common-views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws-frontend-product" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws-frontend-product" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view-layer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common-views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grid-masthead" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws-frontend-product" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws-frontend-product" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws-frontend-product" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws-frontend-product" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data-layer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws-frontend-product" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws-frontend-product" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data-layer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ngrx-data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws-frontend-product" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws-frontend-product" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data-layer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ngrx-data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reducers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws-frontend-product" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws-frontend-product" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data-layer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ngrx-data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reducers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="portal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws-frontend-product" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws-frontend-product" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data-layer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ngrx-data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reducers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="garment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws-frontend-product" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws-frontend-product" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data-layer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ngrx-data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reducers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="error" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws-frontend-product" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ws-frontend-product" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app-stage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
+    <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/client" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="48e1dacf-548d-4610-b990-acca88e3d1cc" name="Default" comment="" />
+      <created>1505314193514</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1505314193514</updated>
+      <workItem from="1505314194727" duration="3751000" />
+      <workItem from="1505334382195" duration="1225000" />
+      <workItem from="1505400553816" duration="2012000" />
+      <workItem from="1505485837965" duration="18275000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="25263000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-1771" y="-125" width="1880" height="1055" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24529317" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.7703549" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/build/tasks.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3466">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#34#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#30#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/util.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2000">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#25#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vendor/animate.scss-master/_flippers/_flip.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vendor/animate.scss-master/_flippers/_flipInX.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vendor/animate.scss-master/_flippers/_flipInY.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vendor/animate.scss-master/_flippers/flippers.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vendor/animate.scss-master/_flippers/_flipOutX.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vendor/animate.scss-master/_flippers/_flipOutY.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vendor/animate.scss-master/_specials/_hinge.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vendor/animate.scss-master/_specials/_rollIn.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vendor/animate.scss-master/_specials/_rollOut.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vendor/animate.scss-master/_specials/specials.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app-stage/app.stage.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="52" column="29" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app-stage/app.stage.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app-stage/app.stage.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app-stage/app.stage.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app-stage/app.stage.routing.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/data-layer/ngrx-data/actions/error.actions.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/data-layer/ngrx-data/actions/portal.actions.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/data-layer/ngrx-data/actions/garment.actions.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/data-layer/ngrx-data/effects/specs/error.effects.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/karma.conf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/e2e/specs/app.stage.component.e2e-spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/e2e/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tslint.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="736">
+          <caret line="142" column="0" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/environments/environment.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scss/_colorpalette.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scss/_vendor.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scss/core/_base-mixins.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/favicon.ico">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tsconfig.spec.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/polyfills.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="55" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding>
+            <element signature="e#1567#1596#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dockerfile.dev">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="59" column="27" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="19" column="55" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
+          <folding>
+            <element signature="e#394#460#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/seed-main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/view-layer/common-views/search-ahead/search.ahead.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="49" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/view-layer/common-views/search-ahead/search.ahead.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#48#89#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/typings.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.angular-cli.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tsconfig.app.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/view-layer/common-views/grid-masthead/grid.masthead.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="6" column="63" selection-start-line="6" selection-start-column="63" selection-end-line="6" selection-end-column="63" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#47#97#0" expanded="true" />
+            <element signature="e#258#373#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/data-layer/ngrx-data/reducers/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1035">
+          <caret line="79" column="62" selection-start-line="79" selection-start-column="62" selection-end-line="79" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#66#0" expanded="true" />
+            <element signature="e#451#503#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/data-layer/ngrx-data/reducers/error/error.reducer.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#76#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/data-layer/ngrx-data/reducers/garment/garment.reducer.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1574">
+          <caret line="0" column="66" selection-start-line="0" selection-start-column="66" selection-end-line="0" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/data-layer/ngrx-data/reducers/portal/portal.reducer.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-389">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
