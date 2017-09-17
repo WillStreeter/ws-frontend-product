@@ -8,10 +8,11 @@ services:
     container_name: local-ws-frontend-product
     build:
       context: .
-      dockea
+      dockerfile: ./Dockerfile.dev
     command: ['npm', 'run', 'start']
     volumes:
       - ./dist:/app/dist
+      - ./build:/app/build
       - ./tools:/app/tools
       - ./src:/app/src
       - ./yarn.lock:/app/yarn.lock:rw

@@ -1,7 +1,7 @@
 all:
 NGINX_CONTAINER_NAME = local-gh-pages-harness
-CONTAINER_NAME = local-ws-frontend-product
-IMAGE_NAME = local-ws-frontend-product:latest
+CONTAINER_NAME = local-ws-frontend-product-ng-cli
+IMAGE_NAME = local-ws-frontend-product-ng-cli:latest
 NGINX_IMAGE_NAME = local-gh-pages-harness:latest
 
 
@@ -16,10 +16,10 @@ build-dist:
 	gulp build.prod.aot
 
 build-dev:
-	docker build -t  local-ws-frontend-product -f Dockerfile.dev .
+	docker build -t  local-ws-frontend-product-ng-cli -f Dockerfile.dev .
 
 build-multi-dev:
-	docker build -t  local-ws-frontend-product -f Dockerfile.dev .
+	docker build -t  local-ws-frontend-product-ng-cli  -f Dockerfile.dev .
 	docker build -t  local-gh-pages-harness -f Dockerfile.nginx.dev .
 
 run-container:
