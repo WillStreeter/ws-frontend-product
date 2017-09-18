@@ -26,7 +26,11 @@
     "@angular/flex-layout": "^2.0.0-rc.1",
     "@angular/forms": "^4.3.5",
     "@angular/http": "^4.3.5",
+<<<<<<< HEAD
     "@angular/material": "^2.0.0-beta.10",
+=======
+    "@angular/material": "2.0.0-beta.8",
+>>>>>>> parent of f5d77b6... update all
     "@angular/platform-browser": "^4.3.5",
     "@angular/platform-browser-dynamic": "^4.3.5",
     "@angular/router": "^4.3.5",
@@ -60,7 +64,6 @@
     "karma-coverage-istanbul-reporter": "^1.2.1",
     "karma-jasmine": "^1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "ngrx-store-freeze": "^0.1.9",
     "protractor": "^5.1.2",
     "ts-node": "^3.3.0",
     "tslint": "^5.6.0",
