@@ -9,6 +9,7 @@ export class GarmentService {
   constructor(private httpWrapperService: HttpWrapperService) { }
 
   getProducts(ErrorActionType:string, SpecificErrorType:string, SuccessType:string) {
+    console.log('GarmentService  getProducts')
     let getParams: HttpParams = {
       errorActionType: ErrorActionType,
       specificErrorType: SpecificErrorType,
@@ -33,7 +34,7 @@ export class GarmentService {
     return this.httpWrapperService.post(postParams);
   }
 
-  addNewProduct(payload: {id:number,name: string, type: string, price:number, inventory:string, thumbnail:string},
+  addNewProduct(payload: {id:number, name: string, type: string, price:number, inventory:string, thumbnail:string},
                ErrorActionType:string, SpecificErrorType:string, SuccessType:string) {
     let postParams: HttpParams = {
       errorActionType:ErrorActionType,

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse, HttpRequest } from '@angular/common/http';
 import { RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { Config } from '../../shared-utils/app-env/env.config';
+import { environment } from '../../../environments/environment';
 import { HttpParams } from './interfaces/httpParams.model';
 
 @Injectable()
@@ -36,6 +36,7 @@ export class HttpWrapperService {
 
   public get(params: HttpParams){
     let {apiUrl, options} = this.configRequest(params.uri);
+    console.log('HttpWrapperService  get   params =', params)
     return this.http.get<Object>('http://private-anon-85f7209c9f-weeblyfrontendtrialapi.apiary-mock.com/products', options)
       .map(
       data =>({
@@ -90,7 +91,7 @@ export class HttpWrapperService {
 
 
   private configRequest(uri: string): {apiUrl: string, options:any} {
-    let apiUrl = `${Config.HOST}/${Config.API}/${uri}`;
+    let apiUrl = `${environment.HOST}/${environment.API}/${uri}`;
 
     let headers = new HttpHeaders().set('Content-Type', 'application/json');
     let options = { headers: headers };

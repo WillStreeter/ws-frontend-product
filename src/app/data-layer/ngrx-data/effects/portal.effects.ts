@@ -23,26 +23,30 @@ import * as fromRoot from '../reducers/index';
 export class PortalEffects {
     @Effect()  portalActionUpdate = this.actions$
       .ofType(portalActions.PortalTypes.UPDATE_SORT_STATE)
-      .map( (action) => action.payload )
+      .map( (action:portalActions.UpdateCurrentSortState) => action.payload )
       .switchMap(()=> this.sortingServices.sortGarmentCollection())
       .map((payload) =>  new garmentActions.UpdateSortedCollection(payload));
 
     @Effect()  updateAddRowRevealState = this.actions$
        .ofType(garmentActions.GarmentTypes.ADD_GARMENT_TO_COLLECTION_SUCCESS)
-         .map( (action) => action.payload )
+<<<<<<< HEAD
+         .map( (action:garmentActions.AddGarmentToCollectionSuccess) => action.payload )
+=======
+        .map(action => action.payload)
+>>>>>>> parent of f5d77b6... update all
         .switchMap(payload =>{
             return Observable.of( new portalActions.UpdateAddRowGarment(false));
         });
 
      @Effect()  updateAfterPageChange= this.actions$
       .ofType(portalActions.PortalTypes.SET_CURRENT_PAGE_NUMBER)
-         .map( (action) => action.payload )
+         .map( (action:portalActions.SetCurrentPageNumber) => action.payload )
          .switchMap(()=> this.sortingServices.getCollectionSubset())
          .map((payload) =>  new garmentActions.UpdateSortedCollection(payload));
 
      @Effect()  updateAfterViewableUpdate= this.actions$
       .ofType(portalActions.PortalTypes.UPDATE_VIEWABLE_PER_PAGE_COUNT)
-         .map( (action) => action.payload )
+         .map( (action:portalActions.UpdateViewablePerPageCount) => action.payload )
          .switchMap(()=> this.sortingServices.getCollectionSubset())
          .map((payload) =>  new garmentActions.UpdateSortedCollection(payload));
 

@@ -1,16 +1,15 @@
 <!-- ngrx smart-container-->
-  <div fxLayout="row" class="grid-create-row">
-    <form #f="ngForm" (ngSubmit)="publishGarmentAdd(f)" novalidate>
+  <form fxLayout="row" class="grid-create-row" #f="ngForm" (ngSubmit)="publishGarmentAdd(f)" novalidate>
      <div fxLayout="column" fxFlex="10" >
          <button type="button"  md-icon-button  class='exit-add'(click)="exitAddRow()">
              <md-icon class="md-24" aria-label="remove add row">clear</md-icon>
          </button>
      </div>
-     <div class="garment-name" fxLayout="column" fxFlex="40">
+     <div class="garment-name" fxLayout="column" fxFlex="30">
          <input id="garmentName"  ngModel placeholder="Garment Name"  name="garmentName">
      </div>
-     <div class="garment-type" fxLayout="column" fxFlex="20">
-                 <div class="garment-toolbar-type" fxLayout="column" fxFlex="20">
+     <div class="garment-type" fxLayout="column" fxFlex="15">
+                 <div class="garment-toolbar-type" fxLayout="column" fxFlex="15">
                     <button md-button type="button"  [mdMenuTriggerFor]="type" class="type-btn-trigger">
                          {{ updatedType}}
                     </button>
@@ -21,8 +20,8 @@
                     </md-menu>
                  </div>
      </div>
-     <div class="garment-price" fxLayout="column" fxFlex="15">
-         <input id="garmentPrice" ngModel  placeholder="price" name="garmentPrice">
+     <div class="garment-price" fxLayout="column" fxFlex="10">
+         <input id="garmentPrice" ngModel  placeholder="price" name="garmentPrice" class="price-input">
      </div>
      <div class="garment-inventory" fxLayout="column" fxFlex="10">
          <input id="garmentInventory" ngModel  placeholder="stock" name="garmentInventory">
@@ -34,5 +33,4 @@
                        <md-icon class="save-icon" aria-label="save changes" >save</md-icon>
                 </button>
      </div>
-    </form>
-  </div>
+  </form>

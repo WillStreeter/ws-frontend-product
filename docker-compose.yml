@@ -2,22 +2,27 @@ version: '3'
 
 services:
 
-  ws-frontend-product:
+  ws-frontend-product-webpack:
     restart: always
-    image: local-ws-frontend-product:latest
-    container_name: local-ws-frontend-product
+    image: ws-typescript-development-webpack
+    container_name: local-ws-frontend-product-webpack
     build:
       context: .
       dockerfile: ./Dockerfile.dev
     command: ['npm', 'run', 'start']
     volumes:
       - ./dist:/app/dist
+<<<<<<< HEAD
       - ./build:/app/build
       - ./tools:/app/tools
+=======
+>>>>>>> tavis
       - ./src:/app/src
       - ./yarn.lock:/app/yarn.lock:rw
+      - ./tslint.json:/app/tsling.json
       - ./tsconfig.json:/app/tsconfig.json
       - ./package.json:/app/package.json:rw
+      - ./yarn.lock:/app/yarn.lock:rw
       - ./.angular-cli.json:/app/.angular-cli.json:rw
     ports:
       - '5555:5555'
@@ -34,6 +39,6 @@ services:
       - ./etc/nginx:/etc/nginx/
       - ./dist/prod:/app/
     links:
-      - "ws-frontend-product"
+      - "ws-frontend-product-webpack"
     ports:
       - "80:80"

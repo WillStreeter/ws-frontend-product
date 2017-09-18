@@ -5,7 +5,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { GarmentModel,
          PortalModel,
          SortRequestModel,
-         GarmentSortModel } from '../../.'
+         GarmentSortModel } from '../../../business-layer/models'
 import { BrokerDispatcherService } from '../../../business-layer/pubsub-broker/services/broker.dispatcher.service';
 import { BrokerResponse } from '../../../business-layer/pubsub-broker/models/broker.response.model';
 import { BrokerList } from '../../../business-layer/brokerage/ngrx-stubs/brokerlist';
@@ -14,7 +14,7 @@ import { BrokerList } from '../../../business-layer/brokerage/ngrx-stubs/brokerl
     moduleId: module.id,
     selector: 'garment-grid',
     templateUrl: 'garment.grid.component.html',
-    styleUrls: ['garment.grid.component.css']
+    styleUrls: ['garment.grid.component.scss']
 })
 export class GarmentGridComponent implements OnInit {
     currentGarmentSubset$: Observable<GarmentModel[]>;

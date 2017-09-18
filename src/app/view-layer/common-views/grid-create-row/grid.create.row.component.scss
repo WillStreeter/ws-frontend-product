@@ -36,11 +36,20 @@ md-checkbox {
     border-width: 1.75px;
 }
 
+
+.type-btn-trigger{
+  text-align: left;
+  padding-left:30px;
+}
+
 .garment-name,
 .garment-type,
 .garment-price,
 .garment-inventory{
     margin:auto;
+}
+.price-input{
+   text-align:right;
 }
 
 input{
@@ -62,7 +71,7 @@ input{
 
 .garment-price{
     input {
-        text-align: left;
+        text-align: right;
     }
 }
 .garment-inventory{

@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { MaterialModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 //data layer
@@ -49,6 +50,7 @@ import { BaseRequestOptions } from '@angular/http';
              BrowserModule,
              BrowserAnimationsModule,
              FormsModule,
+             MaterialModule,
              ReactiveFormsModule,
              HttpClientModule,
              NGRxDataModule.forRoot(),
@@ -60,15 +62,16 @@ import { BaseRequestOptions } from '@angular/http';
              FlexLayoutModule
            ],
   providers: [
-    NGRxBrokerRegistrationService,
+    NGRxBrokerRegistrationService
     // providers used to create fake backend
    /// fakeBackendProvider,
   ///  MockBackend,
-    BaseRequestOptions,
-   {
-    provide: APP_BASE_HREF,
-    useValue: '<%= APP_BASE %>'
-   }],
+  //   BaseRequestOptions,
+  //  {
+  //   provide: APP_BASE_HREF,
+  //   useValue: '<%= APP_BASE %>'
+  //  }
+   ],
   bootstrap: [ AppStageComponent ]
 
 })

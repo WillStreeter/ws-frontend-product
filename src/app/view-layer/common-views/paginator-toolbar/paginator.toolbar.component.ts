@@ -16,7 +16,7 @@ import {PortalModel} from "../../../business-layer/models/portal.model";
     moduleId: module.id,
     selector: 'paginator-toolbar',
     templateUrl: 'paginator.toolbar.component.html',
-    styleUrls: ['paginator.toolbar.component.css']
+    styleUrls: ['paginator.toolbar.component.scss']
 })
 export class PaginatorToolbarComponent implements OnInit {
     portalState$: Subscription;

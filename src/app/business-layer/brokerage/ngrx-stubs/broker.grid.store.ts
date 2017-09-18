@@ -16,7 +16,9 @@ import { BrokerList } from './brokerlist';
 export class BrokerGridStore {
     brokerLabel:string = BrokerList.BROKER_GRID_STORE;
     constructor( private store: Store<fromRoot.State>,
-                 private brkrActnBuilder:BrokerActionBuilder ) { }
+                 private brkrActnBuilder:BrokerActionBuilder ) {
+                        this.store.dispatch(new garmentActions.GetGarmentCollection());
+                 }
 
     getComponentSupplies():any{
        return  Object.assign({

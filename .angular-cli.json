@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "ws-frontend-product"
+    "name": "ws-frontend-product-webpack"
   },
   "apps": [
     {
@@ -57,7 +57,7 @@
   "defaults": {
     "styleExt": "scss",
     "serve": {
-      "port": 4201
+      "port": 5555
     },
     "component": {
     }
