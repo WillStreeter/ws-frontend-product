@@ -1,3 +1,4 @@
+import {createSelector, createFeatureSelector} from '@ngrx/store';
 import * as portal from '../../actions/portal.actions';
 import * as PortalActionTypes from '../../../../business-layer/shared-types/actions/portal.action.types';
 import { SortRequestModel } from '../../../../business-layer/models/sortRequest.model';

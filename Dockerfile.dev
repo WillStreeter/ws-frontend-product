@@ -1,4 +1,4 @@
-FROM willsonic/ws-typescript-development:v1.0.0
+FROM  ws-typescript-development-webpack
 
 ENV UI_CLIENT_PORT 5555
 ENV LIVERELOAD_UI_CLIENT_PORT 3001
@@ -13,8 +13,7 @@ RUN mkdir -p /app/dist \
   && mkdir -p /app/src
 
 COPY dist /app/dist
-COPY.angular-cli.json /app/.angular-cli.json
-COPY test-main.js /app/test-main.js
+COPY .angular-cli.json /app/.angular-cli.json
 COPY karma.conf.js /app/karma.conf.js
 COPY protractor.conf.js /app/protractor.conf.js
 COPY tslint.json /app/tslint.json
@@ -24,7 +23,7 @@ COPY src /app/src
 
 WORKDIR /app
 
-RUN npm install && gulp build.bundle.rxjs
+RUN npm install
 
 CMD ["npm",  "start"]
 #ENTRYPOINT ["/bin/sh", "-c", "while true; do sleep 1; done"]

@@ -39,7 +39,7 @@
             [(ngModel)]="garment.inventory" [readonly]="isReadOnly"  placeholder="" name="garmentInventory">
      </div>
 
-     <div fxLayout="column" fxFlex="5"  [className]="revealPublish_Class">
+     <div *ngIf="!isReadOnly"  fxLayout="column" class="un-revealed" fxFlex="5">
         <div>
                 <button type="submit"  id="{{garment.id}}"
                        class="save-button">
