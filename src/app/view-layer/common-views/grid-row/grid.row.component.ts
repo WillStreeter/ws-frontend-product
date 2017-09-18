@@ -1,4 +1,4 @@
-import { Component,Input, Output, EventEmitter} from '@angular/core';
+import { Component,Input, Output, EventEmitter, OnChanges, SimpleChanges, } from '@angular/core';
 import { NgForm, FormsModule } from '@angular/forms';
 import { GarmentModel } from '../../../business-layer/models';
 
@@ -10,48 +10,35 @@ import { GarmentModel } from '../../../business-layer/models';
     templateUrl: 'grid.row.component.html',
     styleUrls: ['grid.row.component.scss']
 })
-export class GridRowComponent{
-    @Input() garment:GarmentModel;
-    @Input()rowUpdateState:boolean;
+export class GridRowComponent  implements OnChanges{
+    @Input()  garment:GarmentModel;
+    @Input()  rowUpdateState:boolean;
     @Output() updateGarmentModel = new EventEmitter<GarmentModel>();
     @Output() addRowState = new EventEmitter<boolean>();
     isChecked:boolean = false;
     isReadOnly:boolean = true;
-     liveInput_Class='noStyle';
-     revealPublish_Class='un-revealed';
-     updatedType:string ='';
+    liveInput_Class='noStyle';
+    revealPublish_Class='un-revealed';
+    updatedType:string ='';
+    originalGarment:GarmentModel;
+    formattedAmount: string = '';
 
-
-    get id() {
-      return this.garment.id;
+     ngOnChanges(changes: SimpleChanges) {
+       const priceConversion= parseFloat(changes['garment'].currentValue.price).toFixed(2);
+       this.formattedAmount =  '$'+ priceConversion;
+       this.originalGarment = <GarmentModel>{
+                                                  id: changes['garment'].currentValue.id,
+                                                  name:changes['garment'].currentValue.name,
+                                                  type: changes['garment'].currentValue.type,
+                                                  price:changes['garment'].currentValue.price,
+                                                  inventory:changes['garment'].currentValue.inventory,
+                                                  thumbnail:changes['garment'].currentValue.thumbnail
+                                            };
     }
-
-    get name() {
-      return this.garment.name;
-    }
-
-    get type() {
-       this.updatedType = this.garment.type
-        return  this.updatedType;
-    }
-
-    get price() {
-       return "$"+this.garment.price;
-    }
-    get inventory(){
-        return this.garment.inventory;
-    }
-
-    get thumbnail(){
-       return this.garment.thumbnail;
-    }
-
 
     updateGarmentType(value){
-        this.updatedType = value;
+        this.garment.type = value;
     }
-
-
 
 
     turnPublishingOn(garmentId:number){
@@ -73,12 +60,13 @@ export class GridRowComponent{
         this.isChecked= false;
         this.liveInput_Class = 'noStyle';
         this.revealPublish_Class='un-revealed';
-
+        this.formattedAmount = '$'+(f.value.garmentPrice).replace(/(?:[a-zA-Z]|\s|,|\$)+/ig,'');
+        const priceConversion= parseFloat((f.value.garmentPrice).replace(/(?:[a-zA-Z]|\s|,|\$)+/ig,''));
         let updateGM:GarmentModel =<GarmentModel>{
                                                   id:this.garment.id,
                                                   name:f.value.garmentName,
                                                   type: this.updatedType,
-                                                  price:parseInt((f.value.garmentPrice).replace(/(?:[a-zA-Z]|\s|,|\$)+/ig,'')),
+                                                  price: parseFloat(priceConversion.toFixed(2)),
                                                   inventory:parseInt(f.value.garmentInventory),
                                                   thumbnail:this.garment.thumbnail
                                                  };

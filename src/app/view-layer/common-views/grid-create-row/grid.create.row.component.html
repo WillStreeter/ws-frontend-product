@@ -2,7 +2,7 @@
   <form fxLayout="row" class="grid-create-row" #f="ngForm" (ngSubmit)="publishGarmentAdd(f)" novalidate>
      <div fxLayout="column" fxFlex="10" >
          <button type="button"  md-icon-button  class='exit-add'(click)="exitAddRow()">
-             <md-icon class="md-24" aria-label="remove add row">clear</md-icon>
+            <i class="material-icons">clear</i>
          </button>
      </div>
      <div class="garment-name" fxLayout="column" fxFlex="30">
@@ -28,9 +28,9 @@
      </div>
 
      <div fxLayout="column" fxFlex="5">
-                <button type="submit"
+                <button md-icon-button type="submit"
                        class="save-button">
-                       <md-icon class="save-icon" aria-label="save changes" >save</md-icon>
+                        <i class="material-icons save-icon" aria-label="save changes" >save</i>
                 </button>
      </div>
   </form>

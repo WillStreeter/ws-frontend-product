@@ -7,10 +7,10 @@
      </div>
      <div fxLayout="column" fxFlex="5">
           <div class="img-thumb">
-               <img src="{{thumbnail}}" alt="{{name}}">
+               <img src="{{garment.thumbnail}}" alt="{{name}}">
           </div>
      </div>
-     <div class="garment-name" fxLayout="column" fxFlex="30">
+     <div class="garment-name" fxLayout="column" fxFlex="40">
          <input id="garmentName"  [className]="liveInput_Class"
                  [(ngModel)]="garment.name" [readonly]="isReadOnly"  placeholder=""  name="garmentName">
      </div>
@@ -19,7 +19,7 @@
 
                  <div class="garment-toolbar-type" fxLayout="column" fxFlex="15">
                     <button md-button type="button"  [mdMenuTriggerFor]="type" class="type-btn-trigger">
-                         {{ updatedType}}
+                         {{ garment.type}}
                     </button>
                     <md-menu #type="mdMenu">
                       <button md-menu-item type="button" (click)="updateGarmentType('Physical')">Physical</button>
@@ -28,11 +28,12 @@
                     </md-menu>
                  </div>
          </div>
-         <input *ngIf="isReadOnly==true" id="garmentType"  [(ngModel)]="type" [readonly]="isReadOnly"  placeholder="" name="garmentType">
+         <input *ngIf="isReadOnly==true" id="garmentType"  [(ngModel)]="garment.type" [readonly]="isReadOnly"  placeholder="" name="garmentType">
      </div>
-     <div class="garment-price" fxLayout="column" fxFlex="10">
+     <div class="garment-price" fxLayout="column" fxFlex="15">
          <input id="garmentPrice" [className]="liveInput_Class"
-          [(ngModel)]="garment.price" [readonly]="isReadOnly"  placeholder="" name="garmentPrice">
+          [(ngModel)]="formattedAmount"
+          [readonly]="isReadOnly"  placeholder="" name="garmentPrice">
      </div>
      <div class="garment-inventory" fxLayout="column" fxFlex="10">
          <input id="garmentInventory" [className]="liveInput_Class"
@@ -40,11 +41,8 @@
      </div>
 
      <div *ngIf="!isReadOnly"  fxLayout="column" class="un-revealed" fxFlex="5">
-        <div>
-                <button type="submit"  id="{{garment.id}}"
-                       class="save-button">
-                       <md-icon class="save-icon" aria-label="save changes" >save</md-icon>
+                <button md-icon-button type="submit"    class="save-button">
+                        <i class="material-icons save-icon" aria-label="save changes" >save</i>
                 </button>
-        </div>
      </div>
  </form>

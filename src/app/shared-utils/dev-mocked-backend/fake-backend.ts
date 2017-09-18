@@ -1,7 +1,7 @@
 import { Http, BaseRequestOptions, Response, ResponseOptions,
          ResponseType, RequestMethod, XHRBackend, RequestOptions } from '@angular/http';
 
-import {MockBackend, MockConnection} from '@angular/http/testing/index';
+import {MockBackend, MockConnection} from '@angular/http/testing';
 
 
 class MockError extends Response implements Error {
@@ -13,16 +13,19 @@ class MockError extends Response implements Error {
 export function fakeBackendFactory(backend: MockBackend, options: BaseRequestOptions, realBackend: XHRBackend) {
     // array in local storage for registered users
     let products: any[] = JSON.parse(localStorage.getItem('products')) || [];
+        // wrap in timeout to simulate server api call
+                console.log('fakeBackendFactory ----- products =', products)
 
     // configure fake backend
     backend.connections.subscribe((connection: MockConnection) => {
         // wrap in timeout to simulate server api call
+                console.log('fakeBackendFactory ----- connection =', connection)
         setTimeout(() => {
 
             // updateProduct
             if (connection.request.url.endsWith('/api/products/update') && connection.request.method === RequestMethod.Post) {
                 // get new user object from post body
-
+                console.log('fakeBackendFactory ----- fakeBackendFactory')
                 let urlParts = connection.request.url.split('/');
                 let id = parseInt(urlParts[urlParts.length - 1]);
                 let updateProduct = JSON.parse(connection.request.getBody());

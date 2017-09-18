@@ -6,7 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { GridMastheadComponent } from './grid.masthead.component';
-import { MaterialModule } from '@angular/material';
+import { MaterialModule } from '../../material.module';
 
 
 @NgModule({

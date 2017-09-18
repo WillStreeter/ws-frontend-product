@@ -1,7 +1,7 @@
 all:
 NGINX_CONTAINER_NAME = local-gh-pages-harness
 CONTAINER_NAME = local-ws-frontend-product-webpack
-IMAGE_NAME = ws-typescript-development-webpack
+IMAGE_NAME = local-ws-frontend-product-webpack
 NGINX_IMAGE_NAME = local-gh-pages-harness:latest
 
 
@@ -23,7 +23,7 @@ build-multi-dev:
 	docker build -t local-gh-pages-harness -f Dockerfile.nginx.dev .
 
 run-container:
-	docker run --name $(CONTAINER_NAME) -d -p 5555:5555  $(IMAGE_NAME)
+	docker run --name $(CONTAINER_NAME) -d -p 4200:4200  $(IMAGE_NAME)
 
 
 start:

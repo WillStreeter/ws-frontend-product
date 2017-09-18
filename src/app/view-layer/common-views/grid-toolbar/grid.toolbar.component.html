@@ -4,7 +4,7 @@
      <div fxLayout="column" fxFlex="5">
           <md-checkbox></md-checkbox>
      </div>
-     <div class="garment-toolbar-name" fxLayout="column" fxFlex="40">
+     <div class="garment-toolbar-name" fxLayout="column" fxFlex="45">
         <md-button-toggle class="toolbar-tggl-btn" (click)="updateGridSortBase('Name')"
         (dblclick)="updateChangeDirection()">
               Name
@@ -24,7 +24,7 @@
           <button md-menu-item  (click)="updateGridSortBase('Service')">Service</button>
         </md-menu>
      </div>
-     <div class="garment-toolbar-price" fxLayout="column" fxFlex="10">
+     <div class="garment-toolbar-price" fxLayout="column" fxFlex="15">
         <md-button-toggle class="toolbar-tggl-btn" (click)="updateGridSortBase('Price')"
         (dblclick)="updateChangeDirection()">
              Price
@@ -40,5 +40,4 @@
              <i class="material-icons arrw-hidden">arrow_drop_up</i>
         </md-button-toggle>
      </div>
-     <div fxLayout="column" fxFlex="5"></div>
 </div>

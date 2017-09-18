@@ -7,8 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SearchAheadComponent } from './search.ahead.component';
-import { MaterialModule } from '@angular/material';
-
+import { MaterialModule } from '../../material.module';
 
 @NgModule({
     imports: [  FormsModule,
