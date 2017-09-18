@@ -19,7 +19,7 @@ export class ErrorEffects {
 
  @Effect() catchAllRemoteError$ = this.actions$
   .ofType(errorActions.ErrorTypes.REPORT_ERROR)
-  .map(action => action.payload)
+  .map((action:errorActions.ReportError) => action.payload)
   .switchMap(payload => {
     // let obs;
 

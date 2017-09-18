@@ -1,6 +1,6 @@
 import { Component,Input, Output, EventEmitter} from '@angular/core';
 import { NgForm, FormsModule } from '@angular/forms';
-import { GarmentModel } from '../../.';
+import { GarmentModel } from '../../../business-layer/models';
 
 
 
@@ -8,7 +8,7 @@ import { GarmentModel } from '../../.';
     moduleId: module.id,
     selector: 'grid-row',
     templateUrl: 'grid.row.component.html',
-    styleUrls: ['grid.row.component.css']
+    styleUrls: ['grid.row.component.scss']
 })
 export class GridRowComponent{
     @Input() garment:GarmentModel;

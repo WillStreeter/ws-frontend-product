@@ -14,6 +14,7 @@ export const GarmentTypes = GarmentActionTypes;
 
 export class GetGarmentCollection implements Action {
  public readonly type = GarmentActionTypes.FETCH_GARMENT_COLLECTION_ATTEMPT;
+  constructor() {  }
 }
 
 export class GetGarmentCollectionFailure implements Action {
@@ -29,7 +30,7 @@ export class GetGarmentCollectionSuccess implements Action {
 
 export class UpdateGarmentAttempt implements Action {
  public readonly type =  GarmentActionTypes.UPDATE_GARMENT_IN_COLLECTION_ATTEMPT;
- constructor(public payload:GarmentModel) {  }
+ constructor(public payload:any) {  }
 }
 
 export class UpdateGarmentFailure implements Action {
@@ -46,7 +47,7 @@ export class UpdateGarmentSuccess implements Action {
 
 export class AddGarmentToCollectionAttempt implements Action {
  public readonly type =  GarmentActionTypes.ADD_GARMENT_TO_COLLECTION_ATTEMPT;
- constructor(public payload:GarmentAddModel) {  }
+ constructor(public payload:any) {  }
 }
 
 export class AddGarmentToCollectionFailure implements Action {
