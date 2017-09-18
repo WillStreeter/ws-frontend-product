@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
 @Component({
   moduleId: module.id,
   selector: 'sd-app-stage',
-  styleUrls: ['app.stage.component.css'],
+  styleUrls: ['app.stage.component.scss'],
   templateUrl: 'app.stage.component.html',
 })
 

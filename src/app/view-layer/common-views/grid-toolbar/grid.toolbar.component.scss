@@ -27,8 +27,17 @@ md-checkbox {
         padding-left:10px;
 }
 
+.toolbar-tggl-btn{
+  background-color:transparent !important;
+  border:none;
+  box-shadow:none;
+}
+
+
 button .mat-button.cdk-focused.cdk-mouse-focused{
   background-color:transparent !important;
+  border:none;
+  box-shadow:none;
 }
 
 .mat-button-toggle-checked{

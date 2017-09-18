@@ -4,7 +4,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
-import { GarmentModel } from '../../../business-layer/models';;
+import { GarmentModel } from '../../../business-layer/models';
 import { BrokerDispatcherService } from '../../../business-layer/pubsub-broker/services/broker.dispatcher.service';
 import { BrokerResponse } from "../../../business-layer/pubsub-broker/models/broker.response.model";
 import { BrokerList } from '../../../business-layer/brokerage/ngrx-stubs/brokerlist';
@@ -15,7 +15,7 @@ import { BrokerList } from '../../../business-layer/brokerage/ngrx-stubs/brokerl
     moduleId: module.id,
     selector: 'grid-masthead',
     templateUrl: 'grid.masthead.component.html',
-    styleUrls: ['grid.masthead.component.css']
+    styleUrls: ['grid.masthead.component.scss']
 })
 export class GridMastheadComponent implements OnInit {
     brokerRef:any;

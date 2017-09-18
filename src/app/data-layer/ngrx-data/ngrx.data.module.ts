@@ -10,10 +10,9 @@ import { SortingServices }   from '../sorting-services/sorting.service';
 /*
      ngrx base library
  */
-import { RouterStoreModule } from '@ngrx/router-store';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { reducer } from  './reducers/index';
+import { reducers, metaReducers } from  './reducers/index';
 
 
 /*
@@ -33,12 +32,11 @@ import { PortalEffects } from './effects/portal.effects';
 @NgModule({
     imports: [ CommonModule,
                HttpClientModule,
-               RouterModule,
-               StoreModule.provideStore(reducer),
-               RouterStoreModule.connectRouter(),
-               EffectsModule.run(ErrorEffects),
-               EffectsModule.run(PortalEffects),
-               EffectsModule.run(GarmentEffects) ],
+               StoreModule.forRoot(reducers, { metaReducers }),
+               EffectsModule.forRoot([]),
+               EffectsModule.forFeature([ErrorEffects,
+                                      GarmentEffects,
+                                      PortalEffects]) ],
     exports: [],
     providers: [
                  HttpWrapperService,

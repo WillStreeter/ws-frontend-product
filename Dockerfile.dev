@@ -1,4 +1,5 @@
-FROM ws-typescript-development-gulp-free
+FROM  ws-typescript-development-webpack
+
 
 ENV UI_CLIENT_PORT 5555
 ENV LIVERELOAD_UI_CLIENT_PORT 3001
@@ -23,7 +24,7 @@ COPY src /app/src
 
 WORKDIR /app
 
-RUN npm install 
+RUN npm install
 
 CMD ["npm",  "start"]
 #ENTRYPOINT ["/bin/sh", "-c", "while true; do sleep 1; done"]

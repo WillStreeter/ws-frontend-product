@@ -2,10 +2,11 @@
  * Created by willstreeter on 9/10/17.
  */
 import { Observable } from 'rxjs/Observable';
+import "rxjs/add/observable/fromEvent";
+import "rxjs/add/operator/debounceTime";
 import { Subscription } from 'rxjs/Subscription';
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
-import "rxjs/add/observable/fromEvent";
 import { BrokerDispatcherService } from '../../../business-layer/pubsub-broker/services/broker.dispatcher.service';
 import { BrokerResponse } from "../../../business-layer/pubsub-broker/models/broker.response.model";
 import { BrokerList } from '../../../business-layer/brokerage/ngrx-stubs/brokerlist';
@@ -17,7 +18,7 @@ import {PortalModel} from "../../../business-layer/models/portal.model";
     moduleId: module.id,
     selector: 'search-ahead',
     templateUrl: 'search.ahead.component.html',
-    styleUrls: ['search.ahead.component.css']
+    styleUrls: ['search.ahead.component.scss']
 })
 export class SearchAheadComponent implements OnInit {
     @ViewChild('searchBox') input: ElementRef;
@@ -39,7 +40,7 @@ export class SearchAheadComponent implements OnInit {
 
     ngAfterViewInit(): void{
 
-        let searchValue$:Observable<any> = Observable.fromEvent(this.input.nativeElement, 'keyup')
+        let searchValue$ = Observable.fromEvent(this.input.nativeElement, 'keyup')
                             .map(x => {
                                 return x['key']
                             })
