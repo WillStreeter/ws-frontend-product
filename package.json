@@ -34,6 +34,7 @@
     "@ngrx/store": "^4.0.2",
     "@ngrx/store-devtools": "^4.0.0",
     "@types/validator": "^6.2.3",
+    "angular-in-memory-web-api": "^0.4.6",
     "core-js": "^2.5.0",
     "font-awesome": "^4.7.0",
     "hammerjs": "^2.0.8",

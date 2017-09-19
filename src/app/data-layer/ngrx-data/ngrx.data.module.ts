@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { HttpWrapperService } from '../api-services/http.wrapper.service';
-import { GarmentService } from '../api-services/garment.service';
+import { GarmentService } from '../api-services/garments/garment.service';
 import { SortingServices }   from '../sorting-services/sorting.service';
 
 /*

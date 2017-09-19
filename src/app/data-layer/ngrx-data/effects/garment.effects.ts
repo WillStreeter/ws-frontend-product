@@ -13,7 +13,7 @@ import { Actions, Effect, toPayload } from '@ngrx/effects';
 import * as errorActions from '../actions/error.actions';
 import * as portalActions from '../actions/portal.actions';
 import * as garmentActions from '../actions/garment.actions';
-import { GarmentService } from '../../api-services/garment.service';
+import { GarmentService } from '../../api-services/garments/garment.service';
 import * as fromRoot from '../reducers/index';
 import {GarmentSortModel, GarmentModel, GarmentAddModel} from '../../../business-layer/models';
 import * as  GarmentActionTypes  from '../../../business-layer/shared-types/actions/garment.action.types';

@@ -1,3 +1,6 @@
+/**
+ * Created by willstreeter on 9/19/17.
+ */
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse, HttpRequest } from '@angular/common/http';
 import { RequestOptions } from '@angular/http';
@@ -5,8 +8,11 @@ import { Observable } from 'rxjs/Observable';
 import { environment } from '../../../environments/environment';
 import { HttpParams } from './interfaces/httpParams.model';
 
+
+type Data = { data: any }
+
 @Injectable()
-export class HttpWrapperService {
+export class HttpClientWrapperService {
   /*
     These are the methods that are used in the additional api-services,
     where otherwise they would require importing angular 2 http module.
@@ -18,11 +24,11 @@ export class HttpWrapperService {
   public get(params: HttpParams){
     let {apiUrl, options} = this.configRequest(params.uri);
     console.log('HttpWrapperService  get   params =', params)
-    return this.http.get<Object>('http://private-anon-85f7209c9f-weeblyfrontendtrialapi.apiary-mock.com/products', options)
+    return this.http<Data>get(apiUrl, options)
       .map(
       data =>({
         type: params.successActionType,
-        payload: data
+        payload: data.data as options.responseType
       }),
       err => (data => Observable.of({
         type: params.errorActionType,
@@ -36,11 +42,11 @@ export class HttpWrapperService {
   public post(params: HttpParams){
 
     let {apiUrl, options} = this.configRequest(params.uri);
-    return this.http.post<Object>(apiUrl, params.payload, options)
+    return this.http<Data>post(apiUrl, params.payload, options)
       .map(
       data =>({
         type: params.successActionType,
-        payload: data[params.responseObject]
+        payload: data.data as options.responseType
       }),
       err => (data => Observable.of({
         type: params.errorActionType,
@@ -54,11 +60,11 @@ export class HttpWrapperService {
   public put(params: HttpParams){
     let {apiUrl, options} = this.configRequest(params.uri);
 
-    return this.http.put<Object>(apiUrl, params.payload, options)
+    return this.http<Data>put(apiUrl, params.payload, options)
       .map(
       data =>({
         type: params.successActionType,
-        payload: data[params.responseObject]
+        payload: data.data as options.responseType
       }),
       err => (data => Observable.of({
         type: params.errorActionType,
@@ -74,7 +80,7 @@ export class HttpWrapperService {
   public delete(params: HttpParams) {
     let {apiUrl, options} = this.configRequest(params.uri);
 
-    return this.http.delete<Object>(apiUrl, options)
+    return this.http<Data>delete(apiUrl, options)
       .map(
       data =>({
         type: params.successActionType,

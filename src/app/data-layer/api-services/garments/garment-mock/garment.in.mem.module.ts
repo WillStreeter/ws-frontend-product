@@ -1,12 +1,15 @@
 import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import {CommonModule,
+        HttpClientTestingModule,
+        HttpBackend,} from '@angular/common';
 import {BaseRequestOptions, Http} from '@angular/http';
-import {MockBackend} from '@angular/http/testing';
+import {HttpClientTestingBackend, HttpTestingController } from '@angular/common/http/testing';
 import {mockBackendFactory} from './mock-backend-factory';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientTestingModule
   ],
   declarations: [],
   providers: [
