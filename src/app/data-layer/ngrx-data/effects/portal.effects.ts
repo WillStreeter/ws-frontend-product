@@ -29,11 +29,7 @@ export class PortalEffects {
 
     @Effect()  updateAddRowRevealState = this.actions$
        .ofType(garmentActions.GarmentTypes.ADD_GARMENT_TO_COLLECTION_SUCCESS)
-<<<<<<< HEAD
-         .map( (action:garmentActions.AddGarmentToCollectionSuccess) => action.payload )
-=======
         .map(action => action.payload)
->>>>>>> parent of f5d77b6... update all
         .switchMap(payload =>{
             return Observable.of( new portalActions.UpdateAddRowGarment(false));
         });
