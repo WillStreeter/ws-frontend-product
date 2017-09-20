@@ -95,7 +95,7 @@ export class HttpGarmentService extends GarmentService {
                SpecificErrorType:string,
                SuccessType:string) :Observable<Garment> {
                console.log('GarmentService === delete', payload)
-    let postParams: HttpParams = {
+    let deletParams: HttpParams = {
       errorActionType: ErrorActionType,
       specificErrorType: SpecificErrorType,
       payload: payload,
@@ -104,7 +104,7 @@ export class HttpGarmentService extends GarmentService {
       successActionType: SuccessType,
       uri: `${this.garmentsUrl}/delete`
     };
-    return this.httpWrapperService.post(postParams);
+    return this.httpWrapperService.delete(deletParams);
   }
 
 

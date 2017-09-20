@@ -24,11 +24,11 @@ export class HttpClientWrapperService {
   public get(params: HttpParams){
     let {apiUrl, options} = this.configRequest(params.uri);
     console.log('HttpWrapperService  get   params =', params)
-    return this.http<Data>get(apiUrl, options)
+    return this.http.get<Data>(apiUrl, options)
       .map(
       data =>({
         type: params.successActionType,
-        payload: data.data as options.responseType
+        payload: data.data
       }),
       err => (data => Observable.of({
         type: params.errorActionType,
@@ -42,11 +42,11 @@ export class HttpClientWrapperService {
   public post(params: HttpParams){
 
     let {apiUrl, options} = this.configRequest(params.uri);
-    return this.http<Data>post(apiUrl, params.payload, options)
+    return this.http.post<Data>(apiUrl, params.payload, options)
       .map(
       data =>({
         type: params.successActionType,
-        payload: data.data as options.responseType
+        payload: data.data
       }),
       err => (data => Observable.of({
         type: params.errorActionType,
@@ -60,11 +60,11 @@ export class HttpClientWrapperService {
   public put(params: HttpParams){
     let {apiUrl, options} = this.configRequest(params.uri);
 
-    return this.http<Data>put(apiUrl, params.payload, options)
+    return this.http.put<Data>(apiUrl, params.payload, options)
       .map(
       data =>({
         type: params.successActionType,
-        payload: data.data as options.responseType
+        payload: data.data
       }),
       err => (data => Observable.of({
         type: params.errorActionType,
@@ -80,12 +80,12 @@ export class HttpClientWrapperService {
   public delete(params: HttpParams) {
     let {apiUrl, options} = this.configRequest(params.uri);
 
-    return this.http<Data>delete(apiUrl, options)
+    return this.http.delete<Data>(apiUrl, params.payload, options)
       .map(
-      data =>({
-        type: params.successActionType,
-        payload: data[params.responseObject]
-      }),
+            data =>({
+              type: params.successActionType,
+              payload: data.data
+            }),
       err => (data => Observable.of({
         type: params.errorActionType,
         payload: {
