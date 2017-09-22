@@ -91,7 +91,8 @@ export class HttpWrapperService {
 
 
   private configRequest(uri: string): {apiUrl: string, options:any} {
-    let apiUrl = `${environment.HOST}/${uri}`;
+    console.log('HttpWrapperService -- configRequest environment.production =', environment.production )
+    let apiUrl = environment.production === true ?`${environment.HOST}/${uri}`:`${environment.HOST}/${uri}`;
 
     let headers = new HttpHeaders().set('Content-Type', 'application/json');
     let options = { headers: headers };

@@ -65,14 +65,14 @@ export class GridRowComponent  implements OnChanges{
         this.revealPublish_Class='un-revealed';
         this.formattedAmount = '$'+(f.value.garmentPrice).replace(/(?:[a-zA-Z]|\s|,|\$)+/ig,'');
         const priceConversion= parseFloat((f.value.garmentPrice).replace(/(?:[a-zA-Z]|\s|,|\$)+/ig,''));
-        let updateGM:GarmentModel =<GarmentModel>{
-                                                  id:this.garment.id,
-                                                  name:f.value.garmentName,
-                                                  type: this.updatedType,
-                                                  price: parseFloat(priceConversion.toFixed(2)),
-                                                  inventory:parseInt(f.value.garmentInventory),
-                                                  thumbnail:this.garment.thumbnail
-                                                 };
+        let updateGM:GarmentModel = <GarmentModel>{
+                                                      id:this.garment.id,
+                                                      name:f.value.garmentName,
+                                                      type: this.updatedType,
+                                                      price: parseFloat(priceConversion.toFixed(2)),
+                                                      inventory:parseInt(f.value.garmentInventory),
+                                                      thumbnail:this.garment.thumbnail
+                                                  };
         this.updateGarmentModel.emit(updateGM)
 
     }

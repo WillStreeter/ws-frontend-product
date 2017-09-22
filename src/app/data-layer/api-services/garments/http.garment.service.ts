@@ -101,10 +101,12 @@ export class HttpGarmentService {
 
 
   private checkForClientDev(response:any){
+   // because I am using api in memory for a gh page I am commenting this out
      if(environment.production ) {
-        return response;
+        //return response;
+        return Object.assign(response,{payload: <Garment[]> response.payload['data'] } );
      }else{
-      return Object.assign(response,{payload: <Garment[]> response.payload['data'] } );
+        return Object.assign(response,{payload: <Garment[]> response.payload['data'] } );
      }
 
   }

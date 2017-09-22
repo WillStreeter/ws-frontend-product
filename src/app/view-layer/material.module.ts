@@ -6,7 +6,6 @@ import { NgModule } from '@angular/core';
 import {
   MdButtonModule,
   MdButtonToggleModule,
-  MdCoreModule,
   MdCheckboxModule,
   MdMenuModule,
   MdToolbarModule,
@@ -18,7 +17,6 @@ import {
   imports: [
   MdButtonModule,
   MdButtonToggleModule,
-  MdCoreModule,
   MdCheckboxModule,
   MdMenuModule,
   MdToolbarModule,
@@ -28,7 +26,6 @@ import {
   exports: [
   MdButtonModule,
   MdButtonToggleModule,
-  MdCoreModule,
   MdCheckboxModule,
   MdMenuModule,
   MdToolbarModule,

@@ -5,9 +5,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { MaterialModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+
+
+import { MaterialModule } from '../view-layer/material.module';
 //data layer
 import { MockNGRxDataModule } from '../data-layer/ngrx-data/mock.ngrx.data.module';
 
@@ -39,9 +41,7 @@ import { AppStageRoutingModule } from './app.stage.routing.module';
    a good practice
  */
 
-import { fakeBackendProvider } from '../shared-utils/dev-mocked-backend/index';
 import { BaseRequestOptions, Http } from '@angular/http';
-import { MockBackend } from '@angular/http/testing';
 
 
 @NgModule({
@@ -51,8 +51,8 @@ import { MockBackend } from '@angular/http/testing';
              BrowserModule,
              BrowserAnimationsModule,
              FormsModule,
-             MaterialModule,
              ReactiveFormsModule,
+             MaterialModule,
              HttpClientModule,
              MockNGRxDataModule.forRoot(),
              PubSubBrokerModule.forRoot(),

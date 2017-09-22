@@ -3,11 +3,13 @@ FROM  ws-typescript-development-webpack
 
 
 RUN mkdir -p /app/dist \
+  && mkdir -p /app/dist-build \
   && mkdir -p /app/tools \
   && mkdir -p /app/resources \
   && mkdir -p /app/node_modules \
   && mkdir -p /app/src
 
+COPY dist-build /app/dist-build
 COPY .angular-cli.json /app/.angular-cli.json
 COPY karma.conf.js /app/karma.conf.js
 COPY protractor.conf.js /app/protractor.conf.js
@@ -17,6 +19,8 @@ COPY tsconfig.json /app/tsconfig.json
 COPY src /app/src
 
 WORKDIR /app
+
+RUN chmod -R 777 /app/dist-build
 
 RUN npm install
 

@@ -11,6 +11,7 @@ services:
       dockerfile: ./Dockerfile.dev
     command: ['npm', 'run', 'start']
     volumes:
+      - ./dist-build:/app/dist-build
       - ./.angular-cli.json:/app/.angular-cli.json:rw
       - ./karma.conf.js:/app/karma.conf.js:rw
       - ./protractor.conf.js:/protractor/karma.conf.js:rw
@@ -22,3 +23,17 @@ services:
     ports:
       - '4200:4200'
 
+  nginx-for-gh:
+    restart: always
+    image: local-nginx-for-gh:latest
+    container_name: local-nginx-for-gh-container
+    build:
+      context: .
+      dockerfile: ./Dockerfile.nginx.dev
+    volumes:
+      - ./etc/nginx:/etc/nginx/
+      - ./dist-build:/app
+    links:
+      - "ws-frontend-product"
+    ports:
+      - "80:80"

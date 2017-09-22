@@ -11,11 +11,11 @@
     "ng": "ng",
     "start": "ng serve --host 0.0.0.0",
     "build": "ng build",
+    "prod-build": "ng build --output-path=dist-build/prod --env=prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "surge-deploy": "ng build --prod --build-optimizer  && cp dist/index.html dist/200.html && surge --domain local-ws-frontend-product-webpack.surge.sh --project ./dist "
-  },
+    "e2e": "ng e2e"
+   },
   "private": true,
   "dependencies": {
     "@angular/animations": "^4.3.5",

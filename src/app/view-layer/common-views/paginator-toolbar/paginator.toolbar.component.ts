@@ -49,7 +49,7 @@ export class PaginatorToolbarComponent implements OnInit {
       });
 
       this.currentGarmentCollection$= this.brokerRef.storeObs.brokerCurrentGarmentCollection.subscribe( (garmentCollection)=>{
-              if(garmentCollection && garmentCollection.garments){
+              if(garmentCollection && garmentCollection.garments && garmentCollection.garments.length>0){
                   this.totalNumberProducts = garmentCollection.garments.length;
                   this.totalNumberOfPages = Math.ceil(garmentCollection.garments.length/this.viewablePerPage);
                   this.pageList = Array.from(Array(this.totalNumberOfPages).keys());
