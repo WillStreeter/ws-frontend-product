@@ -26,7 +26,7 @@ export function reducer(state = initialState, action: garmentActions.Actions): S
           if(action.payload) {
               let  garmentCollection:GarmentCollectionModel = <GarmentCollectionModel>{};
               garmentCollection.id=''+state.ids.length + Math.floor(Math.random() * (100 - 1)) +1,
-              garmentCollection.products=action.payload;
+              garmentCollection.garments = action.payload;
               if (state.ids.indexOf(garmentCollection.id) > -1) {
                 return state;
               }
@@ -48,7 +48,7 @@ export function reducer(state = initialState, action: garmentActions.Actions): S
                 let  garmentCollection:GarmentCollectionModel = <GarmentCollectionModel>{};
                 const garmentSorted:GarmentSortModel = <GarmentSortModel>(action.payload);
                 garmentCollection.id = garmentSorted.collectionId;
-                garmentCollection.products = [...<GarmentModel[]>(garmentSorted.products)];
+                garmentCollection.garments = [...<GarmentModel[]>(garmentSorted.garments)];
 
 
 
@@ -70,7 +70,7 @@ export function reducer(state = initialState, action: garmentActions.Actions): S
            if(action.payload) {
                 const garmentUpdate = <GarmentModel>(action.payload);
                 let currentGarmentCollection:GarmentCollectionModel = state.entities[state.currentCollectionId];
-                let garmentProducts:GarmentModel[] = [...currentGarmentCollection.products];
+                let garmentProducts:GarmentModel[] = [...currentGarmentCollection.garments];
                 garmentProducts= garmentProducts.map((product:GarmentModel)=>{
                                          if(product.id === garmentUpdate.id){
                                              product = Object.assign({}, garmentUpdate);
@@ -84,7 +84,7 @@ export function reducer(state = initialState, action: garmentActions.Actions): S
                                         entities: Object.assign({}, state.entities, {
                                              [currentGarmentCollection.id]:<GarmentCollectionModel>({
                                                                            id:currentGarmentCollection.id,
-                                                                           products:garmentProducts})
+                                                                           garments:garmentProducts})
                                         }),
                                         currentCollectionId:state.currentCollectionId
                                       });
@@ -96,17 +96,18 @@ export function reducer(state = initialState, action: garmentActions.Actions): S
            if(action.payload) {
                 const garmentToAdd = <GarmentModel>(action.payload);
                 let currentGarmentCollection:GarmentCollectionModel = state.entities[state.currentCollectionId];
-                let garmentProducts:GarmentModel[] = [...currentGarmentCollection.products, garmentToAdd];
+                let garmentProducts:GarmentModel[] = [...currentGarmentCollection.garments, garmentToAdd];
                  state = Object.assign( {
                                         currentSubSet:state.currentSubSet,
                                         ids: state.ids ,
                                         entities: Object.assign({}, state.entities, {
                                              [currentGarmentCollection.id]:<GarmentCollectionModel>({
                                                                            id:currentGarmentCollection.id,
-                                                                           products:garmentProducts})
+                                                                           garments:garmentProducts})
                                         }),
                                         currentCollectionId:state.currentCollectionId
                                       });
+                console.log("garement.reuducer = ADD_GARMENT_TO_COLLECTION_SUCCESS state =", state)
            }
            return state;
 

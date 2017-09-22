@@ -13,7 +13,7 @@ import { Actions, Effect, toPayload } from '@ngrx/effects';
 import * as errorActions from '../actions/error.actions';
 import * as portalActions from '../actions/portal.actions';
 import * as garmentActions from '../actions/garment.actions';
-import { GarmentService } from '../../api-services/garments/garment.service';
+import { HttpGarmentService } from '../../api-services/garments/http.garment.service';
 import * as fromRoot from '../reducers/index';
 import {GarmentSortModel, GarmentModel, GarmentAddModel} from '../../../business-layer/models';
 import * as  GarmentActionTypes  from '../../../business-layer/shared-types/actions/garment.action.types';
@@ -33,8 +33,7 @@ export class GarmentEffects {
     @Effect() fetchGarmentCollection: Observable<Action>  = this.actions$
         .ofType(garmentActions.GarmentTypes.FETCH_GARMENT_COLLECTION_ATTEMPT)
         .switchMap(() => {
-               console.log('GarmentEffects ====  fetchGarmentCollection ')
-                return this.garmentServices.getProducts(
+                return this.garmentServices.getGarments(
                 errorActions.ErrorTypes.REPORT_ERROR,
                 garmentActions.GarmentTypes.FETCH_GARMENT_COLLECTION_FAILURE,
                 garmentActions.GarmentTypes.FETCH_GARMENT_COLLECTION_SUCCESS)
@@ -44,9 +43,9 @@ export class GarmentEffects {
     @Effect()  garmentCollectionFetched: Observable<Action>  = this.actions$
       .ofType(garmentActions.GarmentTypes.FETCH_GARMENT_COLLECTION_SUCCESS)
       .map((action:garmentActions.GetGarmentCollectionSuccess) => action.payload)
-      .switchMap( (payload)=>( this.sortingServices.sortGarmentCollection()))
+      .switchMap( (payload)=> {
+          return this.sortingServices.sortGarmentCollection()})
       .map((payload) =>  {
-           localStorage.setItem('products', JSON.stringify(payload.products));
           return new garmentActions.UpdateSortedCollection(payload)
       });
 
@@ -60,7 +59,7 @@ export class GarmentEffects {
     @Effect() updateGarmentInCollectionAttempt = this.actions$
         .ofType(garmentActions.GarmentTypes.UPDATE_GARMENT_IN_COLLECTION_ATTEMPT)
         .map((action:garmentActions.UpdateGarmentAttempt) => action.payload)
-        .switchMap((payload:any) => this.garmentServices.updateProduct( payload,
+        .switchMap((payload:any) => this.garmentServices.updateGarment( payload,
             errorActions.ErrorTypes.REPORT_ERROR,
             garmentActions.GarmentTypes.UPDATE_GARMENT_IN_COLLECTION_FAILURE,
             garmentActions.GarmentTypes.UPDATE_GARMENT_IN_COLLECTION_SUCCESS));
@@ -79,7 +78,7 @@ export class GarmentEffects {
     @Effect() addGarmentToCollection = this.actions$
         .ofType(garmentActions.GarmentTypes.ADD_GARMENT_TO_COLLECTION_ATTEMPT)
         .map((action:garmentActions.AddGarmentToCollectionAttempt) => action.payload)
-        .switchMap((payload:any) => this.garmentServices.addNewProduct( payload,
+        .switchMap((payload:any) => this.garmentServices.addGarment( payload,
             errorActions.ErrorTypes.REPORT_ERROR,
             garmentActions.GarmentTypes.ADD_GARMENT_TO_COLLECTION_FAILURE,
             garmentActions.GarmentTypes.ADD_GARMENT_TO_COLLECTION_SUCCESS));
@@ -98,7 +97,7 @@ export class GarmentEffects {
 
 
  constructor( private store:Store<fromRoot.State>,
-              private garmentServices: GarmentService,
+              private garmentServices: HttpGarmentService,
               private sortingServices: SortingServices,
               private actions$: Actions
              ) {  }

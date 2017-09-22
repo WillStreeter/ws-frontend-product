@@ -29,7 +29,7 @@ export class SortingServices {
         return Observable.of(<GarmentSortModel>{  collectionId:this.collectionId,
             sortType:this.sortStateVal.sortType,
             subSetCollection:collectionSubset,
-            products:this.garmentProducts })
+            garments:this.garmentProducts })
     }
 
     sortGarmentCollection(){
@@ -39,7 +39,7 @@ export class SortingServices {
         return Observable.of(<GarmentSortModel>{  collectionId:this.collectionId,
                                                   sortType:this.sortStateVal.sortType,
                                                   subSetCollection:collectionSubset,
-                                                  products:this.garmentProducts });
+                                                  garments:this.garmentProducts });
      }
 
     searchGarmentCollection(searchTerm:string){
@@ -52,7 +52,7 @@ export class SortingServices {
          return Observable.of(<GarmentSortModel>{  collectionId:this.collectionId,
              sortType:this.sortStateVal.sortType,
              subSetCollection:clonedGM,
-             products:this.garmentProducts });
+             garments:this.garmentProducts });
     }
 
     private findTermsInCollectionNames(searchTerm:string){
@@ -96,7 +96,7 @@ export class SortingServices {
         this.garmentStore$ = this.store.select(fromRoot.getGarmentsState).subscribe((val)=>{
             this.collectionId = val.currentCollectionId;
             this.currentGarmentCollection = val.entities[this.collectionId];
-            this.garmentProducts =  this.currentGarmentCollection.products;
+            this.garmentProducts =  this.currentGarmentCollection.garments;
         });
         this.garmentStore$.unsubscribe();
 

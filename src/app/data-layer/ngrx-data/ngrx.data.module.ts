@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { HttpWrapperService } from '../api-services/http.wrapper.service';
-import { GarmentService } from '../api-services/garments/garment.service';
+import { HttpGarmentService } from '../api-services/garments/http.garment.service';
 import { SortingServices }   from '../sorting-services/sorting.service';
 
 /*
@@ -41,7 +41,7 @@ import { PortalEffects } from './effects/portal.effects';
     providers: [
                  HttpWrapperService,
                  SortingServices,
-                 GarmentService  ]
+                 HttpGarmentService  ]
 })
 export class NGRxDataModule {
 
@@ -55,7 +55,7 @@ export class NGRxDataModule {
       ngModule: NGRxDataModule,
       providers: [ HttpWrapperService,
                    SortingServices,
-                   GarmentService]
+                   HttpGarmentService]
     }
   }
 }

@@ -32,14 +32,14 @@ export class GridCreateRowComponent{
         this.liveInput_Class = 'noStyle';
         this.revealPublish_Class='un-revealed';
 
-        let updateGM:GarmentModel =<GarmentModel>{
-                                                  id: Math.floor(Math.random() * (1000 - 1)) +1,
-                                                  name:f.value.garmentName,
-                                                  type: this.updatedType,
-                                                  price:f.value.garmentPrice,
-                                                  inventory:f.value.garmentInventory,
-                                                  thumbnail:'/assets/bowtie-thumb.jpeg'
-                                                 };
+        let updateGM:any = Object.assign({}, {
+                                              name:f.value.garmentName,
+                                              type: this.updatedType,
+                                              price:f.value.garmentPrice,
+                                              inventory:f.value.garmentInventory,
+                                              thumbnail:'/assets/images/mock-thumbs/bowtie-thumb.jpeg'
+                                             });
+
         this.addGarmentModel.emit(updateGM)
 
     }

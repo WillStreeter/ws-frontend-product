@@ -7,5 +7,5 @@ export interface GarmentSortModel {
     sortType:string;
     sortBase:string;
     subSetCollection:GarmentModel[];
-    products:GarmentModel[];
+    garments:GarmentModel[];
 }

@@ -17,8 +17,7 @@ export class HttpWrapperService {
 
   public get(params: HttpParams){
     let {apiUrl, options} = this.configRequest(params.uri);
-    console.log('HttpWrapperService  get   params =', params)
-    return this.http.get<Object>('http://private-anon-85f7209c9f-weeblyfrontendtrialapi.apiary-mock.com/products', options)
+    return this.http.get(apiUrl, options)
       .map(
       data =>({
         type: params.successActionType,
@@ -38,35 +37,36 @@ export class HttpWrapperService {
     let {apiUrl, options} = this.configRequest(params.uri);
     return this.http.post<Object>(apiUrl, params.payload, options)
       .map(
-      data =>({
-        type: params.successActionType,
-        payload: data[params.responseObject]
-      }),
-      err => (data => Observable.of({
-        type: params.errorActionType,
-        payload: {
-          action_type: params.specificErrorType,
-          message: data.error
-        }
-      })));
+          data =>({
+            type: params.successActionType,
+            payload: data
+          }),
+          err => (data => Observable.of({
+            type: params.errorActionType,
+            payload: {
+              action_type: params.specificErrorType,
+              message: data.error
+            }
+          }))
+      );
   }
 
   public put(params: HttpParams){
     let {apiUrl, options} = this.configRequest(params.uri);
-
-    return this.http.put<Object>(apiUrl, params.payload, options)
+    return this.http.put(apiUrl, params.payload, options)
       .map(
-      data =>({
-        type: params.successActionType,
-        payload: data[params.responseObject]
-      }),
-      err => (data => Observable.of({
-        type: params.errorActionType,
-        payload: {
-          action_type: params.specificErrorType,
-          message: data.error
-        }
-      })));
+          data =>({
+            type: params.successActionType,
+            payload: data
+          }),
+          err => (data => Observable.of({
+            type: params.errorActionType,
+            payload: {
+              action_type: params.specificErrorType,
+              message: data.error
+            }
+          }))
+      );
   }
 
 
@@ -78,7 +78,7 @@ export class HttpWrapperService {
       .map(
       data =>({
         type: params.successActionType,
-        payload: data[params.responseObject]
+        payload: data
       }),
       err => (data => Observable.of({
         type: params.errorActionType,
@@ -91,7 +91,7 @@ export class HttpWrapperService {
 
 
   private configRequest(uri: string): {apiUrl: string, options:any} {
-    let apiUrl = `${environment.HOST}/${environment.API}/${uri}`;
+    let apiUrl = `${environment.HOST}/${uri}`;
 
     let headers = new HttpHeaders().set('Content-Type', 'application/json');
     let options = { headers: headers };

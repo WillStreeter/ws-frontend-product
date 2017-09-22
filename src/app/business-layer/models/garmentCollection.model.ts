@@ -6,5 +6,5 @@ import { GarmentModel} from './garment.model';
 
 export interface GarmentCollectionModel {
     id:string;
-    products:GarmentModel[];
+    garments:GarmentModel[];
 }

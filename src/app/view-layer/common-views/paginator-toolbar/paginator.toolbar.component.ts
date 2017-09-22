@@ -49,9 +49,9 @@ export class PaginatorToolbarComponent implements OnInit {
       });
 
       this.currentGarmentCollection$= this.brokerRef.storeObs.brokerCurrentGarmentCollection.subscribe( (garmentCollection)=>{
-              if(garmentCollection && garmentCollection.products){
-                  this.totalNumberProducts = garmentCollection.products.length;
-                  this.totalNumberOfPages = Math.ceil(garmentCollection.products.length/this.viewablePerPage);
+              if(garmentCollection && garmentCollection.garments){
+                  this.totalNumberProducts = garmentCollection.garments.length;
+                  this.totalNumberOfPages = Math.ceil(garmentCollection.garments.length/this.viewablePerPage);
                   this.pageList = Array.from(Array(this.totalNumberOfPages).keys());
                   if(this.totalNumberProducts<=5){
                      this.disabled5 = true;

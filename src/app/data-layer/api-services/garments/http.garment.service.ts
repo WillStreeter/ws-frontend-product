@@ -1,30 +1,28 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { GarmentService } from './garment.service';
 import { HttpWrapperService } from '../http.wrapper.service';
 import { HttpParams } from '../interfaces/httpParams.model';
-import {Garment} from "./garment.clone";
+import {Garment} from "./garment-mock/garment.clone";
+import { environment } from '../../../../environments/environment';
 
 @Injectable()
-export class HttpGarmentService extends GarmentService {
+export class HttpGarmentService {
 
-  constructor(private httpWrapperService: HttpWrapperService) {
-      super()
-   }
+  garmentsUrl = 'api/garments';  // URL to web api
+
+  constructor(private httpWrapperService: HttpWrapperService) { }
 
   getGarments(ErrorActionType:string,
               SpecificErrorType:string,
-              SuccessType:string): Observable<Garment[]> {
-    console.log('GarmentService  getGarments')
+              SuccessType:string){
     let getParams: HttpParams = {
       errorActionType: ErrorActionType,
       specificErrorType: SpecificErrorType,
-      responseObject: 'products',
-      responseType:<Garment>[],
+      responseObject: 'garments',
       successActionType:SuccessType,
       uri: `${this.garmentsUrl}`
     };
-    return this.httpWrapperService.get(getParams);
+    return this.httpWrapperService.get(getParams).map( (response)=>(this.checkForClientDev(response)));
   }
 
   getGarment(payload: {
@@ -32,17 +30,16 @@ export class HttpGarmentService extends GarmentService {
                       },
              ErrorActionType:string,
              SpecificErrorType:string,
-             SuccessType:string): Observable<Garment>  {
+             SuccessType:string) {
     let getParams: HttpParams = {
       errorActionType: ErrorActionType,
       specificErrorType: SpecificErrorType,
       payload: payload,
-      responseObject: 'product',
-      responseType:Garment,
+      responseObject: 'garment',
       successActionType: SuccessType,
       uri: `${this.garmentsUrl}/${payload.id}`
     };
-    return this.httpWrapperService.post(getParams);
+    return this.httpWrapperService.post(getParams).map( (response)=>(this.checkForClientDev(response)));
   }
 
   addGarment( payload: {
@@ -54,18 +51,17 @@ export class HttpGarmentService extends GarmentService {
                       },
               ErrorActionType:string,
               SpecificErrorType:string,
-              SuccessType:string): Observable<Garment> {
+              SuccessType:string){
 
     let postParams: HttpParams = {
       errorActionType:ErrorActionType,
       specificErrorType: SpecificErrorType,
       payload: payload,
-      responseObject: 'product',
-      responseType:Garment,
+      responseObject: 'garment',
       successActionType: SuccessType,
       uri:  `${this.garmentsUrl}/add`
     };
-    return this.httpWrapperService.post(postParams);
+    return this.httpWrapperService.post(postParams).map( (response)=>this.checkForClientDev(response));
   }
 
 
@@ -74,18 +70,16 @@ export class HttpGarmentService extends GarmentService {
                          },
                ErrorActionType:string,
                SpecificErrorType:string,
-               SuccessType:string) :Observable<Garment> {
-               console.log('GarmentService === updateProduct', payload)
+               SuccessType:string){
     let postParams: HttpParams = {
       errorActionType: ErrorActionType,
       specificErrorType: SpecificErrorType,
       payload: payload,
-      responseObject: 'product',
-      responseType:Garment,
+      responseObject: 'garment',
       successActionType: SuccessType,
       uri: `${this.garmentsUrl}/update`
     };
-    return this.httpWrapperService.post(postParams);
+    return this.httpWrapperService.put(postParams).map( (response)=>this.checkForClientDev(response))
   }
 
   deleteGarment(payload: {
@@ -93,21 +87,27 @@ export class HttpGarmentService extends GarmentService {
                          },
                ErrorActionType:string,
                SpecificErrorType:string,
-               SuccessType:string) :Observable<Garment> {
-               console.log('GarmentService === delete', payload)
-    let deletParams: HttpParams = {
+               SuccessType:string) {
+    let postParams: HttpParams = {
       errorActionType: ErrorActionType,
       specificErrorType: SpecificErrorType,
       payload: payload,
-      responseType:Garment,
-      responseObject: 'product',
+      responseObject: 'garment',
       successActionType: SuccessType,
       uri: `${this.garmentsUrl}/delete`
     };
-    return this.httpWrapperService.delete(deletParams);
+    return this.httpWrapperService.post(postParams);
   }
 
 
+  private checkForClientDev(response:any){
+     if(environment.production ) {
+        return response;
+     }else{
+      return Object.assign(response,{payload: <Garment[]> response.payload['data'] } );
+     }
+
+  }
 
 
 }

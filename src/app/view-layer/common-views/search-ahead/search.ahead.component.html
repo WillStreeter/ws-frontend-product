@@ -1,9 +1,9 @@
 
 <div fxLayout="row" fxFlex="100">
-   <div fxLayout="column" fxFlex="50">
-       <form class="search-cntr">
+   <div fxLayout="column" fxFlex="45" >
+       <form class="search-cntr"  #searchForm="ngForm" (ngSubmit)="searchTermReq(searchForm)" novalidate>
          <label class="search-label" for="searchBox"><i class="material-icons">search</i></label>
-         <input id="searchBox"  #searchBox class="search-box" placeholder=" Search...">
+         <input id="searchBox" [(ngModel)]="searchInput" #searchBox class="search-box" placeholder=" Search..." name="searchInput">
        </form>
    </div>
 </div>

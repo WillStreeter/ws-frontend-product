@@ -9,7 +9,7 @@ import { MaterialModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 //data layer
-import { NGRxDataModule } from '../data-layer/ngrx-data/ngrx.data.module';
+import { MockNGRxDataModule } from '../data-layer/ngrx-data/mock.ngrx.data.module';
 
 import { NGRxBrokerRegistrationService } from '../business-layer/brokerage/registries/ngrx.broker.registration.service';
 
@@ -54,7 +54,7 @@ import { MockBackend } from '@angular/http/testing';
              MaterialModule,
              ReactiveFormsModule,
              HttpClientModule,
-             NGRxDataModule.forRoot(),
+             MockNGRxDataModule.forRoot(),
              PubSubBrokerModule.forRoot(),
              BrokerageModule.forRoot(),
              AppStageRoutingModule,
@@ -64,9 +64,6 @@ import { MockBackend } from '@angular/http/testing';
            ],
   providers: [
     NGRxBrokerRegistrationService,
-    // providers used to create fake backend
-     fakeBackendProvider,
-     MockBackend,
      BaseRequestOptions,
     {
       provide: APP_BASE_HREF,

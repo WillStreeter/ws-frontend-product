@@ -40,7 +40,6 @@ export class GarmentGridComponent implements OnInit {
     }
 
     exitEditState(val){
-        console.log('GarmentGridComponent  --- exitEditState  =', val)
         var note = this.brokerRef.storeDsp.UPDATE_REVEAL_GARMENT_ADD_ROW;
         note.payLoad = val;
         this.bDS.dispatchBrokerAction(note);

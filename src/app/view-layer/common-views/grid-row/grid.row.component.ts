@@ -24,20 +24,23 @@ export class GridRowComponent  implements OnChanges{
     formattedAmount: string = '';
 
      ngOnChanges(changes: SimpleChanges) {
-       const priceConversion= parseFloat(changes['garment'].currentValue.price).toFixed(2);
-       this.formattedAmount =  '$'+ priceConversion;
-       this.originalGarment = <GarmentModel>{
-                                                  id: changes['garment'].currentValue.id,
-                                                  name:changes['garment'].currentValue.name,
-                                                  type: changes['garment'].currentValue.type,
-                                                  price:changes['garment'].currentValue.price,
-                                                  inventory:changes['garment'].currentValue.inventory,
-                                                  thumbnail:changes['garment'].currentValue.thumbnail
-                                            };
+       if(changes['garment']){
+               const priceConversion= parseFloat(changes['garment'].currentValue.price).toFixed(2);
+               this.formattedAmount =  '$'+ priceConversion;
+               this.updatedType =  changes['garment'].currentValue.type;
+               this.originalGarment = <GarmentModel>{
+                                                          id: changes['garment'].currentValue.id,
+                                                          name:changes['garment'].currentValue.name,
+                                                          type: changes['garment'].currentValue.type,
+                                                          price:changes['garment'].currentValue.price,
+                                                          inventory:changes['garment'].currentValue.inventory,
+                                                          thumbnail:changes['garment'].currentValue.thumbnail
+                                                    };
+       }
     }
 
     updateGarmentType(value){
-        this.garment.type = value;
+        this.updatedType = value;
     }
 
 

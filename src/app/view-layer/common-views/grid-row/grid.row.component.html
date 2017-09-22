@@ -19,7 +19,7 @@
 
                  <div class="garment-toolbar-type" fxLayout="column" fxFlex="15">
                     <button md-button type="button"  [mdMenuTriggerFor]="type" class="type-btn-trigger">
-                         {{ garment.type}}
+                         {{ updatedType}}
                     </button>
                     <md-menu #type="mdMenu">
                       <button md-menu-item type="button" (click)="updateGarmentType('Physical')">Physical</button>
@@ -28,7 +28,7 @@
                     </md-menu>
                  </div>
          </div>
-         <input *ngIf="isReadOnly==true" id="garmentType"  [(ngModel)]="garment.type" [readonly]="isReadOnly"  placeholder="" name="garmentType">
+         <input *ngIf="isReadOnly==true" id="garmentType"  [(ngModel)]="updatedType" [readonly]="isReadOnly" placeholder="" name="garmentType">
      </div>
      <div class="garment-price" fxLayout="column" fxFlex="15">
          <input id="garmentPrice" [className]="liveInput_Class"
